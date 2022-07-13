@@ -1,13 +1,19 @@
 //import fontawesome icons
 @import url('../fontawesome/css/all.css');
-@import url('../fontawesome/scss/brands.scss');
-@import url("../fontawesome/scss/fontawesome.scss");
-@import url("../fontawesome/scss/solid.scss");
-@import url("../fontawesome/scss/regular.scss");
+@import url('../fontawesome/css/brands.css');
+@import url("../fontawesome/css/fontawesome.css");
+@import url("../fontawesome/css/solid.css");
+@import url("../fontawesome/css/regular.css");
+
 
 //import font Roboto 400
+//import font Roboto 900
 @font-face {
 	font-family: 'Roboto';
+	src: url('../fonts/roboto/Roboto-Black.eot') format('embedded-opentype');
+	src: url('../fonts/roboto/Roboto-Black.ttf') format('truetype');
+	src: url('../fonts/roboto/Roboto-Black.woff') format('woff');
+	src: url('../fonts/roboto/Roboto-Black.woff2') format('woff2');
 	src: url('../fonts/roboto/Roboto-Regular.eot') format('embedded-opentype');
 	src: url('../fonts/roboto/Roboto-Regular.ttf') format('truetype');
 	src: url('../fonts/roboto/Roboto-Regular.woff') format('woff');
@@ -16,8 +22,10 @@
 }
 
 //import font Heebo 400
+//import font Heebo 900
 @font-face {
 	font-family: 'Heebo';
+	src: url('../fonts/heebo/Heebo-Black.ttf') format('truetype');
 	src: url('../fonts/heebo/Heebo-Regular.eot') format('embedded-opentype');
 	src: url('../fonts/heebo/Heebo-Regular.ttf') format('truetype');
 	src: url('../fonts/heebo/Heebo-Regular.woff') format('woff');
@@ -25,6 +33,9 @@
 	font-display: swap;
 }
 
+//import font OPen Sans 300
+//import font OPen Sans 400
+//import font OPen Sans 600
 @font-face {
 	font-family: 'Open Sans';
 	src: url('../fonts/open-sans/OpenSans-Light.eot') format('embedded-opentype');

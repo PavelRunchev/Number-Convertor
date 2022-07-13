@@ -111,21 +111,28 @@ function calculate() {
             codeTag.innerHTML = `<pre>${codeBinaryToHexadecimal}</pre`;
         } else if(selectFrom.value == "binary" && selectTo.value == "octal") {
             document.querySelector('.convert-binary-to-octal').style.display = 'block';
+            codeTag.innerHTML = `<pre>${codeBinaryToOctal}</pre`;
         } else if(selectFrom.value == "hexadecimal" && selectTo.value == "decimal") {
             document.querySelector('.convert-hexadecimal-to-decimal').style.display = 'block';
+            codeTag.innerHTML = `<pre>${codeHexadecimalToDecimal}</pre`;
         } else if(selectFrom.value == "hexadecimal" && selectTo.value == "binary") {
             document.querySelector('.convert-hexadecimal-to-binary').style.display = 'block';
+            codeTag.innerHTML = `<pre>${codeHexadecimalToBinary}</pre`;
         } else if(selectFrom.value == "hexadecimal" && selectTo.value == "hexadecimal") {
             document.querySelector('.convert-hexadecimal-to-hexadecimal').style.display = 'block';
             codeTag.innerHTML = `<pre>${codeHexadecimalToHexadecimal}</pre`;
         } else if(selectFrom.value == "hexadecimal" && selectTo.value == "octal") {
             document.querySelector('.convert-hexadecimal-to-octal').style.display = 'block';
+            codeTag.innerHTML = `<pre>${codeHexadecimalToOctal}</pre`;
         } else if(selectFrom.value == "octal" && selectTo.value == "decimal") {
             document.querySelector('.convert-octal-to-decimal').style.display = 'block';
+            codeTag.innerHTML = `<pre>${codeOctalToDecimal}</pre`;
         } else if(selectFrom.value == "octal" && selectTo.value == "binary") {
             document.querySelector('.convert-octal-to-binary').style.display = 'block';
+            codeTag.innerHTML = `<pre>${codeOctalToBinary}</pre`;
         } else if(selectFrom.value == "octal" && selectTo.value == "hexadecimal") {
             document.querySelector('.convert-octal-to-hexadecimal').style.display = 'block';
+            codeTag.innerHTML = `<pre>${codeOctalToHexadecimal}</pre`;
         } else if(selectFrom.value == "octal" && selectTo.value == "octal") {
             document.querySelector('.convert-octal-to-octal').style.display = 'block';
             codeTag.innerHTML = `<pre>${codeOctalToOctal}</pre`;

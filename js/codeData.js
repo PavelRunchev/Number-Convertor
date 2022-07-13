@@ -7,6 +7,7 @@ const binToHexData = { '0000': 0, '0001': 1, '0010': 2, '0011': 3, '0100': 4,
 '0101': 5, '0110': 6, '0111': 7, '1000': 8, '1001': 9, '1010': 'A',
 '1011': 'B', '1100': 'C', '1101': 'D', '1110': 'E', '1111': 'F'
 };
+
 const hexToDecimalData = { 
 '0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, 
 '6': 6, '7': 7, '8': 8, '9': 9, 'A': 10, 'B': 11, 
@@ -71,7 +72,7 @@ const codeDecimalToHexadecimal = 'public static string DecimalToHexadecimal(int 
 
 const codeDecimalToOctal = 'public static string DecimalToOctal(int number)' +
     '\n{' +
-    '\n  string octal = ""; int num = number;' +
+    '\n  string octal = \"\"; int num = number;' +
     '\n  while (num > 0)' +
     '\n  {' +
     '\n     int remainder = num % 8;' +
@@ -80,7 +81,7 @@ const codeDecimalToOctal = 'public static string DecimalToOctal(int number)' +
     '\n  }' +
     '\n' +
     '\n  if(number == 0)' +
-    '\n    return "0";' +
+    '\n    return \"0\";' +
     '\n' +
     '\n  return octal;' +
     '\n}';
@@ -100,60 +101,62 @@ const codeBinaryToDecimal = 'public static int BinaryToDecimal(string number)' +
     '\n  return decimalSum;' +
     '\n}';
 
+const codeBinaryToBinary = "public static string BinaryToBinary(string number)\n{\n  return number;\n}";
+
 const codeBinaryToHexadecimal = 'public static string BinaryToHexadecimal(string number)' +
     '\n{' +
-    '\n   Dictionary<string, int> binToHexData = new Dictionary<string, int>()' +
+    '\n   Dictionary&lt;string, int&gt; binToHexData = new Dictionary&lt;string, int&gt;()' +
     '\n   {' +
     '\n     { "0000", 0 }, {"0001", 1}, {"0010", 2}, {"0011", 3}, {"0100", 4}, {"0101", 5},' +
     '\n     {"0110", 6}, {"0111", 7}, {"1000", 8 }, {"1001", 9}, {"1010", "A" },' +
     '\n     {"1011", "B" }, {"1100", "C" }, {"1101", "D" }, {"1110", "E" }, {"1111", "F" }' +
     '\n   };' +
     '\n' +
-    '\n  string hex = "";' +
-    '\n  List<string> binaryList = number.ToCharArray().Select(e => e.ToString()).ToList();' +
+    '\n  string hex = \"\";' +
+    '\n  List&lt;string&gt; binaryList = number.ToCharArray().Select(e => e.ToString()).ToList();' +
     '\n' +
     '\n  if (binaryList.Count == 0)' +
-    '\n     return "";' +
+    '\n     return \"\";' +
     '\n' +
-    '\n  if (binaryList.All(x => x == "0"))' +
-    '\n    return "0";' +
+    '\n  if (binaryList.All(x => x == \"0\"))' +
+    '\n    return \"0\";' +
     '\n' +
     '\n  if (binaryList.Count == 3)' +
-    '\n     binaryList.Insert(0, "0");' +
+    '\n     binaryList.Insert(0, \"0\");' +
     '\n  else if (binaryList.Count == 2)' +
     '\n  {' +
-    '\n     binaryList.Insert(0, "0");' +
-    '\n     binaryList.Insert(0, "0");' +
+    '\n     binaryList.Insert(0, \"0\");' +
+    '\n     binaryList.Insert(0, \"0\");' +
     '\n   }' +
     '\n   else if (binaryList.Count == 1)' +
     '\n   {' +
-    '\n     binaryList.Insert(0, "0");' +
-    '\n     binaryList.Insert(0, "0");' +
-    '\n     binaryList.Insert(0, "0");' +
+    '\n     binaryList.Insert(0, \"0\");' +
+    '\n     binaryList.Insert(0, \"0\");' +
+    '\n     binaryList.Insert(0, \"0\");' +
     '\    }' +
     '\n' +
     '\n   while (binaryList.Count > 0)' +
     '\n   {' +
-    '\n     string binNumber = String.Join("", binaryList.Take(4));' +
+    '\n     string binNumber = String.Join(\"\", binaryList.Take(4));' +
     '\n     binaryList.RemoveRange(0, 4);' +
     '\n     if (binaryList.Count == 3)' +
     '\n     {' +
-    '\n        binaryList.Insert(0, "0");' +
+    '\n        binaryList.Insert(0, \"0\");' +
     '\n     }' +
     '\n     else if (binaryList.Count == 2)' +
     '\n     {' +
-    '\n        binaryList.Insert(0, "0");' +
-    '\n        binaryList.Insert(0, "0");' +
+    '\n        binaryList.Insert(0, \"0\");' +
+    '\n        binaryList.Insert(0, \"0\");' +
     '\n     }' +
     '\n     else if (binaryList.Count == 1)' +
     '\n     {' +
-    '\n        binaryList.Insert(0, "0");' +
-    '\n        binaryList.Insert(0, "0");' +
-    '\n        binaryList.Insert(0, "0");' +
+    '\n        binaryList.Insert(0, \"0\");' +
+    '\n        binaryList.Insert(0, \"0\");' +
+    '\n        binaryList.Insert(0, \"0\");' +
     '\n     }' +
     '\n' +
-    '\n     if(binNumber == "1010" || binNumber == "1011" || binNumber == "1100"' +
-    '\n        || binNumber == "1101" || binNumber == "1110" || binNumber == "1111")' +
+    '\n     if(binNumber == \"1010\" || binNumber == \"1011\" || binNumber == \"1100\"' +
+    '\n        || binNumber == \"1101\" || binNumber == \"1110\" || binNumber == \"1111\")' +
     '\n        hex = hex + (char)binToHexData[binNumber];' +
     '\n     else' +
     '\n        hex = hex + (int)binToHexData[binNumber];' +
@@ -162,8 +165,252 @@ const codeBinaryToHexadecimal = 'public static string BinaryToHexadecimal(string
     '\n   return hex;' +
     '\n}';
 
-const codeBinaryToBinary = "public static string BinaryToBinary(string number)\n{\n  return number;\n}";
-const codeHexadecimalToHexadecimal = "public static string HexadecimalToHexadecimal(string number)\n{\n  return number;\n}";
+const codeBinaryToOctal = 'public static string BinaryToOctal(string number)' +
+    '\n{' +
+    '\n     Dictionary&lt;string, int&gt; binToOctalData = new Dictionary&lt;string, int&gt;()' +
+    '\n     {' +
+    '\n         {"000", 0 }, {"001", 1 }, {"010", 2 }, {"011", 3 },' +
+    '\n         {"100", 4 }, {"101", 5 }, {"110", 6 }, {"111", 7 }' +
+    '\n     };' +
+    '\n     string octal = \"\";' +
+    '\n     List&lt;string&gt; binaryList = number.ToCharArray().Select(e => e.ToString()).ToList();' +
+    '\n     if (binaryList.Count == 0)' +
+    '\n        return \"\";' +
+    '\n     if (binaryList.All(x => x == \"0\"))' +
+    '\n        return \"0\";' +
+    '\n' +
+    '\n     while (binaryList.Count > 0)' +
+    '\n     {' +
+    '\n         string binNumber = String.Join(\"\", binaryList.Take(3));' +
+    '\n         binaryList.RemoveRange(0, 3);' +
+    '\n         if (binaryList.Count == 2)' +
+    '\n             binaryList.Insert(0, \"0\");' +
+    '\n         else if (binaryList.Count == 1)' +
+    '\n         {' +
+    '\n             binaryList.Insert(0, \"0\");' +
+    '\n             binaryList.Insert(0, \"0\");' +
+    '\n         }' +
+    '\n' +
+    '\n         octal =  octal + binToOctalData[binNumber];' +
+    '\n      }' +
+    '\n' +
+    '\n      return octal;' +
+    '\n}';
+
+const codeHexadecimalToDecimal = 'public static string HexadecimalToDecimal(string number)' +
+    '\n{' +
+    '\n     Dictionary&lt;string, int&gt; hexToDecimalData = new Dictionary&lt;string, int&gt;()' +
+    '\n     {' +
+    '\n         {"0", 0 }, {"1", 1 }, {"2", 2 }, {"3", 3 }, {"4", 4 },' +
+    '\n         {"5", 5 }, {"6", 6 }, {"7", 7 }, {"8", 8 }, {"9", 9 },' + 
+    '\n         {"A", 10 }, {"B", 11 }, {"C", 12 }, {"D", 13 },' +
+    '\n         {"E", 14 }, {"F", 15 }' +
+    '\n     };' +
+    '\n' +
+    '\n     int decimalNumber = 0;' +
+    '\n     List&lt;string&gt; hexadecimalList = number.ToCharArray()' +
+    '\n         .Select(e => e.ToString().ToUpper()).ToList();' +
+    '\n     int pow = hexadecimalList.Count - 1;' +
+    '\n     while (hexadecimalList.Count > 0)' +
+    '\n     {' +
+    '\n         string num = String.Join(\"\", hexadecimalList.Take(1));' +
+    '\n         hexadecimalList.RemoveRange(0, 1);' +
+    '\n         decimalNumber += hexToDecimalData[num] * (int)Math.Pow(16, pow);' +
+    '\n         pow--;' +
+    '\n     }' +
+    '\n' +
+    '\n     return decimalNumber.ToString();' +
+    '\n}';
+
+const codeHexadecimalToBinary = 'public static string HexadecimalToBinary(string number)' + 
+    '\n{' +
+    '\n    Dictionary&lt;string, string&gt; hexToBinaryData = new Dictionary&lt;string, string&gt;()' +
+    '\n    {' +
+    '\n         { "0", "0000" }, {"1", "0001" }, {"2", "0010"}, {"3", "0011"},' +
+    '\n         {"4", "0100"}, {"5", "0101" }, {"6", "0110"}, {"7", "0111"},' +
+    '\n         {"8", "1000"}, {"9", "1001"}, {"A", "1010"}, {"B", "1011"},' +
+    '\n         {"C", "1100"}, {"D", "1101"}, {"E", "1110"}, {"F", "1111"},' +
+    '\n    };' +
+    '\n' +
+    '\n    List&lt;string&gt; hexList = number.ToCharArray()' +
+    '\n        .Select(e => e.ToString().ToUpper()).ToList();' +
+    '\n    if (hexList.All(x => x == \"0\"))' +
+    '\n        return \"0000\";' +
+    '\n' +
+    '\n    string bin = \"\";' +
+    '\n    while (hexList.Count > 0)' +
+    '\n    {' +
+    '\n        string hex = String.Join(\"\", hexList.Take(1));' +
+    '\n        hexList.RemoveRange(0, 1);' +
+    '\n        bin += hexToBinaryData[hex] + \" \";' +
+    '\n    }' +
+    '\n' +
+    '\n    return bin.Trim();' +
+    '\n}';
+
+const codeHexadecimalToHexadecimal = 'public static string HexadecimalToHexadecimal(string number)\n{\n  return number.ToUpper().Trim();\n}';
+
+const codeHexadecimalToOctal = 'public static string HexadecimalToOctal(string number)' +
+    '\n{' +
+    '\n     Dictionary&lt;string, string&gt; hexToBinaryData = new Dictionary&lt;string, string&gt;()' +
+    '\n     {' +
+    '\n         { "0", "0000" }, {"1", "0001" }, {"2", "0010"}, {"3", "0011"},' +
+    '\n         {"4", "0100"}, {"5", "0101" }, {"6", "0110"}, {"7", "0111"},' +
+    '\n         {"8", "1000"}, {"9", "1001"}, {"A", "1010"}, {"B", "1011"},' +
+    '\n         {"C", "1100"}, {"D", "1101"}, {"E", "1110"}, {"F", "1111"},' +
+    '\n     };' +
+    '\n' +
+    '\n     Dictionary&lt;string, int&gt; binToOctalData = new Dictionary&lt;string, int&gt;()' +
+    '\n     {' +
+    '\n         {"000", 0 }, {"001", 1 }, {"010", 2 }, {"011", 3 },' +
+    '\n         {"100", 4 }, {"101", 5 }, {"110", 6 }, {"111", 7 }' +
+    '\n     };' +
+    '\n' +
+    '\n     List&lt;string&gt; hexList = number.ToCharArray()' +
+    '\n         .Select(e => e.ToString().ToUpper()).ToList();' +
+    '\n     if (hexList.All(x => x == "0"))' +
+    '\n         return \"0000\";' +
+    '\n' +
+    '\n     string bin = \"\";' +
+    '\n     while (hexList.Count > 0)' +
+    '\n     {' +
+    '\n         string hex = String.Join(\"\", hexList.Take(1));' +
+    '\n         hexList.RemoveRange(0, 1);' +
+    '\n         bin += hexToBinaryData[hex] + " ";' +
+    '\n     }' +
+    '\n' +
+    '\n     string octal = \"\";' +
+    '\n     List&lt;string&gt; binaryList = bin.Trim().ToCharArray()' +
+    '\n        .Select(e => e.ToString()).ToList();' +
+    '\n     if (binaryList.Count == 0)' +
+    '\n         return \"\";' +
+    '\n     if (binaryList.All(x => x == \"0\"))' +
+    '\n         return \"0\";' +
+    '\n' +
+    '\n     if(binaryList.Count % 3 != 0)' +
+    '\n         binaryList.Insert(0, \"0\");' +
+    '\n     if (binaryList.Count % 3 != 0)' +
+    '\n         binaryList.Insert(0, \"0\");' +
+    '\n' +
+    '\n     while (binaryList.Count > 0)' +
+    '\n     {' +
+    '\n         string binNumber = String.Join(\"\", binaryList.Take(3));' +
+    '\n         binaryList.RemoveRange(0, 3);' +
+    '\n         octal = octal + binToOctalData[binNumber];' +
+    '\n     }' +
+    '\n' +
+    '\n     return octal;' +
+    '\n}';
+
+const codeOctalToDecimal = 'public static string OctalToDecimal(string number)' +
+    '\n{' +
+    '\n     int decimalNumber = 0;' +
+    '\n     List&lt;string&gt; octalList = number.ToCharArray()' +
+    '\n         .Select(e => e.ToString()).ToList();' +
+    '\n     int pow = octalList.Count - 1;' +
+    '\n     while (octalList.Count > 0)' +
+    '\n     {' +
+    '\n         string num = String.Join(\"\", octalList.Take(1));' +
+    '\n         octalList.RemoveRange(0, 1);' +
+    '\n         decimalNumber += int.Parse(num) * (int)Math.Pow(8, pow);' +
+    '\n         pow--;' +
+    '\n     }' +
+    '\n' +
+    '\n     return decimalNumber.ToString();' +
+    '\n}';
+
+const codeOctalToBinary = 'public static string OctalToBinary(string number)' +
+    '\n{' +
+    '\n     Dictionary&lt;string, string&gt; octalToBinaryData = new Dictionary&lt;string, string&gt;()' +
+    '\n     {' +
+    '\n         {"0", "000" }, {"1", "001"}, {"2", "010"}, {"3", "011"},' +
+    '\n         {"4", "100"}, {"5", "101"}, {"6", "110"}, {"7", "111"}' +
+    '\n     };' +
+    '\n     string binary = \"\";' +
+    '\n     List&lt;string&gt; octalList = number.ToCharArray()' +
+    '\n         .Select(e => e.ToString()).ToList();' +
+    '\n' +
+    '\n     if (octalList.All(e => e == "0"))' +
+    '\n         return \"000\";' +
+    '\n' +
+    '\n     if (octalList.Exists(e => e == \"8\" || e == \"9\"))' +
+    '\n         return \"\";' +
+    '\n' +
+    '\n     while (octalList.Count > 0)' +
+    '\n     {' +
+    '\n         string num = String.Join(\"\", octalList.Take(1));' +
+    '\n         octalList.RemoveRange(0, 1);' +
+    '\n         binary += octalToBinaryData[num];' +
+    '\n     }' +
+    '\n' +
+    '\n     return binary;' +
+    '\n}';
+
+const codeOctalToHexadecimal = 'public static string OctalToHexadecimal(string number)' +
+    '\n{' +
+    '\n     Dictionary&lt;string, string&gt; octalToBinaryData = new Dictionary&lt;string, string&gt;()' +
+    '\n     {' +
+    '\n         {"0", "000" }, {"1", "001"}, {"2", "010"}, {"3", "011"},' +
+    '\n         {"4", "100"}, {"5", "101"}, {"6", "110"}, {"7", "111"}' +
+    '\n     };' +
+    '\n     Dictionary&lt;string, int&gt; binToHexData = new Dictionary&lt;string, int&gt;()' +
+    '\n     {' +
+    '\n         { "0000", 0 }, {"0001", 1}, {"0010", 2}, {"0011", 3}, {"0100", 4},' +
+    '\n         {"0101", 5}, {"0110", 6}, {"0111", 7}, {"1000", 8 }, {"1001", 9},' + 
+    '\n         {"1010", "A" }, {"1011", "B" }, {"1100", "C" }, {"1101", "D" },' + 
+    '\n         {"1110", "E" }, {"1111", "F" }' +
+    '\n     };' +
+    '\n' +
+    '\n     string binary = \"\";' +
+    '\n     List&lt;string&gt; octalList = number.ToCharArray()' +
+    '\n         .Select(e => e.ToString()).ToList();' +
+    '\n' +
+    '\n     if (octalList.All(e => e == \"0\"))' +
+    '\n         return \"000\";' +
+    '\n' +
+    '\n     if (octalList.Exists(e => e == \"8\" || e == \"9\"))' +
+    '\n         return \"\";' +
+    '\n' +
+    '\n     while (octalList.Count > 0)' +
+    '\n     {' +
+    '\n         string num = String.Join(\"\", octalList.Take(1));' +
+    '\n         octalList.RemoveRange(0, 1);' +
+    '\n         binary += octalToBinaryData[num];' +
+    '\n     }' +
+    '\n' +
+    '\n     string hex = \"\";' +
+    '\n     List&lt;string&gt; binaryList = binary.ToCharArray()' +
+    '\n         .Select(e => e.ToString()).ToList();' +
+    '\n' +
+    '\n     if (binaryList.Count == 0)' +
+    '\n         return \"\";' +
+    '\n' +
+    '\n     if (binaryList.All(x => x == "0"))' +
+    '\n         return \"0\";' +
+    '\n' +
+    '\n     //garant binary number is allways 4 digits!' +
+    '\n     if (binaryList.Count % 4 != 0)' +
+    '\n         binaryList.Insert(0, \"0\");' +
+    '\n     if (binaryList.Count % 4 != 0)' +
+    '\n         binaryList.Insert(0, \"0\");' +
+    '\n     if (binaryList.Count % 4 != 0)' +
+    '\n         binaryList.Insert(0, \"0\");' +
+    '\n' +
+    '\n     while (binaryList.Count > 0)' +
+    '\n     {' +
+    '\n         string binNumber = String.Join(\"\", binaryList.Take(4));' +
+    '\n         binaryList.RemoveRange(0, 4);' +
+    '\n' +
+    '\n         if (binNumber == \"1010\" || binNumber == \"1011\" || binNumber == \"1100\"' +
+    '\n         || binNumber == \"1101\" || binNumber == \"1110\" || binNumber == \"1111\")' +
+    '\n             hex = hex + (char)binToHexData[binNumber];' +
+    '\n         else' +
+    '\n             hex = hex + (int)binToHexData[binNumber];' +
+    '\n     }' +
+    '\n' +
+    '\n     return Regex.Replace(hex, \"^0+\", \"\");' +
+    '\n}';
+
 const codeOctalToOctal = "public static string OctalToOctal(int number)\n{\n  return number;\n}";
 
 
