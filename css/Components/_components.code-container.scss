@@ -1,0 +1,73 @@
+
+.code-container {
+    min-width: 500px;
+}
+
+.code-csharp > pre {
+    width: 100% !important;
+    font-size: 14px !important;
+    color: $third-color-blue !important;
+    background: linear-gradient(2deg, rgba(91,98,104,0.08) 100%, rgba(213,248,255,1) 100%) !important;
+    border-radius: 5px;
+    padding: 5px;
+    overflow: auto;
+    @include btn-box-shadow-black;
+}
+
+.copy-btn-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 2% 0;
+    position: relative;
+}
+
+.span-copied {
+    visibility: hidden;
+}
+
+.fa-clipboard {
+    display: block;
+    cursor: pointer !important;
+    font-size: 20px;
+    color: $third-color-blue;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+
+    &:hover {
+        color: $secondary-color-blue;
+    }
+
+    &:hover > .span-copy {
+        visibility: visible;
+        opacity: 1;
+
+    }
+
+    &:active > .span-copy {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &:active > .span-copied {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.span-copied,
+.span-copy {
+    opacity: 0;
+    visibility: hidden;
+    width: 100px;
+    position: absolute;
+    top: -30px;
+    right: -40px;
+    color: $third-color-blue !important;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+}
+

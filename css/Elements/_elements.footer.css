@@ -1,0 +1,68 @@
+footer {
+  background: linear-gradient(2deg, #3e93ff 40%, #d5f8ff 100%);
+  padding: 15px 0px;
+  color: whitesmoke;
+}
+
+.icons-container {
+  margin: 2% 0;
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.icons-container > i {
+  cursor: pointer;
+  font-size: 30px;
+  margin: 0 1%;
+  padding: 5px;
+  border: 1px solid whitesmoke;
+  border-radius: 50%;
+  background: linear-gradient(2deg, #5b6268 35%, #d5f8ff 100%) !important;
+  transition: all 0.5s;
+}
+
+.icons-container > i:hover {
+  color: lightgrey;
+}
+
+.icons-container .fa-facebook-f {
+  padding: 5px 10px;
+}
+
+.feedback-container {
+  width: 100%;
+  margin: 1% 0;
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-area-feedback {
+  max-width: 350px;
+}
+
+.text-area-feedback:focus,
+textarea:focus,
+.text-area-feedback:focus {
+  border: none !important;
+  outline: none !important;
+}
+
+.btn-feedback {
+  cursor: pointer;
+  background: linear-gradient(2deg, #5b6268 35%, #d5f8ff 100%);
+  border: none;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 5px 10px;
+  transition: all 0.4s;
+}
+
+.btn-feedback:hover {
+  background: linear-gradient(2deg, #5b6268 55%, #d5f8ff 100%);
+}

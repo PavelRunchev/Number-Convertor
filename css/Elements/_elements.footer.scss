@@ -1,0 +1,83 @@
+
+footer {
+    background: linear-gradient(2deg, rgba(62,147,255,1) 60%, rgba(213,248,255,1) 100%); 
+    padding: 15px 0px;
+    color: whitesmoke;
+}
+
+.icons-container {
+    margin: 2% 0;
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+
+    & > i {
+        cursor: pointer;
+        font-size: 30px;
+        margin: 0 1%;
+        padding: 5px;
+        border: 1px solid whitesmoke;
+        border-radius: 50%;
+        background: linear-gradient(2deg, rgba(91,98,104,1) 35%, rgba(213,248,255,1) 100%) !important;
+        transition: all 0.5s;
+
+        &:hover {
+            transform: scale(0.95);
+            @include btn-box-shadow-black-hover;
+        }
+    }
+
+    .fa-facebook-f {
+        padding: 5px 11px;
+    }
+}
+
+.feedback-container {
+    width: 100%;
+    margin: 1% 0;
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-area-feedback {
+    max-width: 350px;
+}
+
+#feedback,
+textarea:focus,
+#feedback:focus,
+.text-area-feedback:focus {
+    border: 1px solid transparent !important;
+    resize: none !important;
+    outline: 0 !important;
+}
+
+.feedback {
+    cursor: pointer;
+    background: linear-gradient(2deg, rgba(91,98,104,1) 35%, rgba(213,248,255,1) 100%); 
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px 12px;
+    transition: all 0.4s;
+
+    &:hover {
+        background: linear-gradient(2deg, rgba(91,98,104,1) 55%, rgba(213,248,255,1) 100%); ;
+    }
+}
+
+.modal-content {
+    background: linear-gradient(2deg, rgba(62,147,255,1) 60%, rgba(213,248,255,1) 100%); 
+}
+
+.fa-check {
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 5px;
+}
+

@@ -1,0 +1,68 @@
+.e-button {
+    cursor: pointer;
+    position: relative;
+    text-transform: uppercase;
+	text-decoration:none;
+	display: block;
+	padding: 3px 20px;
+	border-radius: 5px;
+    border: none;
+    color: whitesmoke !important;
+    overflow: hidden;
+    @include btn-box-shadow-black;
+    overflow: hidden !important;
+    background: linear-gradient(2deg, rgba(91,98,104,1) 35%, rgba(213,248,255,1) 100%); 
+    transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+
+    &:hover {
+        background: linear-gradient(2deg, rgba(91,98,104,1) 55%, rgba(213,248,255,1) 100%); 
+    }
+}
+
+.btn-convert {
+    overflow: hidden;
+    border-top-left-radius: 5px !important;
+    border-bottom-left-radius: 5px !important;
+    @include btn-box-shadow-black;
+    background: linear-gradient(2deg, rgba(62,147,255,1) 40%, rgba(213,248,255,1) 100%); 
+}
+
+.btn-convert:hover {
+    background: linear-gradient(2deg, rgba(62,147,255,1) 55%, rgba(213,248,255,1) 100%); 
+}
+
+
+
+.span-convert {
+    padding-top: 2px;
+    display: inline-block;
+    position: relative;
+    -o-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+.fa-long-arrow-alt-right {
+    color: #fff;
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    display: inline-block;
+    visibility: hidden;
+    -o-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    opacity: 0;
+}
+
+.btn-convert:hover > .span-convert {
+    transform: translateX(-12px);
+    -webkit-transform: translateX(-12px);
+}
+
+.btn-convert:hover > .fa-long-arrow-alt-right {
+    visibility: visible;
+    opacity: 1;
+}

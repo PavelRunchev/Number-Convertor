@@ -1,0 +1,26 @@
+.table-bordered {
+    max-width: 400px;
+    font-size: 16px !important;
+    border-radius: 5px;
+    padding: 5px;
+    @include btn-box-shadow-black;
+    overflow: hidden;
+
+    & > thead {
+        background: linear-gradient(2deg, rgba(91,98,104,0.7) 10%, rgba(213,248,255,1) 100%) !important; 
+    }
+
+    & th {
+        font-weight: bold !important;
+        text-align: center;
+    }
+
+    & td {
+        text-align: right;
+    }
+
+    & th,
+    & tr {
+        width: 100px;
+    }
+}

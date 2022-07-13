@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="mask-icon" href="./favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    
+    <title>CONVERTOR</title>
+    <!-- Loading Css -->
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <!-- Bootstrap Css -->
+    <link rel="stylesheet" href="./bootstrap-resource/bootstrap.css">
+    <link rel="stylesheet" href="./bootstrap-resource/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="./bootstrap-resource/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./bootstrap-resource/mdb.min.css">
+   
+    
+
+</head>
+
+<body>
+    <header class="header-container">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-mdb-toggle="collapse"
+                    data-mdb-target="#navbarExample01"
+                    aria-controls="navbarExample01"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarExample01">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link text-light" aria-current="page" href="./index.html">Conversion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="./math.html">Math</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#">Currency</a>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Navbar -->
+       
+        <div class="text-center e-header">Number Conversion</div>
+        <div class="header-container-search">
+            <input type="text" class="form-control search-input" placeholder="Search"/>
+            <button class="btn-search"><i class="fas fa-search"></i></button>
+        </div>
+    </header>
+
+    <main class="container-fluid">
+        <h3 class="text-left my-4">Number Convertor</h3>
+        <div class="font-italic">Decimal to Binary, Decimal to Hexadecimal, Decimal to Octal</div>
+        <div class="font-italic">Binary to Decimal, Binary to Hexadecimal, Binary to Octal</div>
+        <div class="font-italic">Hexadecimal to Decimal, Hexadecimal to Binary, Hexadecimal to Octal</div>
+        <div class="font-italic">Octal to Decimal, Octal to Binary, Octal to Hexadecimal</div>
+
+        <div class="container-form">
+            <form class="form">
+                <h4 class="text-center my-3">Calculator</h4>
+                <label for="input" class="text-left w-100 pl-3 label-input-number">Enter decimal number:</label>
+                <div class="input-group">
+                    <input type="text" id="typeNumber" class="form-control input-number" />
+                    <div class="input-group-append">
+                        <span class="input-group-text span-input-number">10</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1" class="pl-3">From</label>
+                    <select class="form-control form-select-from" id="exampleFormControlSelect1">
+                      <option selected value="decimal">Decimal</option>
+                      <option value="binary">Binary</option>
+                      <option value="hexadecimal">Hexadecimal</option>
+                      <option value="octal">Octal</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1" class="pl-3">To</label>
+                    <select class="form-control form-select-to" id="exampleFormControlSelect1">
+                      <option selected value="decimal">Decimal</option>
+                      <option value="binary">Binary</option>
+                      <option value="hexadecimal">Hexadecimal</option>
+                      <option value="octal">Octal</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="input" class="text-left w-100 pl-3 label-result">Result: <span class="span-result-number"></span><span class="text-danger"></span></label>
+                    <button class="e-button btn-convert" type="button">
+                        <span class="span-convert">Convert it</span>
+                        <i class="fas fa-long-arrow-alt-right"></i>
+                    </button>
+                   
+                    <input type="text" disabled readonly placeholder="Result" class="form-control input-result" />
+                    <div class="input-group-append">
+                        <span class="input-group-text input-number-span">10</span>
+                    </div>
+                    <button class="e-button btn-reset" type="button">Reset</button>
+                </div>
+                
+                <div class="input-group my-3">
+                    <textarea class="form-control text-area-result" style="height:100%;"  placeholder="Result" disabled readonly id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <div class="input-group-append">
+                        <span class="input-group-text text-area-number-span">10</span>
+                    </div>
+                </div>
+               
+            </form>
+
+            <section>
+                <h5 class="text-left">How to convert from <span class="convert-description-from font-weight-bold">Decimal</span> to <span class="convert-description-to font-weight-bold">Decimal</span></h5>
+            </section>
+        </div>
+        
+        <div class="convert-description-container">
+            <div class="convert-container ">
+                <section class="convert-decimal-to-decimal">
+                    <p>Decimal is a term that describes the base-10 number system, probably the most commonly used number system. The decimal number system consists of ten single-digit numbers: 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9. The number after 9 is 10. The number after 19 is 20 and so forth. Additional powers of 10 require the addition of another positional digit.</p>
+                </section>
+                <section class="convert-decimal-to-binary">
+                    <h5>Conversion steps:</h5>
+                    <div>1. Divide the number by 2.</div>
+                    <div>2. Get the integer quotient for the next iteration.</div>
+                    <div>3. Get the remainder for the binary digit.</div>
+                    <p>4. Repeat the steps until the quotient is equal to 0.</p>
+                    <div>Example 1</div>
+                    <div>Convert 174<sub>10</sub> to binary</div>
+                    <div>174 &#247; 2  = 87 remainder (0)</div>
+                    <div>87 &#247; 2  = 43 remainder (1)</div>
+                    <div>43 &#247; 2  = 21 remainder (1)</div>
+                    <div>21 &#247; 2  = 10 remainder (1)</div>
+                    <div>10 &#247; 2  = 5 remainder (0)</div>
+                    <div>5 &#247; 2  = 2 remainder (1)</div>
+                    <div>21 &#247; 2  = 1 remainder (0)</div>
+                    <div>1 &#247; 2  = 0 remainder (1)</div>
+                    <p>So 174<sub>10</sub> = 10101110<sub>2</sub></p>
+                    <div>Example 2</div>
+                    <div>Convert 13<sub>10</sub> to binary</div>
+                    <div>13 &#247; 2  = 6 remainder (1)</div>
+                    <div>6 &#247; 2  = 3 remainder (0)</div>
+                    <div>3 &#247; 2  = 1 remainder (1)</div>
+                    <div>1 &#247; 2  = 0 remainder (1)</div>
+                    <div>So 13<sub>10</sub> = 1101<sub>2</sub></div>
+                </section>
+                <section class="convert-decimal-to-hexadecimal">
+                    <h5>Conversion steps:</h5>
+                    <div>1. Divide the number by 16.</div>
+                    <div>2. Get the integer quotient for the next iteration.</div>
+                    <div>3. Get the remainder for the hex digit.</div>
+                    <p>4. Repeat the steps until the quotient is equal to 0.</p>
+                    <div>Example 1</div>
+                    <div>Convert 3563<sub>10</sub> to hex</div>
+                    <div>3563 &#247; 16  = 2226 remainder 15 (F)</div>
+                    <div>2226 &#247; 16  = 139 remainder 2 (2)</div>
+                    <div>139 &#247; 16  = 8 remainder 11 (B)</div>
+                    <div>8 &#247; 16  = 0 remainder 8 (8)</div>
+                    <p>So 3563<sub>10</sub> = 8B2F<sub>16</sub></p>
+                    <div>Example 2</div>
+                    <div>Convert 7562<sub>10</sub> to hex</div>
+                    <div>7562 &#247; 16  = 472 remainder 10 (A)</div>
+                    <div>472 &#247; 16  = 29 remainder 8 (8)</div>
+                    <div>29 &#247; 16  = 1 remainder 13 (D)</div>
+                    <div>1 &#247; 16  = 0 remainder 1 (1)</div>
+                    <p>So 7562<sub>10</sub> = 1D8A<sub>16</sub></p>
+                </section>
+                <section class="convert-decimal-to-octal">
+                    <h5>Conversion steps:</h5>
+                    <div>1. Divide the number by 8.</div>
+                    <div>2. Get the integer quotient for the next iteration.</div>
+                    <div>3. Get the remainder for the octal digit.</div>
+                    <p>4. Repeat the steps until the quotient is equal to 0.</p>
+                    <div>Example 1</div>
+                    <div>Convert 7562<sub>10</sub> to octal</div>
+                    <div>7562 &#247; 8  = 945 remainder 2 (2)</div>
+                    <div>945 &#247; 8  = 118 remainder 1 (1)</div>
+                    <div>118 &#247; 8  = 14 remainder 6 (6)</div>
+                    <div>14 &#247; 8  = 1 remainder 6 (6)</div>
+                    <div>1 &#247; 8  = 0 remainder 1 (1)</div>
+                    <p>So 7562<sub>10</sub> = 16612<sub>8</sub></p>
+                    <div>Example 2</div>
+                    <div>Convert 35631<sub>10</sub> to octal</div>
+                    <div>35631 &#247; 8  = 4453 remainder 7 (7)</div>
+                    <div>4453 &#247; 8  = 556 remainder 5 (5)</div>
+                    <div>556 &#247; 8  = 69 remainder 4 (4)</div>
+                    <div>69 &#247; 8  = 8 remainder 5 (5)</div>
+                    <div>8 &#247; 8  = 1 remainder 0 (0)</div>
+                    <div>1 &#247; 8  = 0 remainder 1 (1)</div>
+                    <p>So 35631<sub>10</sub> = 105457<sub>8</sub></p>
+                </section>
+                <section class="convert-binary-to-decimal">
+                    <div>The decimal number is equal to the sum of binary digits (d<sub>n</sub>) times their power of 2 (2<sup>n</sup>).</div>
+                    <div><bold>decimal</bold> = d<sub>0</sub> &#215; 2<sup>0</sup> + d<sub>1</sub> &#215; 2<sup>1</sup> + d<sub>2</sub> &#215; 2<sup>2</sup> + ...</div>
+                    <div>Example 1</div>
+                    <div>Find the decimal value of 111001<sub>2</sub>:</div>
+                    <div>111001<sub>2</sub> = 1 &#215; 2<sup>5</sup> + 1 &#215; 2<sup>4</sup> + 1 &#215; 2<sup>3</sup> + 0 &#215; 2<sup>2</sup> + 0 &#215; 2<sup>1</sup> + 1 &#215; 2<sup>0</sup> = 57<sub>10</sub></div>
+                </section>
+                <section class="convert-binary-to-binary">
+                    <p>The binary system is a numerical system that functions virtually identically to the decimal number system that people are likely more familiar with. While the decimal number system uses the number 10 as its base, the binary system uses 2. Furthermore, although the decimal system uses the digits 0 through 9, the binary system uses only 0 and 1, and each digit is referred to as a bit. Apart from these differences, operations such as addition, subtraction, multiplication, and division are all computed following the same rules as the decimal system.</p>
+                    <p>Almost all modern technology and computers use the binary system due to its ease of implementation in digital circuitry using logic gates. It is much simpler to design hardware that only needs to detect two states, on and off (or true/false, present/absent, etc.). Using a decimal system would require hardware that can detect 10 states for the digits 0 through 9, and is more complicated.</p>
+                </section>
+                <section class="convert-binary-to-hexadecimal">
+                    <div>Convert every 4 binary digits (start from bit 0) to 1 hex digit, with table below:</div>
+                    <div>Example</div>
+                    <div>Convert binary 1101100<sub>2</sub> to hex:</div>
+                    <div>Convert every 4 binary bits (from zero) to hex digit:</div>
+                    <div>1101100<sub>2</sub> = 110 1100 = 6 C = 6C<sub>16</sub></div>
+                </section>
+                <section class="convert-binary-to-octal">
+                    <div>Convert every 3 binary digits (start from bit 0) to 1 octal digit, with table below:</div>
+                    <div>Example</div>
+                    <div>Convert binary 1101100<sub>2</sub> to octal:</div>
+                    <div>Convert every 3 binary bits (from zero) to octal digit:</div>
+                    <div>1101100<sub>2</sub> = 001 101 100 = 1 5 4 = 154<sub>8</sub></div>
+                </section>
+                <section class="convert-hexadecimal-to-decimal">
+                    <div>Hex numbers are read the same way, but each digit count power of 16 instead of power of 10.</div>
+                    <div>Multiply each digit of the hex number with its corresponding power of 16 and sum.</div>
+                    <div><bold>decimal</bold> = d<sub>0</sub> &#215; 16<sup>0</sup> + d<sub>1</sub> &#215; 16<sup>1</sup> + d<sub>2</sub> &#215; 16<sup>2</sup> + ...</div>
+                    <div>Example 1</div>
+                    <div>3B in base 16 is equal to each digit multiplied with its corresponding 16<sub>n</sub>:</div>
+                    <div>3B<sub>16</sub> = 3 &#215; 16<sup>1</sup> + 11 &#215; 16<sup>0</sup> = 48 + 11 = 59<sub>10</sub></div>
+                    <div>Example 2</div>
+                    <div>E7A9 in base 16 is equal to each digit multiplied with its corresponding 16<sub>n</sub>:</div>
+                    <div>E7A9<sub>16</sub> = 14 &#215; 16<sup>3</sup> + 7 &#215; 16<sup>2</sup> + 10 &#215; 16<sup>1</sup> + 9 &#215; 16<sup>0</sup> = </div>
+                    <div>57344 + 1792 + 160 + 9 = 59305<sub>10</sub></div>
+                </section>
+                <section class="convert-hexadecimal-to-binary">
+                    <div>Convert every hex digit (start lowest digit) to 4 binary digits, with table below:</div>
+                    <div>Example</div>
+                    <div>Convert hex 6C<sub>16</sub> to binary:</div>
+                    <div>6C<sub>16</sub> = 0110 1100 = 01101100<sub>2</sub></div>
+                </section>
+                <section class="convert-hexadecimal-to-hexadecimal">
+                    <p>Convert text into hexadecimal format. Computers store text as numbers, and with hex you display the numbers not as a decimal number, but in base 16. Hex or base 16 or hexadecimal is a numeral system that uses 16 symbols. The symbols include 0-9 and a-f (sometimes A-F).  An example of a hexadecimal number is 3BF2. Computer science applications can use hexadecimal for binary coding in computing and digital electronics.  The primary use of hex is a more people friendly way to represent the value.</p>
+                    <p>While computers work with binary data, it can be difficult for humans to work with a large number of digits. Humans typically use a base 10 system, while for computer applications it is easier to work with hexadecimal than decimal.</p>
+                    <p>Hexadecimal is also used in the Red-Green-Blue color system in computers. Red, green, and blue are each represented by a byte that is two hex digits. An RGB color uses six hex digits. Hexadecimal is also commonly used to represent computer memory addresses.</p>
+                </section>
+                <section class="convert-hexadecimal-to-octal">
+                    <div>Convert every hex digit (start lowest digit) to 4 binary digits, with table below:</div>
+                    <div>Then convert every 3 binary digits from 0 to 1 octal digit, with table below:</div>
+                    <div>Example</div>
+                    <div>Convert hex 6C<sub>16</sub> to octal:</div>
+                    <div>6C<sub>16</sub> = 0110 1100 = 1101100<sub>2</sub></div>
+                    <div>1101100<sub>2</sub> = 001 101 100 = 1 5 4 = 154<sub>8</sub></div>
+                </section>
+                <section class="convert-octal-to-decimal">
+                    <div>Octal numbers are read the same way, but each digit counts 8<sup>n</sup> instead of 10<sup>n</sup>.</div>
+                    <div>Multiply each digit of the hex number with its corresponding 8<sup>n</sup>.</div>
+                    <div><bold>decimal</bold> = d<sub>0</sub> &#215; 16<sup>0</sup> + d<sub>1</sub> &#215; 16<sup>1</sup> + d<sub>2</sub> &#215; 16<sup>2</sup> + ...</div>
+                    <div>Example 1</div>
+                    <div>37 in base 8 is equal to each digit multiplied with its corresponding power of 8<sub>n</sub>:</div>
+                    <div>37<sub>8</sub> = 3 &#215; 8<sup>1</sup> + 7 &#215; 8<sup>0</sup> = 24 + 7 = 31<sub>8</sub></div>
+                    <div>Example 2</div>
+                    <div>7014 in base 8 is equal to each digit multiplied with its corresponding power of 8<sub>n</sub>:</div>
+                    <div>7014<sub>8</sub> = 7 &#215; 8<sup>3</sup> + 0 &#215; 8<sup>2</sup> + 1 &#215; 8<sup>1</sup> + 4 &#215; 8<sup>0</sup> = </div>
+                    <div>3584 + 0 + 8 + 4 = 3596<sub>10</sub></div>
+                </section>
+                <section class="convert-octal-to-binary">
+                    <div>Convert every octal digit (start lowest digit) to 3 binary digits, with table below:</div>
+                    <div>Example</div>
+                    <div>Convert octal 154<sub>8</sub> to binary:</div>
+                    <div>154<sub>8</sub> = 1 5 4 = 001 101 100 = 1101100<sub>2</sub></div>
+                </section>
+                <section class="convert-octal-to-hexadecimal">
+                    <div>Convert every octal digit to 3 binary digits, with table below:</div>
+                    <div>Then convert every 4 binary digits from 0 to 1 hex digit, wit table below:</div>
+                    <div>Example</div>
+                    <div>Convert octal 154<sub>8</sub> to hex:</div>
+                    <div>Convert every octal digit to 3 binary digits:</div>
+                    <div>154<sub>8</sub> = 1 5 4 = 001 101 100 = 001101100<sub>2</sub></div>
+                    <div>Then convert every 4 binary digits to 1 hex digit</div>
+                    <div>001101100<sub>2</sub> = 0110 1100 = 6C<sub>16</sub></div>
+                </section>
+                <section class="convert-octal-to-octal">
+                    <p>A number system with its base as eight and uses digits from 0 to 7 is called Octal Number System. The word octal is used to represent the numbers that have eight as the base. The octal numbers have many applications and importance such as it is used in computers and digital numbering systems. In the number system, octal numbers can be converted to binary numbers, binary numbers to octal numbers by first converting a binary number to decimal number then decimal number to octal number.</p>
+                </section>
+
+                <div class="code-container">
+                    <p>
+                        <button
+                          class="e-button"
+                          type="button"
+                          data-mdb-toggle="collapse"
+                          data-mdb-target="#collapseWidthExample"
+                          aria-expanded="false"
+                          aria-controls="collapseWidthExample"
+                        >
+                          Example C# code
+                        </button>
+                      </p>
+                      <div style="min-height: 120px;">
+                        <div class="collapse collapse-horizontal" id="collapseWidthExample" >
+                            <div class="copy-btn-container">
+                                <i class="far fa-clipboard clipboard-csharp">
+                                    <span class="span-copy text-center">Copy</span>
+                                    <span class="span-copied text-center">Copied!</span>
+                                </i>
+                               
+                            </div>
+                            
+                            <code class="code-csharp">
+                                
+                            </code>
+                        </div>
+                      </div>
+                    </div>
+
+                <table class="table table-bordered" id="table-number-systems">
+                    <thead>
+                      <tr>
+                        <th scope="col">Decimal</th>
+                        <th scope="col">Binary</th>
+                        <th scope="col">Hex</th>
+                        <th scope="col">Octal</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0</td>
+                            <td>0000</td>
+                            <td>0</td>
+                            <td>0</td>
+                          </tr>
+                        <tr>
+                        <tr>
+                            <td>1</td>
+                            <td>0001</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>0010</td>
+                            <td>2</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>0011</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </main>
+   
+    <footer>
+        <div class="icons-container">
+            <i class="fab fa-github"></i>
+            <i class="fab fa-youtube"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-facebook-f"></i>
+        </div>
+        <div class="feedback-container">
+            <textarea rows="3" style="height:100%;" class="form-control text-area-feedback" placeholder="Your message ..." id="feedback"></textarea>
+            <button type="button" class="e-button py-2 ml-1 feedback" data-toggle="modal" data-target="#exampleModal">Feedback</button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title font-weight-bold" id="exampleModalLabel"><i class="fas fa-check"></i> Thank you!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body text-light text-center">
+                        Message is sended.
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+       <div class="text-center text-light">&copy; 2022 Powered by Pavel Runchev</div>
+       <div class="text-center text-light">All rights reserved!</div>
+    </footer>
+
+   
+
+    <!-- loading jQuery -->
+    <script src="./js/bootstrap-js/jquery.min.js"></script>
+    <!-- loading Popper.min.js - needed after respone navigation click show nav menu -->
+    <script src="./js/bootstrap-js/popper.min.js"></script>
+    <script src="./js/bootstrap-js/bootstrap.bundle.min.js"></script>
+    <script src="./js/bootstrap-js/bootstrap.min.js"></script>
+
+    <script src="./js/bootstrap-js/scrolling.js"></script>
+    <script src="./js/bootstrap-js/mdb.min.js"></script>
+
+    <script src="./js/codeData.js"></script>
+    <script src="./js/app.js"></script>
+</body>
+</html>
