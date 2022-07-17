@@ -2,6 +2,7 @@
 
 @import './Settings/_settings.font';
 @import './Settings/_settings.colors';
+@import './Settings/_settings.breakpoints';
 
 @import './Tools/_tools.mixins';
 
@@ -22,6 +23,7 @@
 @import './Components/_components.factorial';
 @import './Components/_components.fibonacci';
 @import './Components/_components.table';
+@import './Components/_components.figures-form';
 
 
 

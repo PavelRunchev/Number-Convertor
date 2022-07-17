@@ -24,43 +24,28 @@
     <link rel="stylesheet" href="./bootstrap-resource/bootstrap-reboot.min.css">
     <link rel="stylesheet" href="./bootstrap-resource/mdb.min.css">
    
-    
+    <link rel="text/javascript" href="https://free.currencyconverterapi.com/api/v4/convert?q=GBP_EUR&compact=ultra">
 
 </head>
 
 <body>
     <header class="header-container">
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
-                <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-mdb-toggle="collapse"
-                    data-mdb-target="#navbarExample01"
-                    aria-controls="navbarExample01"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                >
-                    <i class="fas fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarExample01">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item active">
-                        <a class="nav-link text-light" aria-current="page" href="./index.html">Conversion</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="./math.html">Math</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Currency</a>
-                    </li>
-                    </ul>
-                </div>
-            </div>
+        <nav class="nav-container">
+            <i class="fas fa-bars"></i>
+            <ul class="unordered-list">
+                <li class="list-item">
+                    <a class="link" href="./index.html">Table</a>
+                </li>
+                <li class="list-item">
+                  <a class="link" href="./math.html">Math</a>
+                </li>
+                <li class="list-item">
+                    <a class="link" href="./math.html">Currency</a>
+                </li>
+            </ul>
         </nav>
         <!-- Navbar -->
-       
         <div class="text-center e-header">Number Conversion</div>
         <div class="header-container-search">
             <input type="text" class="form-control search-input" placeholder="Search"/>
@@ -87,7 +72,7 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1" class="pl-3">From</label>
-                    <select class="form-control form-select-from" id="exampleFormControlSelect1">
+                    <select class="form-control form-select form-select-from" id="exampleFormControlSelect1">
                       <option selected value="decimal">Decimal</option>
                       <option value="binary">Binary</option>
                       <option value="hexadecimal">Hexadecimal</option>
@@ -96,7 +81,7 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1" class="pl-3">To</label>
-                    <select class="form-control form-select-to" id="exampleFormControlSelect1">
+                    <select class="form-control form-select form-select-to" id="exampleFormControlSelect1">
                       <option selected value="decimal">Decimal</option>
                       <option value="binary">Binary</option>
                       <option value="hexadecimal">Hexadecimal</option>
@@ -306,22 +291,22 @@
                         >
                           Example C# code
                         </button>
-                      </p>
-                      <div style="min-height: 120px;">
-                        <div class="collapse collapse-horizontal" id="collapseWidthExample" >
-                            <div class="copy-btn-container">
-                                <i class="far fa-clipboard clipboard-csharp">
-                                    <span class="span-copy text-center">Copy</span>
-                                    <span class="span-copied text-center">Copied!</span>
-                                </i>
-                               
-                            </div>
-                            
-                            <code class="code-csharp">
+                    </p>
+                    <div style="min-height: 120px;">
+                            <div class="collapse collapse-horizontal" id="collapseWidthExample" >
+                                <div class="copy-btn-container">
+                                    <i class="far fa-clipboard clipboard-csharp">
+                                        <span class="span-copy text-center">Copy</span>
+                                        <span class="span-copied text-center">Copied!</span>
+                                    </i>
                                 
-                            </code>
-                        </div>
-                      </div>
+                                </div>
+                                
+                                <code class="code-csharp">
+                                    
+                                </code>
+                            </div>
+                    </div>
                 </div>
 
                 <table class="table table-bordered" id="table-number-systems">
@@ -687,12 +672,13 @@
     <!-- loading Popper.min.js - needed after respone navigation click show nav menu -->
     <script src="./js/bootstrap-js/popper.min.js"></script>
     <script src="./js/bootstrap-js/bootstrap.bundle.min.js"></script>
-    <script src="./js/bootstrap-js/bootstrap.min.js"></script>
+    <script  src="./js/bootstrap-js/bootstrap.min.js"></script>
 
     <script src="./js/bootstrap-js/scrolling.js"></script>
     <script src="./js/bootstrap-js/mdb.min.js"></script>
 
-    <script src="./js/codeData.js"></script>
-    <script src="./js/app.js"></script>
+    <script type="text/javascript" src="./js/nav.js"></script>
+    <script type="text/javascript" src="./js/codeData.js"></script>
+    <script type="text/javascript" src="./js/app.js"></script>
 </body>
 </html>

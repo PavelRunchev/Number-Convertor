@@ -413,6 +413,36 @@ const codeOctalToHexadecimal = 'public static string OctalToHexadecimal(string n
 
 const codeOctalToOctal = "public static string OctalToOctal(int number)\n{\n  return number;\n}";
 
+const codeFactorial = 'public static long Factorial(int n)' +
+    '\n{' +
+    '\n     long fact = 1;' +
+    '\n     for (int i = 1; i < n; i++)' +
+    '\n     {' +
+    '\n         fact += fact * i;' +
+    '\n     }' +
+    '\n' +
+    '\n     return fact;' +
+    '\n}';
+
+const codeFibonacci = 'public static int Fibonacci(int n)' +
+    '\n{' +
+    '\n     int fn = n;' +
+    '\n     int f0 = 0;' +
+    '\n     int f1 = 1;' +
+    '\n' +
+    '\n     if (n < 1)' +
+    '\n        return n;' +
+    '\n' +
+    '\n     for (int i = 2; i <= n; i++)' +
+    '\n     {' +
+    '\n         fn = f0 + f1;'+
+    '\n         f0 = f1;' +
+    '\n         f1 = fn;' +
+    '\n     }' +
+    '\n' +
+    '\n     return f1;' +
+    '\n}';
+
 
 
 

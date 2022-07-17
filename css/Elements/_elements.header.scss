@@ -1,68 +1,140 @@
 .header-container {
-    display: flex;
-    flex-direction: row;
-    flex-flow: wrap;
-    justify-content: space-around;
     padding: 10px;
-    margin: 0.6%;
     background: linear-gradient(2deg, rgba(62,147,255,1) 60%, rgba(213,248,255,1) 100%); 
+
+    @include for-phone-only {
+        margin: 0% 0%;
+        @include flex-box(column, flex-start, flex-start);
+    }
+
+    @include for-tablet-portrait-up {
+        margin: 0.6%;
+        @include flex-box(column, center, center);
+    }
+
+    @include for-tablet-landscape-up {
+        @include flex-box(row, space-around, center);
+    }
+
+    & > .nav-container {
+        @include for-phone-only {
+            width: 100%;
+            @include flex-box(column, flex-start, flex-start);
+        }
+
+        @include for-tablet-portrait-up {
+            width: 100%;
+            @include flex-box(column, center, center);
+        }
     
-    &-ul {
-        width: 15%;
-        display: flex;
-        flex-direction: row;
-        flex-flow: wrap;
-        justify-content: space-around;
-        align-items: center;
-        list-style: none;
-        margin: 0 !important;
-        padding-left: 0 !important;
-    }
+        @include for-tablet-landscape-up {
+            width: 250px;
+            @include flex-box(row, space-around, center);
+        }
 
-    &-li {
-        height: 2rem;
-        display: flex;
-        flex-direction: row;
-        flex-flow: row wrap;
-        justify-content: center;
-        align-items: center;
-    }
+        & > .fa-bars {
+            cursor: pointer;
+            font-size: 24px;
+            color: whitesmoke;
 
-    &-ancher {
-        cursor: pointer;
-        text-decoration: none !important;
-        color: whitesmoke !important;
-        border-bottom: 1px solid transparent;
-        transition: all 0.5s;
-    }
+            @include for-phone-only {
+                visibility: visible;
+                opacity: 1;
+                //equal float-right!!!
+                margin-left: auto;
+            }
+    
+            @include for-tablet-portrait-up {
+                visibility: visible;
+                opacity: 1;
+                //equal float-right!!!
+                margin-left: auto;
+            }
+        
+            @include for-tablet-landscape-up {
+                visibility: hidden;
+                opacity: 0;
+            }
+        }
 
-    &-ancher:hover {
-        border-color: whitesmoke;
+        & > .unordered-list {
+            width: 200px;
+            list-style: none;
+            margin: 0 !important;
+
+            @include for-phone-only {
+                display: 'none';
+                @include flex-box(column, flex-start, flex-start);
+            }
+    
+            @include for-tablet-portrait-up {
+                display: 'none';
+                padding-left: 0 !important;
+                @include flex-box(column, center, center);
+            }
+        
+            @include for-tablet-landscape-up {
+                display: flex;
+                @include flex-box(row, space-around, center);
+            }
+        }
+
+        & .list-item {
+            height: 2rem;
+            @include flex-box(row, center, center);
+        }
+
+        & .link {
+            cursor: pointer;
+            text-decoration: none !important;
+            color: whitesmoke !important;
+            border-bottom: 1px solid transparent;
+            transition: all 0.5s;
+        }
+    
+        & .link:hover {
+            border-color: whitesmoke;
+        }
     }
 }
 
 .e-header {
-    display: flex;
+    @include for-phone-only {
+        width: 100%;
+        @include flex-box(row, flex-start, flex-start);
+    }
+
+    @include for-tablet-portrait-up {
+        @include flex-box(row, center, center);
+    }
+
+    @include for-tablet-landscape-up {
+        @include flex-box(row, center, center);
+    }
+
     font-size: 24px;
     text-transform: uppercase;
     font-weight: bold;
     color: whitesmoke;
-    align-items: center;
-}
-
-.e-header::after {
-    content: none;
-    position: relative;
-    background-color: whitesmoke;
-    width: 50px;
-    height: 3px;
 }
 
 .header-container-search {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    @include for-phone-only {
+        min-width: 46%;
+        margin: 2% 0%;
+        @include flex-box(row, flex-start, flex-start);
+    }
+
+    @include for-tablet-portrait-up {
+        width: 250px !important;
+        @include flex-box(row, center, center);
+    }
+
+    @include for-tablet-landscape-up {
+        @include flex-box(row, center, center);
+    }
 }
+
 
 .btn-search {
     max-width: 35px;

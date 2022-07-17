@@ -13,3 +13,10 @@
 	-webkit-box-shadow: 1px 13px 30px -3px #000; 
 	box-shadow: 1px 0px 13px -3px #000;
 }
+
+@mixin flex-box($flex, $content, $items) {
+	display: flex;
+	flex-direction: $flex;
+	justify-content: $content;
+	align-items: $items;
+}

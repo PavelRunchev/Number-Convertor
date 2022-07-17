@@ -30,15 +30,23 @@
 
 <body>
     <header class="header-container">
-        <ul class="header-container-ul">
-            <li class="header-container-li">
-                <a class="header-container-ancher" href="./index.html">Table</a>
-            </li>
-            <li class="header-container-li">
-              <a class="header-container-ancher" href="./math.html">Math</a>
-          </li>
-        </ul>
-        <div class="text-center e-header">Number Conversion</div>
+        <!-- Navbar -->
+        <nav class="nav-container">
+            <i class="fas fa-bars"></i>
+            <ul class="unordered-list">
+                <li class="list-item">
+                    <a class="link" href="./index.html">Table</a>
+                </li>
+                <li class="list-item">
+                  <a class="link" href="./math.html">Math</a>
+                </li>
+                <li class="list-item">
+                    <a class="link" href="./math.html">Currency</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- Navbar -->
+        <div class="text-center e-header">Mathematical</div>
         <div class="header-container-search">
             <input type="text" class="form-control search-input" placeholder="Search"/>
             <button class="btn-search"><i class="fas fa-search"></i></button>
@@ -48,227 +56,348 @@
     <main class="container-fluid">
         <section class="factorial-container  my-5">
             <h3 class="text-left">Factorial (n!)</h3>
-            <div>The factorial of n is denoted by n! and calculated by the product of integer numbers from 1 to n.</div>
-            <div>Examples:</div>
-            <div>1! = 1</div>
-            <div>2! = 1×2 = 2</div>
-            <div>3! = 1×2×3 = 6</div>
-            <div>4! = 1×2×3×4 = 24</div>
-            <div>5! = 1×2×3×4×5 = 120</div>
-            <div>Recursive factorial formula</div>
-            <div>n! = n×(n-1)!</div>
-            <div>Example: 5! = 5×(5-1)! = 5×4! = 5×24 = 120</div>
-
-            <div class="my-3">
-                <h3>Factorial Calculator</h3>
-                <form class="form form-factorial">
-                    <label for="input" class="text-left w-100 pl-3 label-input-number">Enter number:</label>
-                    <div class="input-group">
-                        <input type="number" class="form-control input-factorial-number" placeholder="Enter"/>
-                        <button class="e-button btn-convert btn-factorial-calculate" type="button">Calculate</button>
-                        <label for="input" class="text-left w-100 pl-3 mt-2 label-input-number">Result:</label>
-                        <input type="text" class="form-control input-factorial-result" placeholder="Result" disabled readonly>
+            <p>
+                <button
+                  class="e-button"
+                  type="button"
+                  data-mdb-toggle="collapse"
+                  data-mdb-target="#collapseWidthExample"
+                  aria-expanded="false"
+                  aria-controls="collapseWidthExample"
+                >
+                  Show More...
+                </button>
+            </p>
+            <div>
+                <div class="collapse collapse-horizontal" id="collapseWidthExample" >
+                    <div>The factorial of n is denoted by n! and calculated by the product of integer numbers from 1 to n.</div>
+                    <div>Examples:</div>
+                    <div>1! = 1</div>
+                    <div>2! = 1×2 = 2</div>
+                    <div>3! = 1×2×3 = 6</div>
+                    <div>4! = 1×2×3×4 = 24</div>
+                    <div>5! = 1×2×3×4×5 = 120</div>
+                    <div>Recursive factorial formula</div>
+                    <div>n! = n×(n-1)!</div>
+                    <div>Example: 5! = 5×(5-1)! = 5×4! = 5×24 = 120</div>
+        
+                    <div class="my-3">
+                        <h3>Factorial Calculator</h3>
+                        <form class="form form-factorial my-3">
+                            <label for="input" class="text-left w-100 pl-3 label-input-number">Enter number:</label>
+                            <div class="input-group">
+                                <input type="number" class="form-control input-factorial-number" placeholder="Enter"/>
+                                <button class="e-button btn-convert btn-factorial-calculate" type="button">Calculate</button>
+                                <label for="input" class="text-left w-100 pl-3 mt-2 label-input-number">Result:</label>
+                                <input type="text" class="form-control input-factorial-result" placeholder="Result" disabled readonly>
+                            </div>
+                        </form>
                     </div>
-                </form>
+        
+                    <h4>Factorial Table</h4>
+                    <table class="table table-bordered my-3" style="max-width: 250px;">
+                        <thead>
+                            <tr >
+                              <th scope="col" class="font-weight-bold">Number n</th>
+                              <th scope="col" class="font-weight-bold">Factorial n!</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                              <td>0</td>
+                              <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>6</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>24</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>120</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>720</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>5040</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>40320</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>362880</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>3628800</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>39916800</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>479001600</td>
+                            </tr>
+                        </tbody>
+                    </table>
+        
+                    <div class="code-container mt-5">
+                        <h4>Example C# code</h4>
+                        <code class="code-factorial my-4"></code>
+                    </div>
+                </div>
             </div>
-
-            <h4>Factorial Table</h4>
-            <table class="my-3">
-                <thead>
-                    <tr >
-                      <th scope="col" class="font-weight-bold">Number n</th>
-                      <th scope="col" class="font-weight-bold">Factorial n!</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                      <td>0</td>
-                      <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>6</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>24</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>120</td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>720</td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td>5040</td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td>40320</td>
-                    </tr>
-                    <tr>
-                        <td>9</td>
-                        <td>362880</td>
-                    </tr>
-                    <tr>
-                        <td>10</td>
-                        <td>3628800</td>
-                    </tr>
-                    <tr>
-                        <td>11</td>
-                        <td>39916800</td>
-                    </tr>
-                    <tr>
-                        <td>12</td>
-                        <td>479001600</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <code class="code-factorial-JS my-4">
-                <h4>JS example code</h4>
-                <div>function factorial(n) {</div>
-                <div>&nbsp;let fact = 1;</div>
-                <div>&nbsp;for (let i = 1; i < n; i++) {</div>
-                <div>&nbsp;&nbsp;fact += fact * i;</div>
-                <div>&nbsp;}</div>
-                <div></div>
-                <div>&nbsp;return fact;</div>
-                <div>}</div>
-            </code>
         </section>
 
-        <section class="fibonacci-container my-5">
+        <hr>
+
+        <section class="fibonacci-container">
             <h3 class="text-left">Fibonacci Numbers & Sequence</h3>
-            <div>Fibonacci sequence is a sequence of numbers, where each number is the sum of the 2 previous numbers, except the first two numbers that are 0 and 1.</div>
-            <div>Examples:</div>
-            <div>F<sub>0</sub> = 0</div>
-            <div>F<sub>1</sub> = 1</div>
-            <div>F<sub>2</sub> = F<sub>1</sub> + F<sub>0</sub> = 1 + 0 = 1</div>
-            <div>F<sub>3</sub> = F<sub>2</sub> + F<sub>1</sub> = 1 + 1 = 2</div>
-            <div>F<sub>4</sub> = F<sub>3</sub> + F<sub>2</sub> = 2 + 1 = 3</div>
-            <div>F<sub>5</sub> = F<sub>4</sub> + F<sub>3</sub> = 3 + 2 = 5</div>
-            <div>...</div>
-
-            <div class="my-3">
-                <h3>Fibonacci Calculator</h3>
-                <form class="form form-factorial">
-                    <label for="input" class="text-left w-100 pl-3 label-input-number">Enter number:</label>
-                    <div class="input-group">
-                        <input type="number" class="form-control input-fibonacci-number" placeholder="Enter"/>
-                        <button class="e-button btn-convert btn-fibonacci-calculate" type="button">Calculate</button>
-                        <label for="input" class="text-left w-100 pl-3 mt-2 label-input-number">Result:</label>
-                        <input type="text" class="form-control input-fibonacci-result" placeholder="Result" disabled readonly>
+            <p>
+                <button
+                  class="e-button"
+                  type="button"
+                  data-mdb-toggle="collapse"
+                  data-mdb-target="#collapseWidthExample2"
+                  aria-expanded="false"
+                  aria-controls="collapseWidthExample"
+                >
+                  Show More...
+                </button>
+            </p>
+            <div>
+                <div class="collapse collapse-horizontal" id="collapseWidthExample2" >
+                    <div>Fibonacci sequence is a sequence of numbers, where each number is the sum of the 2 previous numbers, except the first two numbers that are 0 and 1.</div>
+                    <div>Examples:</div>
+                    <div>F<sub>0</sub> = 0</div>
+                    <div>F<sub>1</sub> = 1</div>
+                    <div>F<sub>2</sub> = F<sub>1</sub> + F<sub>0</sub> = 1 + 0 = 1</div>
+                    <div>F<sub>3</sub> = F<sub>2</sub> + F<sub>1</sub> = 1 + 1 = 2</div>
+                    <div>F<sub>4</sub> = F<sub>3</sub> + F<sub>2</sub> = 2 + 1 = 3</div>
+                    <div>F<sub>5</sub> = F<sub>4</sub> + F<sub>3</sub> = 3 + 2 = 5</div>
+                    <div>...</div>
+        
+                    <div class="my-3">
+                        <h3>Fibonacci Calculator</h3>
+                        <form class="form form-factorial my-3">
+                            <label for="input" class="text-left w-100 pl-3 label-input-number">Enter number:</label>
+                            <div class="input-group">
+                                <input type="number" class="form-control input-fibonacci-number" placeholder="Enter"/>
+                                <button class="e-button btn-convert btn-fibonacci-calculate" type="button">Calculate</button>
+                                <label for="input" class="text-left w-100 pl-3 mt-2 label-input-number">Result:</label>
+                                <input type="text" class="form-control input-fibonacci-result" placeholder="Result" disabled readonly>
+                            </div>
+                        </form>
                     </div>
-                </form>
+        
+                    <table  class="table table-bordered my-3" style="max-width: 250px;">
+                        <thead>
+                            <tr >
+                              <th scope="col" class="font-weight-bold">Number (n)&nbsp;&nbsp;</th>
+                              <th scope="col" class="font-weight-bold">F<sub>n</sub></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                              <td>0</td>
+                              <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>8</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>13</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>21</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>34</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>55</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>89</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>144</td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td>233</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>377</td>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td>610</td>
+                            </tr>
+                        </tbody>
+                    </table>
+        
+                    <h4>Example C# code</h4>
+                    <code class="code-fibonacci my-4"></code>
+                </div>
             </div>
-
-            <table  class="my-3">
-                <thead>
-                    <tr >
-                      <th scope="col" class="font-weight-bold">Number (n)&nbsp;&nbsp;</th>
-                      <th scope="col" class="font-weight-bold">F<sub>n</sub></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                      <td>0</td>
-                      <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>3</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>5</td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>8</td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td>13</td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td>21</td>
-                    </tr>
-                    <tr>
-                        <td>9</td>
-                        <td>34</td>
-                    </tr>
-                    <tr>
-                        <td>10</td>
-                        <td>55</td>
-                    </tr>
-                    <tr>
-                        <td>11</td>
-                        <td>89</td>
-                    </tr>
-                    <tr>
-                        <td>12</td>
-                        <td>144</td>
-                    </tr>
-                    <tr>
-                        <td>13</td>
-                        <td>233</td>
-                    </tr>
-                    <tr>
-                        <td>14</td>
-                        <td>377</td>
-                    </tr>
-                    <tr>
-                        <td>15</td>
-                        <td>610</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <code class="code-fibonacci-JS my-4">
-                <h4>JS example code</h4>
-                <div>function fibonnaci(n) {</div>
-                <div>&nbsp;let fn = n;</div>
-                <div>&nbsp;let f0 = 0;</div>
-                <div>&nbsp;let f1 = 1;</div>
-                <div></div>
-                <div>&nbsp;if(n < 1) return n;</div>
-                <div></div>
-                <div>&nbsp;for (let i = 2; i <= n; i++) {</div>
-                <div>&nbsp;&nbsp;fn = F0 + F1;</div>
-                <div>&nbsp;&nbsp;F0 = F1;</div>
-                <div>&nbsp;&nbsp;F1 = fn;</div>
-                <div>&nbsp;}</div>
-                <div></div>
-                <div>&nbsp;return F1;</div>
-                <div>}</div>
-            </code>
         </section>
 
+        <hr>
+
+        <section class="container-form-figures">
+            <h3>Figure Calcolator</h3>
+            <div>Choice type figure.</div>
+            <form class="form">
+                <h4 class="text-center my-3">Calculator</h4>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1" class="pl-3">Type figure</label>
+                    <select class="form-control form-select type-figure" id="exampleFormControlSelect1">
+                      <option selected value="triangle">Triangle</option>
+                      <option value="triangle-prism">Triangle Prism</option>
+                      <option value="cone">Cone</option>
+                      <option value="trapezoid">Trapezoid</option>
+                      <option value="cube">Cube</option>
+                      <option value="pyramid">Pyramid</option>
+                    </select>
+                </div>
+
+                <section class="triangle-form-container">
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect2" class="pl-3">Operation</label>
+                        <select class="form-control form-select triangle-operation-select" id="exampleFormControlSelect2">
+                            <option selected value="area">Area</option>
+                            <option value="perimeter">Perimeter</option>
+                        </select>
+                    </div>
+    
+                    <div class="form-group triangle-formula">
+                        <label for="exampleFormControlSelect3" class="pl-3">Formula</label>
+                        <select class="form-control form-select triangle-formula-select" id="exampleFormControlSelect3">
+                            <option selected value="area-base-height">Area with base and height</option>
+                            <option value="herons-formula">Area with Heron's formula</option>
+                            <option value="area-sides-and-angle">With 2 Side and included angle</option>
+                        </select>
+                    </div>
+    
+                    <div class="form-group traingle-inputs">
+                        <div class="input-group by-base-and-height">
+                            <input type="text" placeholder="Base" class="form-control"/>
+                            <input type="text" placeholder="Height" class="form-control"/>
+                        </div>
+                        <div class="input-group by-herons-formula">
+                            <input type="text" placeholder="Side a" class="form-control"/>
+                            <input type="text" placeholder="Side b" class="form-control"/>
+                            <input type="text" placeholder="Side c" class="form-control"/>
+                        </div>
+                        <div class="input-group by-sides-and-angle">
+                            <input type="text" placeholder="Side b" class="form-control"/>
+                            <input type="text" placeholder="Side c" class="form-control"/>
+                            <input type="text" placeholder="Angle" class="form-control"/>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="trianglePrism-form-container">
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect2" class="pl-3">Operation</label>
+                        <select class="form-control form-select triangle-operation-select" id="exampleFormControlSelect2">
+                            <option selected value="surface-area">Surface Area</option>
+                            <option value="volume">Volume</option>
+                        </select>
+                    </div>
+                </section>
+                
+                <label class="error-inputs d-block text-danger text-center"></label>
+                <div class="input-group mb-4">
+                    <button class="e-button btn-calculate-figures" type="button">
+                        <span class="span-convert">Calculate</span>
+                        <i class="fas fa-long-arrow-alt-right"></i>
+                    </button>
+                   
+                    <input type="text" disabled readonly placeholder="Result" class="form-control input-result-figure" />
+                    <button class="e-button btn-reset" type="button">Reset</button>
+                </div>
+            </form>
+
+            <div class="info-container">
+                <div class="triangle-info">
+                    <h3>Triangle definition</h3>
+                    <div>A triangle is a closed figure with 3 angles, 3 sides, and 3 vertices. It is one of the most basic shapes in geometry and is denoted by the symbol △. There are different types of triangles in math that are classified on the basis of their sides and angles.</div>
+
+                    <article class="triangle-area my-5">
+                        <section class="my-4 triangle-area-formula-base-and-height">
+                            <h4>Area of a Triangle Formula</h4>
+                            <img src="./images/triangle-area-with-height.png" class="img-fluid my-3"/>
+                        </section>
+                        <section class="my-4 triangle-area-herons-formula">
+                            <h4>Area using Heron's Formula</h4>
+                            <img src="./images/triangle-area-heron.jpg" class="img-fluid my-3"/>
+                        </section>
+                        <section class="my-4 triangle-area-with-angle-formula">
+                            <h4>Area with 2 sides and included angle Formula</h4>
+                            <img src="./images/triangle-area-angle.png" class="img-fluid my-3"/>
+                        </section>
+                    </article>
+
+                    <article class="triangle-perimeter my-5">
+                        <h3>Perimeter of Triangle</h3>
+                        <div>The perimeter of a triangle is defined as the total length of its boundary. A triangle is a polygon with 3 sides and it can be classified into different types based on the measure of its sides and angles. There are different formulas and methods to calculate the perimeter of a triangle based on the type of triangle.</div>
+                        <img src="./images/Formulas--PerimeterOfTriangle.jpg" class="img-fluid my-3"/>
+                    </article>
+                </div>
+                
+            </div>
+
+        </section>
+
+        <hr>
+        
     </main>
    
     <footer>
@@ -280,7 +409,7 @@
         </div>
         <div class="feedback-container">
             <textarea rows="3" style="height:100%;" class="form-control text-area-feedback" placeholder="Your message ..." id="feedback"></textarea>
-            <button type="button" class="btn-feedback" data-toggle="modal" data-target="#exampleModal">Feedback</button>
+            <button type="button" class="e-button py-2 ml-1 feedback" data-toggle="modal" data-target="#exampleModal">Feedback</button>
 
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -315,6 +444,12 @@
 
     <script src="./js/bootstrap-js/scrolling.js"></script>
     <script src="./js/bootstrap-js/mdb.min.js"></script>
+
+    <script src="./js/nav.js"></script>
+    <script src="./js/codeData.js"></script>
+    <script src="./js/math-factorial.js"></script>
+    <script src="./js/math-fibonacci.js"></script>
+    <script src="./js/math-triangle.js"></script>
     <script src="./js/math.js"></script>
 </body>
 </html>

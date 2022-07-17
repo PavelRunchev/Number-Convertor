@@ -1,0 +1,44 @@
+.container-form-figures {
+    max-width: 500px;
+    min-height: 600px;
+    margin-right: auto;
+
+    @include for-phone-only {
+        padding-left: 0%;
+    }
+
+    @include for-tablet-portrait-up {
+        padding-left: 1%;
+    }
+
+    @include for-tablet-landscape-up {
+        padding-left: 3%;
+    }
+}
+
+.form {
+    display: block;
+    margin: 5% 0;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: whitesmoke;
+    @include primary-box-shadow-black;
+
+    &-title {
+        text-transform: capitalize;
+        font-size: 26px;
+        font-weight: 100;
+    }
+}
+
+#input-number:focus {
+    border-color: $primary-color-blue !important;
+    outline: none !important;
+}
+
+.triangle-perimeter,
+.triangle-volume,
+.triangle-area-herons-formula,
+.triangle-area-with-angle-formula {
+    display: none;
+}

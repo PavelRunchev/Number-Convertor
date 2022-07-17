@@ -1,6 +1,16 @@
 
 .code-container {
-    min-width: 500px;
+    @include for-phone-only {
+        width: 100%;
+    }
+
+    @include for-tablet-portrait-up {
+        min-width: 500px;
+    }
+
+    @include for-tablet-landscape-up {
+        min-width: 500px;
+    }
 }
 
 .code-csharp > pre {

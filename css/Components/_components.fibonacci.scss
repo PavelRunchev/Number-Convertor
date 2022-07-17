@@ -1,4 +1,26 @@
 
 .fibonacci-container {
     max-width: 100%;
+    @include for-phone-only {
+        padding-left: 0%;
+    }
+
+    @include for-tablet-portrait-up {
+        padding-left: 1%;
+    }
+
+    @include for-tablet-landscape-up {
+        padding-left: 3%;
+    }
+}
+
+.code-fibonacci > pre {
+    max-width: 400px !important;
+    font-size: 14px !important;
+    color: $third-color-blue !important;
+    background: linear-gradient(2deg, rgba(91,98,104,0.08) 100%, rgba(213,248,255,1) 100%) !important;
+    border-radius: 5px;
+    padding: 5px;
+    overflow: auto;
+    @include btn-box-shadow-black;
 }

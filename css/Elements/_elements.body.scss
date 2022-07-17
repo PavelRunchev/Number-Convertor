@@ -8,5 +8,24 @@ body {
     -webkit-display: column;
     background-color: rgba(192, 225, 240, 0.35) !important;
     padding: 0 !important;
+
+    & hr {
+        min-width: 500px;
+        height: 1px !important;
+        margin-right: auto !important;
+        background: linear-gradient(2deg, rgba(91,98,104,1) 65%, rgba(213,248,255,1) 100%); 
+        @include for-phone-only {
+            margin-left: 0%;
+        }
+    
+        @include for-tablet-portrait-up {
+            margin-left: 1%;
+        }
+    
+        @include for-tablet-landscape-up {
+            margin-left: 3%;
+        }
+    }
+
 }
 
