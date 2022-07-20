@@ -2,16 +2,25 @@
 document.querySelector('.cone-operation-select').addEventListener('change', typeConeForm);
 let surfaceAreaConeFormula = document.querySelector('.cone-surface-area-formula');
 let volumeConeFormula = document.querySelector('.cone-volume-formula');
-volumeConeFormula.style.display = 'none';
 let labelConeEnterInput = document.querySelector('.cone-label-enter');
+
+let errorConeInput = document.querySelector('.error-inputs');
+let resultConeInput = document.querySelector('.input-result-figure');
+
+if(volumeConeFormula == null || errorConeInput == null || resultConeInput == null)
+    ErrorDOMElement();
+
+volumeConeFormula.style.display = 'none';
 
 async function typeConeForm() {
     let typeFigureSelect = document.querySelector('.type-figure');
+    if(typeFigureSelect == null)
+        ErrorDOMElement();
 
     if(typeFigureSelect.value == 'cone') {
         let typeOperationSelect = document.querySelector('.cone-operation-select');
 
-        if(typeFigureSelect == null || typeOperationSelect == null || surfaceAreaConeFormula == null 
+        if(typeOperationSelect == null || surfaceAreaConeFormula == null 
             || volumeConeFormula == null || labelConeEnterInput == null)
             ErrorDOMElement();
 
@@ -24,6 +33,9 @@ async function typeConeForm() {
             volumeConeFormula.style.display = 'block';
             labelConeEnterInput.innerHTML = 'Volume enter:';
         }
+
+        errorConeInput.innerHTML = '';
+        resultConeInput.value = '';
     } 
 }
 

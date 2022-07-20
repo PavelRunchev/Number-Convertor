@@ -4,12 +4,12 @@ document.querySelector('.type-figure').addEventListener('change', typeFigure);
 document.querySelector('.triangle-operation-select').addEventListener('change', operationSelect);
 document.querySelector('.btn-calculate-figures').addEventListener('click', calculateFigure);
 
+let errorInput = document.querySelector('.error-inputs');
+let resultInput = document.querySelector('.input-result-figure');
+
 function ErrorDOMElement() {
     throw new Error('Missing DOM Element!');
 }
-
-let errorInput = document.querySelector('.error-inputs');
-let resultInput = document.querySelector('.input-result-figure');
 
 function InvalidOperation() {
     errorInput.textContent = 'Invalid operation!';
@@ -70,9 +70,17 @@ async function typeFigure() {
         //show only trapezoid form and trapezoid info
         showFigure('.trapezoid-form-container', '.trapezoid-info');
     } else if(typeFigureSelect.value == 'cube') {
-        console.log(typeFigureSelect.value);
+        //show only cube form and cube info
+        showFigure('.cube-form-container', '.cube-info');
     } else if(typeFigureSelect.value == 'pyramid') {
         console.log(typeFigureSelect.value);
+        //todo
+    } else if(typeFigureSelect.value == 'sphere') {
+        //show only sphere form and sphere info
+        showFigure('.sphere-form-container', '.sphere-info');
+    } else if(typeFigureSelect.value == 'cylinder') {
+        //show only cylinder form and cylinder info
+        showFigure('.cylinder-form-container', '.cylinder-info');
     }
 }
 
@@ -84,18 +92,24 @@ function calculateFigure(e) {
         ErrorDOMElement();
 
     if(typeFigureSelect.value == 'triangle') {
-        let operationFigureSelect = document.querySelector('.triangle-operation-select');
-        triangleCalculate(operationFigureSelect);
+        triangleCalculate();
     } else if(typeFigureSelect.value == 'triangular-prism') {
-        let operationFigureSelect = document.querySelector('.triangular-prism-operation-select');
-        triangularPrismCalculate(operationFigureSelect);
+        triangularPrismCalculate();
     } else if(typeFigureSelect.value == 'cone') {
-        let operationFigureSelect = document.querySelector('.cone-operation-select');
-        coneCalculate(operationFigureSelect);
-    }  
+        coneCalculate();
+    } else if(typeFigureSelect.value == 'trapezoid') {
+        trapezoidCalculate();
+    } else if(typeFigureSelect.value == 'cube') {
+        cubeCalculate();
+    } else if(typeFigureSelect.value == 'sphere') {
+        sphereCalculate();
+    } else if(typeFigureSelect.value == 'cylinder') {
+        cylinderCalculate();
+    }   
 }
 
-function triangleCalculate(operationFigureSelect) {
+function triangleCalculate() {
+    const operationFigureSelect = document.querySelector('.triangle-operation-select');
     const triangleFormulaSelect = document.querySelector('.triangle-formula-select');
     if(triangleFormulaSelect == null || operationFigureSelect == null)
         ErrorDOMElement();
@@ -139,7 +153,8 @@ function triangleCalculate(operationFigureSelect) {
     }
 }
 
-function triangularPrismCalculate(operationFigureSelect) {
+function triangularPrismCalculate() {
+    const operationFigureSelect = document.querySelector('.triangular-prism-operation-select');
     if(operationFigureSelect == null)
         ErrorDOMElement();
 
@@ -150,7 +165,7 @@ function triangularPrismCalculate(operationFigureSelect) {
             resultInput.value = calcTriangularPrismSurficeArea(sideB.value, height.value, length.value, sideC.value);
             sideB.value = '', height.value = '', length.value = '', sideC.value = '';
         } else {
-            errorInput.textContent = 'Tringular Prism sides must be a numbers!';
+            errorInput.textContent = 'Invalid Tringular Prism sides!';
         }
     } else if(operationFigureSelect.value == 'volume') {
         const [w, h, l] = Array.from(document.querySelectorAll('.traingular-prism-volume > input'));
@@ -158,17 +173,19 @@ function triangularPrismCalculate(operationFigureSelect) {
             resultInput.value = calcTriangularPrismVolume(w.value, h.value, l.value);
             w.value = '', h.value = '', l.value = '';
         } else {
-            errorInput.textContent = 'Tringular Prism sides must be a numbers!';
+            errorInput.textContent = 'Invalid Tringular Prism sides!';
         }
     } else {
         InvalidOperation();
     }
 }
 
-function coneCalculate(operationFigureSelect) {
+function coneCalculate() {
+    const operationFigureSelect = document.querySelector('.cone-operation-select');
     const [radius, height] = Array.from(document.querySelectorAll('.cone-inputs > div > input'));
     if(operationFigureSelect == null || radius == null || height == null)
         ErrorDOMElement();
+
     if(checkNumberIsInteger(radius.value) && checkNumberIsInteger(height.value)) {
         if(operationFigureSelect.value == 'surface-area') {
             resultInput.value = calcConeSurfaceArea(radius.value, height.value);
@@ -178,8 +195,93 @@ function coneCalculate(operationFigureSelect) {
             InvalidOperation();
         }
     } else {
-        errorInput.textContent = 'Cone sides must be a numbers!';
+        errorInput.textContent = 'Invalid Cone radius or height!';
     }
 
     radius.value = '', height.value = '';
+}
+
+function trapezoidCalculate() {
+    const operationFigureSelect = document.querySelector('.trapezoid-operation-select');
+    if(operationFigureSelect == null)
+        ErrorDOMElement();
+    
+    if(operationFigureSelect.value == 'area') {
+        const [a, b, h] = Array.from(document.querySelectorAll('.trapezoid-area > input'));
+        if(checkNumberIsInteger(a.value) && checkNumberIsInteger(b.value) && checkNumberIsInteger(h.value)) {
+            resultInput.value = calcTrapezoidArea(a.value, b.value, h.value);
+        } else {
+            errorInput.textContent = 'Invalid Trapezoid sides!';
+        }
+    } else if(operationFigureSelect.value == 'perimeter') {
+        const [a, b, c, d] = Array.from(document.querySelectorAll('.trapezoid-perimeter > input'));
+        if(checkNumberIsInteger(a.value) && checkNumberIsInteger(b.value) 
+        && checkNumberIsInteger(c.value) && checkNumberIsInteger(d.value)) {
+            resultInput.value = calcTrapezoidPerimeter(a.value, b.value, c.value, d.value);
+        } else {
+            errorInput.textContent = 'Invalid Trapezoid sides!';
+        }
+    } else {
+        InvalidOperation();
+    }
+}
+
+function cubeCalculate() {
+    const operationFigureSelect = document.querySelector('.cube-operation-select');
+    const [a] = Array.from(document.querySelectorAll('.cube-inputs > div > input'));
+
+    if(operationFigureSelect.value == null || a == null)
+        ErrorDOMElement();
+
+    if(checkNumberIsInteger(a.value)) {
+        if(operationFigureSelect.value == 'surface-area') {
+            resultInput.value = calcCubeSurfaceArea(a.value);
+        } else if (operationFigureSelect.value == 'volume') {
+            resultInput.value = calcCubeVolume(a.value);
+        } else {
+            InvalidOperation();
+        }
+    } else {
+        errorInput.textContent = 'Invalid Cube a side!';
+    }
+}
+
+function sphereCalculate() {
+    const operationFigureSelect = document.querySelector('.sphere-operation-select');
+    const [r] = Array.from(document.querySelectorAll('.sphere-inputs > div > input'));
+
+    if(operationFigureSelect.value == null || r == null)
+        ErrorDOMElement();
+
+    if(checkNumberIsInteger(r.value)) {
+        if(operationFigureSelect.value == 'surface-area') {
+            resultInput.value = calcSphereSurfaceArea(r.value);
+        } else if (operationFigureSelect.value == 'volume') {
+            resultInput.value = calcSphereVolume(r.value);
+        } else {
+            InvalidOperation();
+        }
+    } else {
+        errorInput.textContent = 'Invalid Sphere radius!';
+    }
+}
+
+function cylinderCalculate() {
+    const operationFigureSelect = document.querySelector('.cylinder-operation-select');
+    const [r, h] = Array.from(document.querySelectorAll('.cylinder-inputs > div > input'));
+
+    if(operationFigureSelect.value == null || r == null || h == null)
+        ErrorDOMElement();
+
+    if(checkNumberIsInteger(r.value) && checkNumberIsInteger(h.value)) {
+        if(operationFigureSelect.value == 'surface-area') {
+            resultInput.value = calcCylinderSurfaceArea(r.value, h.value);
+        } else if (operationFigureSelect.value == 'volume') {
+            resultInput.value = calcCylinderVolume(r.value, h.value);
+        } else {
+            InvalidOperation();
+        }
+    } else {
+        errorInput.textContent = 'Invalid Cylinder radius or height!';
+    }
 }

@@ -8,6 +8,9 @@ let surfaceAreaInfo = document.querySelector('.triangularPrism-surface-area-form
 let volumeInfo = document.querySelector('.triangularPrism-volume-formula');
 let labelEnterInput = document.querySelector('.traingular-prism-label-enter');
 
+let errorTringularPrismInput = document.querySelector('.error-inputs');
+let resultTringularPrismInput = document.querySelector('.input-result-figure');
+
 if(inputsSurfaceArea == null || inputsVolume == null 
     || surfaceAreaInfo == null || volumeInfo == null || labelEnterInput == null)
     ErrorDOMElement();
@@ -24,7 +27,8 @@ async function typeTringularPrismForm() {
     if(typeFigureSelect.value == 'triangular-prism') {
         let typeOperationSelect = document.querySelector('.triangular-prism-operation-select');
         if(inputsSurfaceArea == null || inputsVolume == null || surfaceAreaInfo == null 
-            || volumeInfo == null || labelEnterInput == null || typeOperationSelect == null)
+            || volumeInfo == null || labelEnterInput == null || typeOperationSelect == null
+            || errorTringularPrismInput == null || resultTringularPrismInput == null)
             ErrorDOMElement();
 
         await hiddenElements('.traingular-prism-inputs > div');
@@ -39,6 +43,9 @@ async function typeTringularPrismForm() {
             volumeInfo.style.display = 'block';
             labelEnterInput.innerHTML = 'Volume enter:';
         }
+
+        errorTringularPrismInput.innerHTML = '';
+        resultTringularPrismInput.value = '';
     }
 }
 

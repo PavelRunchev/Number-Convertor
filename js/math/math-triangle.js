@@ -10,21 +10,23 @@ function ErrorDOMElement() {
 }
 
 let triangleFormulaSelect = document.querySelector('.triangle-formula');
-
 let triangleArea = document.querySelector('.triangle-area');
 let trianglePerimeter = document.querySelector('.triangle-perimeter');
-
 let inputsByBaseAndHeight = document.querySelector('.by-base-and-height');
 let inputsByHeronsFormula = document.querySelector('.by-herons-formula');
-inputsByHeronsFormula.style.display = 'none';
 let inputsByAngle = document.querySelector('.by-sides-and-angle');
-inputsByAngle.style.display = 'none';
+
+
+let errorTriangleInput = document.querySelector('.error-inputs');
+let resultTriangleInput = document.querySelector('.input-result-figure');
 
 if(triangleFormulaSelect == null || triangleArea == null || trianglePerimeter == null
     || inputsByBaseAndHeight == null || inputsByHeronsFormula == null
-    || inputsByAngle == null) {
+    || inputsByAngle == null)
         ErrorDOMElement();
-    } 
+
+inputsByHeronsFormula.style.display = 'none';
+inputsByAngle.style.display = 'none';
 
 function hiddenElements(selector) {
     Array.from(document.querySelectorAll(`${selector}`))
@@ -33,6 +35,11 @@ function hiddenElements(selector) {
 
 async function typeTriangleFormula() {
     let triangleFormulaSelect = document.querySelector('.triangle-formula-select');
+
+    if(triangleFormulaSelect == null || errorTriangleInput == null 
+        || resultTriangleInput == null)
+        ErrorDOMElement();
+        
     await hiddenElements('.traingle-inputs > div');
     await hiddenElements('.triangle-area > section');
    
@@ -46,6 +53,9 @@ async function typeTriangleFormula() {
         inputsByAngle.style.display = 'flex';
         document.querySelector('.triangle-area-with-angle-formula').style.display = 'block';
     }
+
+    errorTriangleInput.innerHTML = '';
+    resultTriangleInput.value = '';
 }
 
 async function operationSelect() {
@@ -86,29 +96,30 @@ async function operationSelect() {
 }
 
 function checkNumberIsInteger(n) {
-    const number = Number(n);
-    return typeof number == 'number' && !isNaN(number);
+    return typeof Number(n) == 'number' && !isNaN(Number(n));
 }
 
 function calcTriangleAreaByBaseAndHeight(base, height) {
-    return (Number(base) * Number(height)) / 2;
+    const area = (Number(base) * Number(height)) / 2;
+    return area.toFixed(2).replace(/0+$/, '');
 }
 
 function calcTriangleAreaByHeronsFormula(a, b, c) {
     //semiPerimeter
     const s = (Number(a) + Number(b) + Number(c)) / 2;
     const area = Math.sqrt(s * (s - Number(a)) * (s - Number(b)) * (s - Number(c)));
-    return area.toFixed(2);
+    return area.toFixed(2).replace(/0+$/, '');
 }
 
 function calcTriangleAreaBySidesAndAngle(sideA, sideB, angle) {
     const sinFromAngle = Math.sin(Number(angle) * Math.PI / 180);
     const area = 0.5 * (Number(sideA) * Number(sideB)) * sinFromAngle;
-    return  area.toFixed(2);
+    return  area.toFixed(2).replace(/0+$/, '');
 }
 
 function calcTrianglePerimeter(num1, num2, num3) {
-    return Number(num1) + Number(num2) + Number(num3);
+    const perimeter = Number(num1) + Number(num2) + Number(num3);
+    return perimeter.toFixed(2).replace(/0+$/, '');
 }
 
 
