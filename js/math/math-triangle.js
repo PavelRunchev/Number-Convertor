@@ -9,7 +9,6 @@ function ErrorDOMElement() {
     throw new Error('Missing DOM Element!');
 }
 
-
 let triangleFormulaSelect = document.querySelector('.triangle-formula');
 
 let triangleArea = document.querySelector('.triangle-area');
@@ -49,23 +48,60 @@ async function typeTriangleFormula() {
     }
 }
 
+async function operationSelect() {
+    let typeFigure = document.querySelector('.type-figure');
+    if(typeFigure == null)
+        ErrorDOMElement(); 
+   
+    //change to triangle figure.
+    if(typeFigure.value == 'triangle') {
+        let triangleOperationOption = document.querySelector('.triangle-operation-select');
+        let triangleFormulaSelect = document.querySelector('.triangle-formula');
+        let triangleArea = document.querySelector('.triangle-area');
+        let trianglePerimeter = document.querySelector('.triangle-perimeter');
+        let inputsByBaseAndHeight = document.querySelector('.by-base-and-height');
+        let inputsByHeronsFormula = document.querySelector('.by-herons-formula');
+        let labelEnter = document.querySelector('.triangle-label-enter');
+
+        if(triangleOperationOption == null || triangleFormulaSelect == null || triangleArea == null 
+            || trianglePerimeter == null || inputsByBaseAndHeight == null 
+            || inputsByHeronsFormula == null || labelEnter == null)
+            ErrorDOMElement();
+        
+        await hiddenElements('.triangle-info > article');
+        await hiddenElements('.traingle-inputs > div');
+
+        if(triangleOperationOption.value == 'area') {
+            triangleArea.style.display = 'block';
+            triangleFormulaSelect.style.display = 'block';
+            inputsByBaseAndHeight.style.display = 'flex';
+            labelEnter.innerHTML = 'Enter Area:';
+        } else if(triangleOperationOption.value == 'perimeter') {
+            trianglePerimeter.style.display = 'block';
+            triangleFormulaSelect.style.display = 'none';
+            inputsByHeronsFormula.style.display = 'flex';
+            labelEnter.innerHTML = 'Enter Perimeter:';
+        }
+    }
+}
+
 function checkNumberIsInteger(n) {
     const number = Number(n);
     return typeof number == 'number' && !isNaN(number);
 }
 
-function calcAreaByBaseAndHeight(base, height) {
+function calcTriangleAreaByBaseAndHeight(base, height) {
     return (Number(base) * Number(height)) / 2;
 }
 
-function calcByHeronsFormula(a, b, c) {
+function calcTriangleAreaByHeronsFormula(a, b, c) {
     //semiPerimeter
     const s = (Number(a) + Number(b) + Number(c)) / 2;
     const area = Math.sqrt(s * (s - Number(a)) * (s - Number(b)) * (s - Number(c)));
     return area.toFixed(2);
 }
 
-function calcAreaBySidesAndAngle(sideA, sideB, angle) {
+function calcTriangleAreaBySidesAndAngle(sideA, sideB, angle) {
     const sinFromAngle = Math.sin(Number(angle) * Math.PI / 180);
     const area = 0.5 * (Number(sideA) * Number(sideB)) * sinFromAngle;
     return  area.toFixed(2);
