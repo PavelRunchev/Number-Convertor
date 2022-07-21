@@ -41,10 +41,10 @@ async function typeCubeForm() {
 
 function calcCubeSurfaceArea(a) {
     const sa = 6 * Math.pow(Number(a), 2);
-    return sa.toFixed(2).replace(/0+$/, '');
+    return sa.toFixed(2).replace(/\.*0+$/, '');
 }
 
 function calcCubeVolume(a) {
     const v = Math.pow(Number(a), 3);
-    return v.toFixed(2).replace(/0+$/, '');
+    return v.toFixed(2).replace(/\.*0+$/, '');
 }

@@ -73,8 +73,8 @@ async function typeFigure() {
         //show only cube form and cube info
         showFigure('.cube-form-container', '.cube-info');
     } else if(typeFigureSelect.value == 'pyramid') {
-        console.log(typeFigureSelect.value);
-        //todo
+        //show only pyramid form and pyramid info
+        showFigure('.pyramid-form-container', '.pyramid-info');
     } else if(typeFigureSelect.value == 'sphere') {
         //show only sphere form and sphere info
         showFigure('.sphere-form-container', '.sphere-info');
@@ -101,8 +101,10 @@ function calculateFigure(e) {
         trapezoidCalculate();
     } else if(typeFigureSelect.value == 'cube') {
         cubeCalculate();
+    } else if(typeFigureSelect.value == 'pyramid') {
+        pyramidCalculate();
     } else if(typeFigureSelect.value == 'sphere') {
-        sphereCalculate();
+            sphereCalculate();
     } else if(typeFigureSelect.value == 'cylinder') {
         cylinderCalculate();
     }   
@@ -243,6 +245,57 @@ function cubeCalculate() {
         }
     } else {
         errorInput.textContent = 'Invalid Cube a side!';
+    }
+}
+
+function pyramidCalculate() {
+    const pyramidFormulaSelect = document.querySelector('.pyramid-formula-select');
+    const operationFigureSelect = document.querySelector('.pyramid-operation-select');
+    
+    if(pyramidFormulaSelect == null || operationFigureSelect == null)
+        ErrorDOMElement();
+
+    if(pyramidFormulaSelect.value == 'square-pyramid') {
+        const [a, h] = Array.from(document.querySelectorAll('.square-pyramid-input > input'));
+        if(checkNumberIsInteger(a.value) && checkNumberIsInteger(h.value)) {
+            if(operationFigureSelect.value == 'surface-area') {
+                resultInput.value = calcSquarePyramidSurfaceArea(a.value, h.value);
+            } else if(operationFigureSelect.value == 'volume') {
+                resultInput.value = calcSquarePyramidVolume(a.value, h.value);
+            } else {
+                InvalidOperation();
+            }
+        } else {
+            errorInput.textContent = 'Invalid Pyramid sides!';
+        }
+    } else if(pyramidFormulaSelect.value == 'rectangular-pyramid') {
+        const [l, w, h] = Array.from(document.querySelectorAll('.rectangular-pyramid-input > input'));
+        if(checkNumberIsInteger(l.value) && checkNumberIsInteger(w.value) && checkNumberIsInteger(h.value)) {
+            if(operationFigureSelect.value == 'surface-area') {
+                resultInput.value = calcRectangularPyramidSurfaceArea(l.value, w.value, h.value);
+            } else if(operationFigureSelect.value == 'volume') {
+                resultInput.value = calcRectangularPyramidVolume(l.value, w.value, h.value);
+            } else {
+                InvalidOperation();
+            }
+        } else {
+            errorInput.textContent = 'Invalid Pyramid sides!';
+        }
+    } else if(pyramidFormulaSelect.value == 'triangular-pyramid') {
+        const [a, b, h] = Array.from(document.querySelectorAll('.triangular-pyramid-input > input'));
+        if(checkNumberIsInteger(a.value) && checkNumberIsInteger(b.value) && checkNumberIsInteger(h.value)) {
+            if(operationFigureSelect.value == 'surface-area') {
+                resultInput.value = calcTriangularPyramidSurfaceArea(a.value, b.value, h.value);
+            } else if(operationFigureSelect.value == 'volume') {
+                resultInput.value = calcTriangularPyramidVolume(a.value, b.value, h.value);
+            } else {
+                InvalidOperation();
+            }
+        } else {
+            errorInput.textContent = 'Invalid Pyramid sides!';
+        }
+    } else {
+        InvalidOperation();
     }
 }
 

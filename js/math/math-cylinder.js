@@ -42,10 +42,10 @@ async function typeCylinderForm() {
 
 function calcCylinderSurfaceArea(r, h) {
     const sa = 2 * Math.PI * Math.pow(Number(r), 2) + 2 * Math.PI * Number(r) * Number(h);
-    return sa.toFixed(2).replace(/0+$/, '');
+    return sa.toFixed(2).replace(/\.*0+$/, '');
 }
 
 function calcCylinderVolume(r, h) {
     const v = Number(h) * Math.PI * Math.pow(Number(r), 2);
-    return v.toFixed(2).replace(/0+$/, '');
+    return v.toFixed(2).replace(/\.*0+$/, '');
 }

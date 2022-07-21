@@ -1,8 +1,4 @@
 
-//
-//math-triangle.js must be import before math.js in HTML!!!
-//
-
 document.querySelector('.triangle-formula-select').addEventListener('change', typeTriangleFormula);
 
 function ErrorDOMElement() {
@@ -101,25 +97,25 @@ function checkNumberIsInteger(n) {
 
 function calcTriangleAreaByBaseAndHeight(base, height) {
     const area = (Number(base) * Number(height)) / 2;
-    return area.toFixed(2).replace(/0+$/, '');
+    return area.toFixed(2).replace(/\.*0+$/, '');
 }
 
 function calcTriangleAreaByHeronsFormula(a, b, c) {
     //semiPerimeter
     const s = (Number(a) + Number(b) + Number(c)) / 2;
     const area = Math.sqrt(s * (s - Number(a)) * (s - Number(b)) * (s - Number(c)));
-    return area.toFixed(2).replace(/0+$/, '');
+    return area.toFixed(2).replace(/\.*0+$/, '');
 }
 
 function calcTriangleAreaBySidesAndAngle(sideA, sideB, angle) {
     const sinFromAngle = Math.sin(Number(angle) * Math.PI / 180);
     const area = 0.5 * (Number(sideA) * Number(sideB)) * sinFromAngle;
-    return  area.toFixed(2).replace(/0+$/, '');
+    return  area.toFixed(2).replace(/\.*0+$/, '');
 }
 
 function calcTrianglePerimeter(num1, num2, num3) {
     const perimeter = Number(num1) + Number(num2) + Number(num3);
-    return perimeter.toFixed(2).replace(/0+$/, '');
+    return perimeter.toFixed(2).replace(/\.*0+$/, '');
 }
 
 

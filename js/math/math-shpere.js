@@ -43,10 +43,10 @@ async function typeSphereForm() {
 
 function  calcSphereSurfaceArea(r) {
     const sa = 4 * Math.PI * Math.pow(Number(r), 2);
-    return sa.toFixed(2).replace(/0+$/, '');
+    return sa.toFixed(2).replace(/\.*0+$/, '');
 }
 
 function calcSphereVolume(r) {
     const v = Math.PI * Math.pow(Number(r), 3) * (4 / 3);
-    return v.toFixed(2).replace(/0+$/, '');
+    return v.toFixed(2).replace(/\.*0+$/, '');
 }

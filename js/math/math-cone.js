@@ -42,11 +42,11 @@ async function typeConeForm() {
 function calcConeSurfaceArea(r, h) {
     const t = Math.sqrt(Math.pow(Number(r), 2) + Math.pow(Number(h), 2));
     const sa = Math.PI * Number(r) * t + Math.PI * Math.pow(Number(r), 2);
-    return sa.toFixed(2).replace(/0+$/, '');
+    return sa.toFixed(2).replace(/\.*0+$/, '');
 }
 
 function calcConeVolume(r, h) {
     const volume = (Math.PI * Math.pow(Number(r), 2) * Number(h)) / 3;
-    return volume.toFixed(2).replace(/0+$/, '');
+    return volume.toFixed(2).replace(/\.*0+$/, '');
 }
 

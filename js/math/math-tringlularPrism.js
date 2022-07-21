@@ -54,10 +54,10 @@ function calcTriangularPrismSurficeArea(b, h, l, c) {
     const sideRectangles = 2 * (Number(c) * Number(l));
     const bottomRectangle = Number(b) * Number(l);
     const sa = frontTriangle + sideRectangles + bottomRectangle;
-    return sa.toFixed(2).replace(/0+$/, '');
+    return sa.toFixed(2).replace(/\.*0+$/, '');
 }
 
 function calcTriangularPrismVolume(w, h, l) {
     const volume = (Number(w) * Number(h) * Number(l)) / 2;
-    return volume.toFixed(2).replace(/0+$/, '');
+    return volume.toFixed(2).replace(/\.*0+$/, '');
 }

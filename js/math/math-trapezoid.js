@@ -50,10 +50,10 @@ async function typeTrapezoidForm() {
 
 function calcTrapezoidArea(a, b, h) {
     const area = ((Number(a) + Number(b)) / 2) * Number(h);
-    return area.toFixed(2).replace(/0+$/, '');
+    return area.toFixed(2).replace(/\.*0+$/, '');
 }
 
 function calcTrapezoidPerimeter(a, b, c, d) {
     const perimeter = Number(a) + Number(b) + Number(c) + Number(d);
-    return perimeter.toFixed(2).replace(/0+$/, '');
+    return perimeter.toFixed(2).replace(/\.*0+$/, '');
 }
