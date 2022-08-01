@@ -80,20 +80,40 @@
         }
 
         & .list-item {
-            height: 2rem;
+            display: inline-block;
+            position: relative;
+            cursor: pointer;
+            height: 2.2rem;
+            margin: 0 5px;
+            padding: 0 8px;
             @include flex-box(row, center, center);
+            background-color: transparent;
+            transition: background-color 0.5s;
+
+            &-underline {
+                position: absolute;
+                top: 35px;
+                left: 0;
+                height: 2px;
+                width: 0;
+                background-color: whitesmoke;
+                transition: all 0.5s;
+            }
+
+            &:hover {
+                background-color: $secondary-color-blue;
+            }
+
+            &:hover .list-item-underline {
+                width: 100%;
+                left: 0;
+            }
         }
 
         & .link {
             cursor: pointer;
             text-decoration: none !important;
             color: whitesmoke !important;
-            border-bottom: 1px solid transparent;
-            transition: all 0.5s;
-        }
-    
-        & .link:hover {
-            border-color: whitesmoke;
         }
     }
 }

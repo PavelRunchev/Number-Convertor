@@ -29,3 +29,22 @@
     @include btn-box-shadow-black;
 }
 
+.copy-container {
+    max-width: 400px !important;
+
+    .fa-clipboard,
+    .fa-check {
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+        margin: 2% 0 2% auto;
+        color: $third-color-blue;
+    }
+
+    .fa-check {
+        display: none;
+    }
+}
+
+
+
