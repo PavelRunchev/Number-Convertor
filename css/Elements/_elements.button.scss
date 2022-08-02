@@ -11,13 +11,14 @@
     overflow: hidden;
     @include btn-box-shadow-black;
     overflow: hidden !important;
-    background: linear-gradient(2deg, rgba(91,98,104,1) 35%, rgba(213,248,255,1) 100%); 
+    //background: linear-gradient(2deg, rgba(91,98,104,1) 35%, rgba(213,248,255,1) 100%); 
+    background-color: #626567;
+    //background-image: linear-gradient(to right, skyblue, lightgrey, lightcoral);
     transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    -webkit-transition: all 0.5s ease-in-out;
 
     &:hover {
-        background: linear-gradient(2deg, rgba(91,98,104,1) 55%, rgba(213,248,255,1) 100%); 
+        //background: linear-gradient(2deg, rgba(91,98,104,1) 55%, rgba(213,248,255,1) 100%);
+        background-color: #757575;
     }
 }
 
@@ -27,12 +28,14 @@
     border-top-left-radius: 5px !important;
     border-bottom-left-radius: 5px !important;
     @include btn-box-shadow-black;
-    background: linear-gradient(2deg, rgba(62,147,255,1) 40%, rgba(213,248,255,1) 100%); 
+    background-color: #3498DB;
+    //background: linear-gradient(2deg, rgba(62,147,255,1) 40%, rgba(213,248,255,1) 100%); 
 }
 
 .btn-calculate-figures:hover,
 .btn-convert:hover {
-    background: linear-gradient(2deg, rgba(62,147,255,1) 55%, rgba(213,248,255,1) 100%); 
+    //background: linear-gradient(2deg, rgba(62,147,255,1) 55%, rgba(213,248,255,1) 100%); 
+    background-color: #2E86C1;
 }
 
 .span-convert {

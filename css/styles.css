@@ -405,7 +405,7 @@ body hr {
 
 .header-container {
   padding: 10px;
-  background: linear-gradient(2deg, rgb(62, 147, 255) 60%, rgb(213, 248, 255) 100%);
+  background: linear-gradient(2deg, rgb(52, 152, 219) 60%, rgb(213, 248, 255) 100%);
 }
 @media screen and (max-width: 599px) {
   .header-container {
@@ -542,7 +542,7 @@ body hr {
   transition: all 0.5s;
 }
 .header-container > .nav-container .list-item:hover {
-  background-color: #3573CA;
+  background-color: #2E86C1;
 }
 .header-container > .nav-container .list-item:hover .list-item-underline {
   width: 100%;
@@ -720,13 +720,11 @@ select:focus,
   overflow: hidden;
   box-shadow: 0px 5px 13px -7px #000000, 1px 0px 30px -14px rgba(0, 0, 0, 0);
   overflow: hidden !important;
-  background: linear-gradient(2deg, rgb(91, 98, 104) 35%, rgb(213, 248, 255) 100%);
+  background-color: #626567;
   transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-  -webkit-transition: all 0.5s ease-in-out;
 }
 .e-button:hover {
-  background: linear-gradient(2deg, rgb(91, 98, 104) 55%, rgb(213, 248, 255) 100%);
+  background-color: #757575;
 }
 
 .btn-convert,
@@ -735,12 +733,12 @@ select:focus,
   border-top-left-radius: 5px !important;
   border-bottom-left-radius: 5px !important;
   box-shadow: 0px 5px 13px -7px #000000, 1px 0px 30px -14px rgba(0, 0, 0, 0);
-  background: linear-gradient(2deg, rgb(62, 147, 255) 40%, rgb(213, 248, 255) 100%);
+  background-color: #3498DB;
 }
 
 .btn-calculate-figures:hover,
 .btn-convert:hover {
-  background: linear-gradient(2deg, rgb(62, 147, 255) 55%, rgb(213, 248, 255) 100%);
+  background-color: #2E86C1;
 }
 
 .span-convert {
@@ -774,7 +772,7 @@ select:focus,
 }
 
 footer {
-  background: linear-gradient(2deg, rgb(62, 147, 255) 60%, rgb(213, 248, 255) 100%);
+  background: linear-gradient(2deg, rgb(52, 152, 219) 60%, rgb(213, 248, 255) 100%);
   padding: 15px 0px;
   color: whitesmoke;
 }
@@ -942,6 +940,8 @@ textarea:focus,
   font-weight: bold;
   transition: all 0.4s;
   font-size: 18px;
+  color: whitesmoke;
+  text-decoration: none !important;
 }
 .list-anchor .fa-table, .list-anchor .fa-university, .list-anchor .fa-calculator {
   font-size: 16px;
@@ -960,16 +960,25 @@ textarea:focus,
   color: #76D7EA !important;
 }
 
+.a-table:hover {
+  color: #FC5A8D !important;
+}
 .a-table:hover .fa-table {
   opacity: 1;
   visibility: visible;
 }
 
+.a-university:hover {
+  color: #A7F432 !important;
+}
 .a-university:hover .fa-university {
   opacity: 1;
   visibility: visible;
 }
 
+.a-calculator:hover {
+  color: #76D7EA !important;
+}
 .a-calculator:hover .fa-calculator {
   opacity: 1;
   visibility: visible;
@@ -1234,4 +1243,35 @@ section > h5, section > div, section > p {
 .triangle-area-herons-formula,
 .triangle-area-with-angle-formula {
   display: none;
+}
+
+.container-currency {
+  width: 450px;
+  min-height: 550px;
+}
+
+.container-currency-live {
+  width: 100%;
+}
+
+.container-main-currency-live {
+  display: none;
+  width: 100%;
+  background: linear-gradient(2deg, rgba(91, 98, 104, 0.08) 100%, rgb(213, 248, 255) 100%) !important;
+  border-radius: 5px;
+  padding: 2%;
+  overflow: auto;
+  box-shadow: 0px 5px 13px -7px #000000, 1px 0px 30px -14px rgba(0, 0, 0, 0);
+}
+
+.usd-live-currency,
+.euro-live-currency,
+.pound-live-currency,
+.ruble-live-currency,
+.lev-live-currency,
+.turkey-lira-live-currency,
+.yena-live-currency,
+.yuan-live-currency {
+  font-weight: bold;
+  color: #3498DB;
 }/*# sourceMappingURL=styles.css.map */

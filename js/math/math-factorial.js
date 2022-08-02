@@ -34,12 +34,17 @@ function factorial(e) {
         throw new Error('Missing DOM Element!')
     }
 
-    const n = Number(input.value);
-    let fact = 1;
-    for (let i = 1; i < n; i++) {
-        fact += fact * i;
-    }
+    let fact = calcFactorial(Number(input.value));
 
     result.value = fact;
     input.value = '';
 }
+
+function calcFactorial(n) {
+    let fact = 1;
+    for (let i = 1; i < n; i++) { fact += fact * i; }
+
+    return fact;
+}
+
+

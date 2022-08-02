@@ -1,6 +1,6 @@
 
 footer {
-    background: linear-gradient(2deg, rgba(62,147,255,1) 60%, rgba(213,248,255,1) 100%); 
+    background: linear-gradient(2deg, rgba(52,152,219,1) 60%, rgba(213,248,255,1) 100%); 
     padding: 15px 0px;
     color: whitesmoke;
 }
@@ -144,6 +144,8 @@ textarea:focus,
     font-weight: bold;
     transition: all 0.4s;
     font-size: 18px;
+    color: whitesmoke;
+    text-decoration: none !important;
 
     & .fa-table,
     & .fa-university,
@@ -169,9 +171,9 @@ textarea:focus,
 }
 
 .a-table {
-    // &:hover {
-    //     color: #C53151 !important;
-    // }
+    &:hover {
+        color: #FC5A8D !important;
+    }
 
     &:hover .fa-table {
         opacity: 1;
@@ -180,9 +182,9 @@ textarea:focus,
 }
 
 .a-university {
-    // &:hover {
-    //     color: #A7F432 !important;
-    // }
+    &:hover {
+        color: #A7F432 !important;
+    }
 
     &:hover .fa-university {
         opacity: 1;
@@ -191,9 +193,9 @@ textarea:focus,
 }
 
 .a-calculator {
-    // &:hover {
-    //     color: #76D7EA !important;
-    // }
+    &:hover {
+        color: #76D7EA !important;
+    }
 
     &:hover .fa-calculator {
         opacity: 1;

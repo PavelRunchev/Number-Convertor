@@ -1,6 +1,6 @@
 .header-container {
     padding: 10px;
-    background: linear-gradient(2deg, rgba(62,147,255,1) 60%, rgba(213,248,255,1) 100%); 
+    background: linear-gradient(2deg, rgba(52,152,219,1) 60%, rgba(213,248,255,1) 100%); 
 
     @include for-phone-only {
         margin: 0% 0%;
@@ -101,7 +101,7 @@
             }
 
             &:hover {
-                background-color: $secondary-color-blue;
+                background-color: #2E86C1;
             }
 
             &:hover .list-item-underline {
