@@ -20,3 +20,8 @@
 	justify-content: $content;
 	align-items: $items;
 }
+
+@keyframes fadeIn {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}

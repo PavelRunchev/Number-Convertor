@@ -360,6 +360,22 @@ a, button {
 
 /* colors */
 /* background colors */
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 body {
   width: 100%;
   min-height: 100%;
@@ -401,6 +417,9 @@ body hr {
   background-color: transparent;
   margin: 0;
   padding: 0;
+  opacity: 0;
+  -webkit-animation: fadeIn 1.5s forwards;
+          animation: fadeIn 1.5s forwards;
 }
 
 .header-container {
