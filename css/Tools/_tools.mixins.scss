@@ -21,6 +21,23 @@
 	align-items: $items;
 }
 
+@mixin input-select-focus {
+	outline: 0 none !important;
+    border-color: #3498DB !important;
+    box-shadow: 0 1px 1px rgba(0,0,0, 0.095) inset, 0 0 8px rgba(77,147,217, 0.45) !important;
+}
+
+@mixin code-container {
+	max-width: 400px;
+	font-size: 14px;
+    color: $third-color-blue !important;
+    background: linear-gradient(2deg, rgba(91,98,104,0.08) 100%, rgba(213,248,255,1) 100%) !important;
+    border-radius: 5px;
+    padding: 5px;
+    overflow: auto;
+    @include btn-box-shadow-black;
+}
+
 @keyframes fadeIn {
 	0% { opacity: 0; }
 	100% { opacity: 1; }

@@ -444,5 +444,19 @@ const codeFibonacci = 'public static int Fibonacci(int n)' +
     '\n}';
 
 
+const codeDistanceConvert = 'public static double DistanceConvert(double n, string from, string to)' +
+    '\n{' +
+    '\n     Dictionary<string, double> data = new Dictionary<string, double>()' +
+    '\n     {' +
+    '\n         {"km", 1000}, {"m", 1}, {"cm", 0.01}, {"mm", 0.001},' +
+    '\n         {"mi", 1609.34}, {"nm", 1852}, {"yrd", 0.9144},' +
+    '\n         {"ft", 0.3048}, {"in", 0.0254}' +
+    '\n     };' +
+    '\n' +
+    '\n     double result = n * (data[from] / data[to]);' +
+    '\n     return result;' +
+    '\n}';
+
+
 
 

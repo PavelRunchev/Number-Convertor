@@ -118,6 +118,11 @@
     }
 }
 
+.fa-angle-down {
+    color: whitesmoke;
+    padding-left: 5px;
+}
+
 .e-header {
     @include for-phone-only {
         width: 100%;

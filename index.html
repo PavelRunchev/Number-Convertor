@@ -46,6 +46,11 @@
                     <a class="link" href="./currency.html">Currency</a>
                     <span class="list-item-underline"></span>
                 </li>
+                <li class="list-item">
+                    <a class="link" href="#">Inspiration </a>
+                    <i class="fas fa-angle-down"></i>
+                    <span class="list-item-underline"></span>
+                </li>
             </ul>
         </nav>
         <!-- Navbar -->
@@ -64,54 +69,55 @@
         <div class="font-italic">Octal to Decimal, Octal to Binary, Octal to Hexadecimal</div>
 
         <div class="container-form">
-            <form class="form">
-                <h4 class="text-center my-3">Calculator</h4>
-                <label for="input" class="text-left w-100 pl-3 label-input-number">Enter decimal number:</label>
-                <div class="input-group">
-                    <input type="text" id="typeNumber" class="form-control input-number" />
-                    <div class="input-group-append">
-                        <span class="input-group-text span-input-number">10</span>
+            <form class="e-form">
+                <h3 class="text-center my-3 py-4">Calculator</h3>
+                <div class="form-inner-container">
+                    <label for="input" class="text-left w-100 pl-3 label-input-number">Enter decimal number:</label>
+                    <div class="input-group">
+                        <input type="text" id="typeNumber" class="form-control input-number" />
+                        <div class="input-group-append">
+                            <span class="input-group-text span-input-number">10</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1" class="pl-3">From</label>
+                        <select class="form-control form-select form-select-from" id="exampleFormControlSelect1">
+                        <option selected value="decimal">Decimal</option>
+                        <option value="binary">Binary</option>
+                        <option value="hexadecimal">Hexadecimal</option>
+                        <option value="octal">Octal</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1" class="pl-3">To</label>
+                        <select class="form-control form-select form-select-to" id="exampleFormControlSelect1">
+                        <option selected value="decimal">Decimal</option>
+                        <option value="binary">Binary</option>
+                        <option value="hexadecimal">Hexadecimal</option>
+                        <option value="octal">Octal</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="input" class="text-left w-100 pl-3 label-result">Result: <span class="span-result-number"></span><span class="text-danger"></span></label>
+                        <button class="e-button btn-convert" type="button">
+                            <span class="span-convert">Convert it</span>
+                            <i class="fas fa-long-arrow-alt-right"></i>
+                        </button>
+                    
+                        <input type="text" disabled readonly placeholder="Result" class="form-control input-result" />
+                        <div class="input-group-append">
+                            <span class="input-group-text input-number-span">10</span>
+                        </div>
+                        <button class="e-button btn-reset" type="button">Reset</button>
+                    </div>
+                    
+                    <div class="input-group my-3">
+                        <textarea class="form-control text-area-result" style="height:100%;"  placeholder="Result" disabled readonly id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <div class="input-group-append">
+                            <span class="input-group-text text-area-number-span">10</span>
+                        </div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="exampleFormControlSelect1" class="pl-3">From</label>
-                    <select class="form-control form-select form-select-from" id="exampleFormControlSelect1">
-                      <option selected value="decimal">Decimal</option>
-                      <option value="binary">Binary</option>
-                      <option value="hexadecimal">Hexadecimal</option>
-                      <option value="octal">Octal</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlSelect1" class="pl-3">To</label>
-                    <select class="form-control form-select form-select-to" id="exampleFormControlSelect1">
-                      <option selected value="decimal">Decimal</option>
-                      <option value="binary">Binary</option>
-                      <option value="hexadecimal">Hexadecimal</option>
-                      <option value="octal">Octal</option>
-                    </select>
-                </div>
-                <div class="input-group">
-                    <label for="input" class="text-left w-100 pl-3 label-result">Result: <span class="span-result-number"></span><span class="text-danger"></span></label>
-                    <button class="e-button btn-convert" type="button">
-                        <span class="span-convert">Convert it</span>
-                        <i class="fas fa-long-arrow-alt-right"></i>
-                    </button>
-                   
-                    <input type="text" disabled readonly placeholder="Result" class="form-control input-result" />
-                    <div class="input-group-append">
-                        <span class="input-group-text input-number-span">10</span>
-                    </div>
-                    <button class="e-button btn-reset" type="button">Reset</button>
-                </div>
-                
-                <div class="input-group my-3">
-                    <textarea class="form-control text-area-result" style="height:100%;"  placeholder="Result" disabled readonly id="exampleFormControlTextarea1" rows="3"></textarea>
-                    <div class="input-group-append">
-                        <span class="input-group-text text-area-number-span">10</span>
-                    </div>
-                </div>
-               
             </form>
 
             <section>
@@ -285,7 +291,7 @@
                 <div class="code-container my-5">
                     <p>
                         <button
-                          class="e-button"
+                          class="e-button-math-default"
                           type="button"
                           data-mdb-toggle="collapse"
                           data-mdb-target="#collapseWidthExample"
@@ -312,7 +318,7 @@
                     </div>
                 </div>
 
-                <table class="table table-bordered" id="table-number-systems">
+                <table class="table table-bordered mb-5" id="table-number-systems">
                     <thead>
                       <tr>
                         <th scope="col">Decimal</th>

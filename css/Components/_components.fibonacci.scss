@@ -15,12 +15,9 @@
 }
 
 .code-fibonacci > pre {
-    max-width: 400px !important;
-    font-size: 14px !important;
-    color: $third-color-blue !important;
-    background: linear-gradient(2deg, rgba(91,98,104,0.08) 100%, rgba(213,248,255,1) 100%) !important;
-    border-radius: 5px;
-    padding: 5px;
-    overflow: auto;
-    @include btn-box-shadow-black;
+    @include code-container;
+}
+
+.input-fibonacci-number:focus {
+    @include input-select-focus;
 }

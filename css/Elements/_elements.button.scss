@@ -22,6 +22,49 @@
     }
 }
 
+.e-button-math {
+    cursor: pointer;
+    position: relative;
+    text-transform: uppercase;
+	text-decoration:none;
+	display: block;
+	padding: 3px 20px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: none;
+    color: whitesmoke !important;
+    overflow: hidden;
+    @include btn-box-shadow-black;
+    overflow: hidden !important;
+    background-color: #3498DB;
+    transition: all 0.5s ease-in-out;
+
+    &:hover {
+        background-color: #2E86C1;
+    }
+}
+
+.e-button-math-default {
+    cursor: pointer;
+    position: relative;
+    text-transform: uppercase;
+	text-decoration:none;
+	display: block;
+	padding: 7px 20px;
+	border-radius: 5px;
+    border: none;
+    color: whitesmoke !important;
+    overflow: hidden;
+    @include btn-box-shadow-black;
+    overflow: hidden !important;
+    background-color: #626567;
+    transition: all 0.5s ease-in-out;
+
+    &:hover {
+        background-color: #757575;
+    }
+}
+
 .btn-convert,
 .btn-calculate-figures {
     overflow: hidden;

@@ -18,6 +18,33 @@
     }
 }
 
+.e-form {
+    display: block;
+    margin: 5% 0;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    @include primary-box-shadow-black;
+
+    &-title {
+        text-transform: capitalize;
+        font-size: 26px;
+        font-weight: 100;
+    }
+
+    & > h3 {
+        background-color: #3498DB;
+        padding: 3%;
+        color: whitesmoke;
+        text-align: center;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+}
+
+.form-inner-container {
+    padding: 15px;
+}
+
 #input-number:focus {
     border-color: $primary-color-blue !important;
     outline: none !important;

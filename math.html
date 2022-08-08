@@ -61,7 +61,7 @@
             <h3 class="text-left">Factorial (n!)</h3>
             <p>
                 <button
-                  class="e-button"
+                  class="e-button-math-default"
                   type="button"
                   data-mdb-toggle="collapse"
                   data-mdb-target="#collapseWidthExample"
@@ -85,19 +85,22 @@
                     <div>Example: 5! = 5×(5-1)! = 5×4! = 5×24 = 120</div>
         
                     <div class="my-3">
-                        <h3>Factorial Calculator</h3>
-                        <form class="form form-factorial my-3">
-                            <label for="input" class="text-left w-100 pl-3 label-input-number">Enter number:</label>
-                            <div class="input-group">
-                                <input type="number" class="form-control input-factorial-number" placeholder="Enter"/>
-                                <div class="input-group-append">
-                                    <button class="e-button btn-convert btn-factorial-calculate" type="button">Calculate</button>
+                        
+                        <form class="e-form form-factorial my-3">
+                            <h3>Factorial Calculator</h3>
+                            <div class="form-inner-container">
+                                <label for="input" class="text-left w-100 pl-3 label-input-number">Enter number:</label>
+                                <div class="input-group">
+                                    <input type="number" class="form-control input-factorial-number" placeholder="Enter"/>
+                                    <div class="input-group-append">
+                                        <button class="e-button-math btn-factorial-calculate" type="button">Calculate</button>
+                                    </div>
+                                    
                                 </div>
-                                
-                            </div>
-                            <div class="input-group">
-                                <label for="input" class="text-left w-100 pl-3 mt-2 label-input-number">Result:</label>
-                                <input type="text" class="form-control input-factorial-result" placeholder="Result" disabled readonly>
+                                <div class="input-group">
+                                    <label for="input" class="text-left w-100 pl-3 mt-2 label-input-number">Result:</label>
+                                    <input type="text" class="form-control input-factorial-result" placeholder="Result" disabled readonly>
+                                </div>
                             </div>
                         </form>
                     </div>
@@ -184,7 +187,7 @@
             <h3 class="text-left">Fibonacci Numbers & Sequence</h3>
             <p>
                 <button
-                  class="e-button"
+                  class="e-button-math-default"
                   type="button"
                   data-mdb-toggle="collapse"
                   data-mdb-target="#collapseWidthExample2"
@@ -207,19 +210,22 @@
                     <div>...</div>
         
                     <div class="my-3">
-                        <h3>Fibonacci Calculator</h3>
-                        <form class="form form-factorial my-3">
-                            <label for="input" class="text-left w-100 pl-3 label-input-number">Enter number:</label>
-                            <div class="input-group">
-                                <input type="number" class="form-control input-fibonacci-number" placeholder="Enter"/>
-                                <div class="input-group-append">
-                                    <button class="e-button btn-convert btn-fibonacci-calculate" type="button">Calculate</button>
+                        
+                        <form class="e-form form-factorial my-3">
+                            <h3>Fibonacci Calculator</h3>
+                            <div class="form-inner-container">
+                                <label for="input" class="text-left w-100 pl-3 label-input-number">Enter number:</label>
+                                <div class="input-group">
+                                    <input type="number" class="form-control input-fibonacci-number" placeholder="Enter"/>
+                                    <div class="input-group-append">
+                                        <button class="e-button-math btn-fibonacci-calculate" type="button">Calculate</button>
+                                    </div>
+                                    
                                 </div>
-                                
-                            </div>
-                            <div class="input-group">
-                                <label for="input" class="text-left w-100 pl-3 mt-2 label-input-number">Result:</label>
-                                <input type="text" class="form-control input-fibonacci-result" placeholder="Result" disabled readonly>
+                                <div class="input-group">
+                                    <label for="input" class="text-left w-100 pl-3 mt-2 label-input-number">Result:</label>
+                                    <input type="text" class="form-control input-fibonacci-result" placeholder="Result" disabled readonly>
+                                </div>
                             </div>
                         </form>
                     </div>
@@ -312,10 +318,10 @@
         <hr>
 
         <section class="container-form-figures">
-            <h3>Figure Calcolator</h3>
+            <h3>Figure Calculator</h3>
             <p>
                 <button
-                  class="e-button"
+                  class="e-button-math-default"
                   type="button"
                   data-mdb-toggle="collapse"
                   data-mdb-target="#collapseWidthExample3"
@@ -328,219 +334,221 @@
             <div>
             <div class="collapse collapse-horizontal" id="collapseWidthExample3" >
                 <div>Choice type figure.</div>
-                <form class="form">
-                    <h4 class="text-center my-3">Calculator</h4>
-                    <div class="form-group">
-                        <label for="exampleFormControlSelect1" class="pl-3">Type figure</label>
-                        <select class="form-control form-select type-figure" id="exampleFormControlSelect1">
-                        <option selected value="triangle">Triangle</option>
-                        <option value="triangular-prism">Triangular Prism</option>
-                        <option value="cone">Cone</option>
-                        <option value="trapezoid">Trapezoid</option>
-                        <option value="cube">Cube</option>
-                        <option value="pyramid">Pyramid</option>
-                        <option value="sphere">Sphere</option>
-                        <option value="cylinder">Cylinder</option>
-                        </select>
-                    </div>
-
-                    <section class="triangle-form-container figure">
+                <form class="e-form">
+                    <h3 class="text-center my-2 py-4">Figure Calculator</h3>
+                    <div class="form-inner-container">
                         <div class="form-group">
-                            <label for="exampleFormControlSelect2" class="pl-3">Operation</label>
-                            <select class="form-control form-select triangle-operation-select" id="exampleFormControlSelect2">
-                                <option selected value="area">Area</option>
-                                <option value="perimeter">Perimeter</option>
-                            </select>
-                        </div>
-        
-                        <div class="form-group triangle-formula">
-                            <label for="exampleFormControlSelect3" class="pl-3">Formula</label>
-                            <select class="form-control form-select triangle-formula-select" id="exampleFormControlSelect3">
-                                <option selected value="area-base-height">Area with base and height</option>
-                                <option value="herons-formula">Area with Heron's formula</option>
-                                <option value="area-sides-and-angle">With 2 Side and included angle</option>
-                            </select>
-                        </div>
-        
-                        <div class="form-group traingle-inputs">
-                            <label class="triangle-label-enter">Enter area:</label>
-                            <div class="input-group by-base-and-height">
-                                <input type="text" placeholder="Base" class="form-control"/>
-                                <input type="text" placeholder="Height" class="form-control"/>
-                            </div>
-                            <div class="input-group by-herons-formula">
-                                <input type="text" placeholder="Side a" class="form-control"/>
-                                <input type="text" placeholder="Side b" class="form-control"/>
-                                <input type="text" placeholder="Side c" class="form-control"/>
-                            </div>
-                            <div class="input-group by-sides-and-angle">
-                                <input type="text" placeholder="Side b" class="form-control"/>
-                                <input type="text" placeholder="Side c" class="form-control"/>
-                                <input type="text" placeholder="Angle" class="form-control"/>
-                            </div>
-                        </div>
-                    </section>
-                    
-                    <section class="triangularPrism-form-container figure">
-                        <div class="form-group">
-                            <label for="exampleFormControlSelect2" class="pl-3">Operation</label>
-                            <select class="form-control form-select triangular-prism-operation-select" id="exampleFormControlSelect2">
-                                <option selected value="surface-area">Surface Area</option>
-                                <option value="volume">Volume</option>
-                            </select>
-                        </div>
-                        <div class="form-group traingular-prism-inputs">
-                            <label class="traingular-prism-label-enter">Surface area enter:</label>
-                            <div class="input-group traingular-prism-surface-area">
-                                <input type="text" placeholder="SideB" class="form-control"/>
-                                <input type="text" placeholder="Height" class="form-control"/>
-                                <input type="text" placeholder="Length" class="form-control"/>
-                                <input type="text" placeholder="SideC" class="form-control"/>
-                            </div>
-                            <div class="input-group traingular-prism-volume">
-                                <input type="text" placeholder="Width" class="form-control"/>
-                                <input type="text" placeholder="Height" class="form-control"/>
-                                <input type="text" placeholder="Length" class="form-control"/>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="cone-form-container figure">
-                        <div class="form-group">
-                            <label for="exampleFormControlSelect3" class="pl-3">Operation</label>
-                            <select class="form-control form-select cone-operation-select" id="exampleFormControlSelect3">
-                                <option selected value="surface-area">Surface Area</option>
-                                <option value="volume">Volume</option>
-                            </select>
-                        </div>
-                        <div class="form-group cone-inputs">
-                            <label class="cone-label-enter">Surface area enter:</label>
-                            <div class="input-group">
-                                <input type="text" placeholder="r" class="form-control"/>
-                                <input type="text" placeholder="h" class="form-control"/>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="trapezoid-form-container figure">
-                        <div class="form-group">
-                            <label for="exampleFormControlSelect4" class="pl-3">Operation</label>
-                            <select class="form-control form-select trapezoid-operation-select" id="exampleFormControlSelect4">
-                                <option selected value="area">Area</option>
-                                <option value="perimeter">Perimeter</option>
-                            </select>
-                        </div>
-                        <div class="form-group trapezoid-inputs">
-                            <label class="trapezoid-label-enter">Area enter:</label>
-                            <div class="input-group trapezoid-area">
-                                <input type="text" placeholder="a" class="form-control"/>
-                                <input type="text" placeholder="b" class="form-control"/>
-                                <input type="text" placeholder="h" class="form-control"/>
-                            </div>
-                            <div class="input-group trapezoid-perimeter">
-                                <input type="text" placeholder="a" class="form-control"/>
-                                <input type="text" placeholder="b" class="form-control"/>
-                                <input type="text" placeholder="c" class="form-control"/>
-                                <input type="text" placeholder="d" class="form-control"/>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="cube-form-container figure">
-                        <div class="form-group">
-                            <label for="exampleFormControlSelect5" class="pl-3">Operation</label>
-                            <select class="form-control form-select cube-operation-select" id="exampleFormControlSelect5">
-                                <option selected value="surface-area">Surface Area</option>
-                                <option value="volume">Volume</option>
-                            </select>
-                        </div>
-                        <div class="form-group cube-inputs">
-                            <label class="cube-label-enter">Surface area enter:</label>
-                            <div class="input-group">
-                                <input type="text" placeholder="a" class="form-control"/>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="pyramid-form-container figure">
-                        <div class="form-group triangle-formula">
-                            <label for="exampleFormControlSelect6" class="pl-3">Type Pyramid</label>
-                            <select class="form-control form-select pyramid-formula-select" id="exampleFormControlSelect6">
-                                <option selected value="square-pyramid">Square Pyramid</option>
-                                <option value="rectangular-pyramid">Rectangular Pyramid</option>
-                                <option value="triangular-pyramid">Triangular Pyramid</option>
+                            <label for="exampleFormControlSelect1" class="pl-3">Type figure</label>
+                            <select class="form-control form-select type-figure" id="exampleFormControlSelect1">
+                            <option selected value="triangle">Triangle</option>
+                            <option value="triangular-prism">Triangular Prism</option>
+                            <option value="cone">Cone</option>
+                            <option value="trapezoid">Trapezoid</option>
+                            <option value="cube">Cube</option>
+                            <option value="pyramid">Pyramid</option>
+                            <option value="sphere">Sphere</option>
+                            <option value="cylinder">Cylinder</option>
                             </select>
                         </div>
 
-                        <div class="form-group">
-                            <label for="exampleFormControlSelect7" class="pl-3">Operation</label>
-                            <select class="form-control form-select pyramid-operation-select" id="exampleFormControlSelect7">
-                                <option selected value="surface-area">Surface Area</option>
-                                <option value="volume">Volume</option>
-                            </select>
-                        </div>
+                        <section class="triangle-form-container figure">
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect2" class="pl-3">Operation</label>
+                                <select class="form-control form-select triangle-operation-select" id="exampleFormControlSelect2">
+                                    <option selected value="area">Area</option>
+                                    <option value="perimeter">Perimeter</option>
+                                </select>
+                            </div>
+            
+                            <div class="form-group triangle-formula">
+                                <label for="exampleFormControlSelect3" class="pl-3">Formula</label>
+                                <select class="form-control form-select triangle-formula-select" id="exampleFormControlSelect3">
+                                    <option selected value="area-base-height">Area with base and height</option>
+                                    <option value="herons-formula">Area with Heron's formula</option>
+                                    <option value="area-sides-and-angle">With 2 Side and included angle</option>
+                                </select>
+                            </div>
+            
+                            <div class="form-group traingle-inputs">
+                                <label class="triangle-label-enter">Enter area:</label>
+                                <div class="input-group by-base-and-height">
+                                    <input type="text" placeholder="Base" class="form-control"/>
+                                    <input type="text" placeholder="Height" class="form-control"/>
+                                </div>
+                                <div class="input-group by-herons-formula">
+                                    <input type="text" placeholder="Side a" class="form-control"/>
+                                    <input type="text" placeholder="Side b" class="form-control"/>
+                                    <input type="text" placeholder="Side c" class="form-control"/>
+                                </div>
+                                <div class="input-group by-sides-and-angle">
+                                    <input type="text" placeholder="Side b" class="form-control"/>
+                                    <input type="text" placeholder="Side c" class="form-control"/>
+                                    <input type="text" placeholder="Angle" class="form-control"/>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <section class="triangularPrism-form-container figure">
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect2" class="pl-3">Operation</label>
+                                <select class="form-control form-select triangular-prism-operation-select" id="exampleFormControlSelect2">
+                                    <option selected value="surface-area">Surface Area</option>
+                                    <option value="volume">Volume</option>
+                                </select>
+                            </div>
+                            <div class="form-group traingular-prism-inputs">
+                                <label class="traingular-prism-label-enter">Surface area enter:</label>
+                                <div class="input-group traingular-prism-surface-area">
+                                    <input type="text" placeholder="SideB" class="form-control"/>
+                                    <input type="text" placeholder="Height" class="form-control"/>
+                                    <input type="text" placeholder="Length" class="form-control"/>
+                                    <input type="text" placeholder="SideC" class="form-control"/>
+                                </div>
+                                <div class="input-group traingular-prism-volume">
+                                    <input type="text" placeholder="Width" class="form-control"/>
+                                    <input type="text" placeholder="Height" class="form-control"/>
+                                    <input type="text" placeholder="Length" class="form-control"/>
+                                </div>
+                            </div>
+                        </section>
 
-                        <div class="form-group pyramid-inputs">
-                            <label class="pyramid-label-enter">Surface area enter:</label>
-                            <div class="input-group square-pyramid-input">
-                                <input type="text" placeholder="a side" class="form-control"/>
-                                <input type="text" placeholder="height" class="form-control"/>
+                        <section class="cone-form-container figure">
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect3" class="pl-3">Operation</label>
+                                <select class="form-control form-select cone-operation-select" id="exampleFormControlSelect3">
+                                    <option selected value="surface-area">Surface Area</option>
+                                    <option value="volume">Volume</option>
+                                </select>
                             </div>
-                            <div class="input-group rectangular-pyramid-input">
-                                <input type="text" placeholder="length" class="form-control"/>
-                                <input type="text" placeholder="width" class="form-control"/>
-                                <input type="text" placeholder="height" class="form-control"/>
+                            <div class="form-group cone-inputs">
+                                <label class="cone-label-enter">Surface area enter:</label>
+                                <div class="input-group">
+                                    <input type="text" placeholder="r" class="form-control"/>
+                                    <input type="text" placeholder="h" class="form-control"/>
+                                </div>
                             </div>
-                            <div class="input-group triangular-pyramid-input">
-                                <input type="text" placeholder="a side" class="form-control"/>
-                                <input type="text" placeholder="b side" class="form-control"/>
-                                <input type="text" placeholder="height" class="form-control"/>
-                            </div>
-                        </div>
-                    </section>
+                        </section>
 
-                    <section class="sphere-form-container figure">
-                        <div class="form-group">
-                            <label for="exampleFormControlSelect8" class="pl-3">Operation</label>
-                            <select class="form-control form-select sphere-operation-select" id="exampleFormControlSelect8">
-                                <option selected value="surface-area">Surface Area</option>
-                                <option value="volume">Volume</option>
-                            </select>
-                        </div>
-                        <div class="form-group sphere-inputs">
-                            <label class="sphere-label-enter">Surface area enter:</label>
-                            <div class="input-group">
-                                <input type="text" placeholder="Radius" class="form-control"/>
+                        <section class="trapezoid-form-container figure">
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect4" class="pl-3">Operation</label>
+                                <select class="form-control form-select trapezoid-operation-select" id="exampleFormControlSelect4">
+                                    <option selected value="area">Area</option>
+                                    <option value="perimeter">Perimeter</option>
+                                </select>
                             </div>
-                        </div>
-                    </section>
+                            <div class="form-group trapezoid-inputs">
+                                <label class="trapezoid-label-enter">Area enter:</label>
+                                <div class="input-group trapezoid-area">
+                                    <input type="text" placeholder="a" class="form-control"/>
+                                    <input type="text" placeholder="b" class="form-control"/>
+                                    <input type="text" placeholder="h" class="form-control"/>
+                                </div>
+                                <div class="input-group trapezoid-perimeter">
+                                    <input type="text" placeholder="a" class="form-control"/>
+                                    <input type="text" placeholder="b" class="form-control"/>
+                                    <input type="text" placeholder="c" class="form-control"/>
+                                    <input type="text" placeholder="d" class="form-control"/>
+                                </div>
+                            </div>
+                        </section>
 
-                    <section class="cylinder-form-container figure">
-                        <div class="form-group">
-                            <label for="exampleFormControlSelect11" class="pl-3">Operation</label>
-                            <select class="form-control form-select cylinder-operation-select" id="exampleFormControlSelect11">
-                                <option selected value="surface-area">Surface Area</option>
-                                <option value="volume">Volume</option>
-                            </select>
-                        </div>
-                        <div class="form-group cylinder-inputs">
-                            <label class="cylinder-label-enter">Surface area enter:</label>
-                            <div class="input-group">
-                                <input type="text" placeholder="Radius" class="form-control"/>
-                                <input type="text" placeholder="Height" class="form-control"/>
+                        <section class="cube-form-container figure">
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect5" class="pl-3">Operation</label>
+                                <select class="form-control form-select cube-operation-select" id="exampleFormControlSelect5">
+                                    <option selected value="surface-area">Surface Area</option>
+                                    <option value="volume">Volume</option>
+                                </select>
                             </div>
+                            <div class="form-group cube-inputs">
+                                <label class="cube-label-enter">Surface area enter:</label>
+                                <div class="input-group">
+                                    <input type="text" placeholder="a" class="form-control"/>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="pyramid-form-container figure">
+                            <div class="form-group triangle-formula">
+                                <label for="exampleFormControlSelect6" class="pl-3">Type Pyramid</label>
+                                <select class="form-control form-select pyramid-formula-select" id="exampleFormControlSelect6">
+                                    <option selected value="square-pyramid">Square Pyramid</option>
+                                    <option value="rectangular-pyramid">Rectangular Pyramid</option>
+                                    <option value="triangular-pyramid">Triangular Pyramid</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect7" class="pl-3">Operation</label>
+                                <select class="form-control form-select pyramid-operation-select" id="exampleFormControlSelect7">
+                                    <option selected value="surface-area">Surface Area</option>
+                                    <option value="volume">Volume</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group pyramid-inputs">
+                                <label class="pyramid-label-enter">Surface area enter:</label>
+                                <div class="input-group square-pyramid-input">
+                                    <input type="text" placeholder="a side" class="form-control"/>
+                                    <input type="text" placeholder="height" class="form-control"/>
+                                </div>
+                                <div class="input-group rectangular-pyramid-input">
+                                    <input type="text" placeholder="length" class="form-control"/>
+                                    <input type="text" placeholder="width" class="form-control"/>
+                                    <input type="text" placeholder="height" class="form-control"/>
+                                </div>
+                                <div class="input-group triangular-pyramid-input">
+                                    <input type="text" placeholder="a side" class="form-control"/>
+                                    <input type="text" placeholder="b side" class="form-control"/>
+                                    <input type="text" placeholder="height" class="form-control"/>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="sphere-form-container figure">
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect8" class="pl-3">Operation</label>
+                                <select class="form-control form-select sphere-operation-select" id="exampleFormControlSelect8">
+                                    <option selected value="surface-area">Surface Area</option>
+                                    <option value="volume">Volume</option>
+                                </select>
+                            </div>
+                            <div class="form-group sphere-inputs">
+                                <label class="sphere-label-enter">Surface area enter:</label>
+                                <div class="input-group">
+                                    <input type="text" placeholder="Radius" class="form-control"/>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="cylinder-form-container figure">
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect11" class="pl-3">Operation</label>
+                                <select class="form-control form-select cylinder-operation-select" id="exampleFormControlSelect11">
+                                    <option selected value="surface-area">Surface Area</option>
+                                    <option value="volume">Volume</option>
+                                </select>
+                            </div>
+                            <div class="form-group cylinder-inputs">
+                                <label class="cylinder-label-enter">Surface area enter:</label>
+                                <div class="input-group">
+                                    <input type="text" placeholder="Radius" class="form-control"/>
+                                    <input type="text" placeholder="Height" class="form-control"/>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <label class="error-inputs d-block text-danger text-center"></label>
+                        <div class="input-group mb-4">
+                            <button class="e-button btn-calculate-figures" type="button">
+                                <span class="span-convert">Calculate</span>
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                            </button>
+                        
+                            <input type="text" disabled readonly placeholder="Result" class="form-control input-result-figure" />
+                            <button class="e-button btn-reset" type="button">Reset</button>
                         </div>
-                    </section>
-                    
-                    <label class="error-inputs d-block text-danger text-center"></label>
-                    <div class="input-group mb-4">
-                        <button class="e-button btn-calculate-figures" type="button">
-                            <span class="span-convert">Calculate</span>
-                            <i class="fas fa-long-arrow-alt-right"></i>
-                        </button>
-                    
-                        <input type="text" disabled readonly placeholder="Result" class="form-control input-result-figure" />
-                        <button class="e-button btn-reset" type="button">Reset</button>
                     </div>
                 </form>
 
@@ -791,6 +799,129 @@
                 </div>
             </div>
         </section>
+
+        <hr>
+
+        <section class="distance-container  my-5">
+            <h3 class="text-left">Distance Conversion Calculator</h3>
+            <p>
+                <button
+                  class="e-button-math-default"
+                  type="button"
+                  data-mdb-toggle="collapse"
+                  data-mdb-target="#collapseWidthExample4"
+                  aria-expanded="false"
+                  aria-controls="collapseWidthExample"
+                >
+                  Show More...
+                </button>
+            </p>
+            <div>
+                <div class="collapse collapse-horizontal" id="collapseWidthExample4" >
+                    <div>Main distance unit is meter!</div>
+        
+                    <div class="my-3 distance-calculator-container">
+                        
+                        <form class="e-form my-3">
+                            <h3>Distance Converter</h3>
+                            <div class="form-inner-container">
+                                <div class="input-group">
+                                    <label for="input" class="text-left w-100 pl-3 label-input-number">From:</label>
+                                    
+                                    <input type="number" class="form-control input-distance-converter" placeholder="From"/>
+                                    <select class="form-control form-select form-select-from-distance">
+                                        <option selected value="km">Kilometers</option>
+                                        <option value="m">Meters</option>
+                                        <option value="mi">Miles</option>
+                                        <option value="nm">Nautical Mile</option>
+                                        <option value="yrd">Yard</option>
+                                        <option value="ft">Feet</option>
+                                        <option value="in">Inches</option>
+                                        <option value="cm">Sentimeters</option>
+                                        <option value="mm">Millimeters</option>
+                                    </select>
+
+                                    <div class="input-group-append">
+                                        <button class="e-button-math btn-convert-distance" type="button">Convert</button>
+                                    </div>
+                                </div>
+
+                                <label for="input" class="text-right w-100 mt-3 label-distance-to">To:</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control input-distance-converter-result" placeholder="Result" disabled readonly/>
+                                    <select class="form-control form-select form-select-to-distance">
+                                        <option selected value="m">Meters</option>
+                                        <option value="km">Kilometers</option>
+                                        <option value="mi">Miles</option>
+                                        <option value="nm">Nautical Mile</option>
+                                        <option value="yrd">Yard</option>
+                                        <option value="ft">Feet</option>
+                                        <option value="in">Inches</option>
+                                        <option value="cm">Sentimeters</option>
+                                        <option value="mm">Millimeters</option>
+                                    </select>
+                                    
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+        
+                    <h4>Table information</h4>
+                    <div></div>
+                    <table class="table table-bordered my-3" style="max-width: 250px;">
+                        <tbody>
+                            <tr>
+                              <td>1 km</td>
+                              <td>1000 m</td>
+                            </tr>
+                            <tr>
+                                <td>1 m</td>
+                                <td>1 m</td>
+                            </tr>
+                            <tr>
+                                <td>1 cm</td>
+                                <td> 0.01 m</td>
+                            </tr>
+                            <tr>
+                                <td>1 mm</td>
+                                <td>0.001 m</td>
+                            </tr>
+                            <tr>
+                                <td>1 mi </td>
+                                <td>1609.34 m</td>
+                            </tr>
+                            <tr>
+                                <td>1 nm</td>
+                                <td>1852 m</td>
+                              </tr>
+                            <tr>
+                                <td>1 yrd</td>
+                                <td>0.9144 m</td>
+                            </tr>
+                            <tr>
+                                <td>1 ft</td>
+                                <td>0.3048 m</td>
+                            </tr>
+                            <tr>
+                                <td>1 in</td>
+                                <td>0.0254 m</td>
+                            </tr>
+                        </tbody>
+                    </table>
+        
+                    <div class="code-container  mt-5">
+                        <h4>Example C# code</h4>
+                        <div class="copy-container">
+                            <i class="far fa-clipboard clipboard-distance"></i>
+                            <i class="fas fa-check coppidClipboard-distance"></i>
+                        </div>
+                        <code class="code-distance-converter-calculator my-4"></code>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr>
     </main>
    
     <footer>
@@ -875,5 +1006,6 @@
     <script src="./js/math/math-shpere.js"></script>
     <script src="./js/math/math-cylinder.js"></script>
     <script src="./js/math/math.js"></script>
+    <script src="./js/math/math-distance-converter.js"></script>
 </body>
 </html>

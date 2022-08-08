@@ -1,6 +1,5 @@
 .container-form-figures {
     max-width: 500px;
-    min-height: 600px;
     margin-right: auto;
 
     @include for-phone-only {
@@ -13,6 +12,10 @@
 
     @include for-tablet-landscape-up {
         padding-left: 3%;
+    }
+
+    & input[type=text]:focus {
+        @include input-select-focus;
     }
 }
 
