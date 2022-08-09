@@ -10,8 +10,8 @@
 }
 
 @mixin btn-box-shadow-black-hover {
-	-webkit-box-shadow: 1px 13px 30px -3px #000; 
-	box-shadow: 1px 0px 13px -3px #000;
+	-webkit-box-shadow: 1px 13px 30px -3px #fff; 
+	box-shadow: 1px 0px 13px -3px #fff;
 }
 
 @mixin flex-box($flex, $content, $items) {

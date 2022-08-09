@@ -1,33 +1,38 @@
 .header-container {
+    width: 100%;
+    z-index: 1000 !important;
     padding: 10px;
-    background: linear-gradient(2deg, rgba(52,152,219,1) 60%, rgba(213,248,255,1) 100%); 
+    background: linear-gradient(2deg, rgba(52,152,219,0.85) 60%, rgba(213,248,255,0.85) 100%); 
 
-    @include for-phone-only {
-        margin: 0% 0%;
-        @include flex-box(column, flex-start, flex-start);
-    }
-
-    @include for-tablet-portrait-up {
+    @include for-tablet-down {
+        position: relative;
         margin: 0.6%;
         @include flex-box(column, center, center);
     }
 
-    @include for-tablet-landscape-up {
+    @include for-phone-only {
+        position: relative;
+        margin: 0% 0%;
+        @include flex-box(column, flex-start, flex-start);
+    }
+
+    @include for-tablet-up {
+        position: fixed;
         @include flex-box(row, space-around, center);
     }
 
     & > .nav-container {
+        @include for-tablet-down {
+            width: 100%;
+            @include flex-box(column, center, center);
+        }
+
         @include for-phone-only {
             width: 100%;
             @include flex-box(column, flex-start, flex-start);
         }
-
-        @include for-tablet-portrait-up {
-            width: 100%;
-            @include flex-box(column, center, center);
-        }
     
-        @include for-tablet-landscape-up {
+        @include for-tablet-up {
             width: 250px;
             @include flex-box(row, space-around, center);
         }
@@ -40,18 +45,16 @@
             @include for-phone-only {
                 visibility: visible;
                 opacity: 1;
-                //equal float-right!!!
                 margin-left: auto;
             }
     
-            @include for-tablet-portrait-up {
+            @include for-tablet-down {
                 visibility: visible;
                 opacity: 1;
-                //equal float-right!!!
                 margin-left: auto;
             }
         
-            @include for-tablet-landscape-up {
+            @include for-tablet-up {
                 visibility: hidden;
                 opacity: 0;
             }
@@ -61,19 +64,19 @@
             width: 200px;
             list-style: none;
             margin: 0 !important;
+    
+            @include for-tablet-down {
+                display: 'none';
+                padding-left: 0 !important;
+                @include flex-box(column, center, center);
+            }
 
             @include for-phone-only {
                 display: 'none';
                 @include flex-box(column, flex-start, flex-start);
             }
-    
-            @include for-tablet-portrait-up {
-                display: 'none';
-                padding-left: 0 !important;
-                @include flex-box(column, center, center);
-            }
         
-            @include for-tablet-landscape-up {
+            @include for-tablet-up {
                 display: flex;
                 @include flex-box(row, space-around, center);
             }
@@ -83,6 +86,7 @@
             display: inline-block;
             position: relative;
             cursor: pointer;
+            opacity: 0;
             height: 2.2rem;
             margin: 0 5px;
             padding: 0 8px;
@@ -118,7 +122,12 @@
     }
 }
 
-.fa-angle-down {
+.fa-angle-up {
+    display: none;
+}
+
+.fa-angle-down,
+.fa-angle-up {
     color: whitesmoke;
     padding-left: 5px;
 }

@@ -1,9 +1,12 @@
 
 footer {
-    background: linear-gradient(2deg, rgba(52,152,219,1) 60%, rgba(213,248,255,1) 100%); 
+    background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('../images/tu-gabrovo-footer.jpg');
+	background-size: 100% 100%;
+    background-repeat: no-repeat; 
     padding: 15px 0px;
     color: whitesmoke;
 }
+
 
 .footer-container {
     width: 100%;
@@ -51,7 +54,7 @@ footer {
         padding: 5px;
         border: 1px solid whitesmoke;
         border-radius: 50%;
-        background: linear-gradient(2deg, rgba(91,98,104,1) 35%, rgba(213,248,255,1) 100%) !important;
+       //background: linear-gradient(2deg, rgba(91,98,104,1) 75%, rgba(213,248,255,1) 100%) !important;
         transition: all 0.5s;
 
         &:hover {
@@ -61,7 +64,16 @@ footer {
     }
 
     .fa-facebook-f {
-        padding: 5px 11px;
+        padding: 5px 12px;
+        background-color: rgb(69,104,233);
+    }
+
+    .fa-twitter {
+        background-color: rgb(68,143,230);
+    }
+
+    .fa-youtube {
+        background-color: rgb(241,37,15);
     }
 }
 
