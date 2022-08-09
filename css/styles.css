@@ -1570,4 +1570,37 @@ section > h5, section > div, section > p {
 .yuan-live-currency {
   font-weight: bold;
   color: #3498DB;
+}
+
+.my-toastr {
+  display: none;
+  opacity: 0;
+  width: 300px;
+  position: fixed;
+  top: 70px;
+  right: 25px;
+  padding: 10px 20px;
+  background: linear-gradient(2deg, rgba(52, 152, 219, 0.75) 35%, rgba(213, 248, 255, 0.85) 100%);
+  border-radius: 5px;
+  box-shadow: 0px 10px 13px -7px rgba(0, 0, 0, 0.48), 0px 0px 20px 7px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.my-toast-header {
+  text-align: center;
+  padding: 0.5rem 0.75rem;
+  color: #757575;
+  background-clip: padding-box;
+  background-color: #fff;
+  border-bottom: 1pxsolidrgba 0, 0, 0, 0.05;
+  border-top-left-radius: calc(0.25rem - 1px);
+  border-top-right-radius: calc(0.25rem - 1px);
+}
+
+.toast-body {
+  color: whitesmoke;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
 }/*# sourceMappingURL=styles.css.map */

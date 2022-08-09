@@ -104,3 +104,44 @@ function showInnerMenu(e) {
         }, 500);
     }
 }
+
+
+//search my toastr
+document.querySelector('.btn-search').addEventListener('click', search);
+function search(e) {
+    e.preventDefault();
+    let inpout = document.querySelector('.search-input');
+    let toastr = document.querySelector('.my-toastr');
+
+    console.log(toastr);
+    if(inpout.value == '') return;
+
+    toastr.style.display = 'block';
+    document.querySelector('.my-toast-header').innerHTML = `Result: ${inpout.value}`;
+    inpout.value = '';
+    toastr.animate([
+        { opacity: 0 },
+        { opacity: 1 }
+        ], {
+            duration: 500,
+            easeing: "ease-out",
+            delay: 100,
+            fill: "forwards",
+    });
+
+    setTimeout(function() {
+        toastr.animate([
+            { opacity: 1 },
+            { opacity: 0 }
+            ], {
+                duration: 300,
+                easeing: "ease-out",
+                delay: 0,
+                fill: "forwards",
+        });
+    }, 2500);
+
+    setTimeout(function() {
+        toastr.style.display = 'none';
+    }, 3000);
+}
