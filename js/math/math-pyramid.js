@@ -1,40 +1,50 @@
+//*
+// Math Pyramid
+//*
 
+let pyramidFormulaSelect = document.querySelector('.pyramid-formula-select');
+let pyramidOperationSelect = document.querySelector('.pyramid-operation-select');
 
-document.querySelector('.pyramid-formula-select').addEventListener('change', typePyramidForm);
-document.querySelector('.pyramid-operation-select').addEventListener('change', typePyramidFormula);
+if(pyramidFormulaSelect == null || pyramidOperationSelect == null) 
+    ErrorDOMElement();
+
+pyramidFormulaSelect.addEventListener('change', typePyramidForm);
+pyramidOperationSelect.addEventListener('change', typePyramidFormula);
+
 //hidden all pyramids case
+//hiddenElements function is imported from math-global-functions.js
 hiddenElements('.pyramid-inputs > div');
 hiddenElements('.pyramid-info > article');
 
 let labelPyramidEnter = document.querySelector('.pyramid-label-enter');
+
 let squarePyramidInputs = document.querySelector('.square-pyramid-input');
 let squarePyramidSurfaceAreaFormula = document.querySelector('.square-pyramid-surface-area-formula');
 let squarePyramidVolumeFormula = document.querySelector('.square-pyramid-volume-formula');
+
 let rectangularPyramidInputs = document.querySelector('.rectangular-pyramid-input');
 let rectangularPyramidSurfaceAreaFormula = document.querySelector('.rectangular-pyramid-surface-area-formula');
 let rectangularPyramidVolumeFormula = document.querySelector('.rectangular-pyramid-volume-formula');
+
 let triangularPyramidInputs = document.querySelector('.triangular-pyramid-input');
 let triangularPyramidSurfaceAreaFormula = document.querySelector('.triangular-pyramid-surface-area-formula');
 let triangularPyramidVolumeFormula = document.querySelector('.triangular-pyramid-volume-formula');
 
-if(squarePyramidInputs == null || squarePyramidSurfaceAreaFormula == null || squarePyramidVolumeFormula == null
+// variables set default value when changes select options
+let errorPyramidInput = document.querySelector('.error-inputs');
+let resultPyramidInput = document.querySelector('.input-result-figure');
+
+if(labelPyramidEnter == null || squarePyramidInputs == null || squarePyramidSurfaceAreaFormula == null || squarePyramidVolumeFormula == null
     || rectangularPyramidInputs == null || rectangularPyramidSurfaceAreaFormula == null
     || rectangularPyramidVolumeFormula == null || triangularPyramidInputs == null 
-    || triangularPyramidSurfaceAreaFormula == null || labelPyramidEnter == null 
-    || triangularPyramidVolumeFormula == null)
+    || triangularPyramidSurfaceAreaFormula == null || triangularPyramidVolumeFormula == null
+    || errorPyramidInput == null || resultPyramidInput == null)
     ErrorDOMElement();
 
 //Show only first case (Square Pyramid Surface Area)
 squarePyramidInputs.style.display = 'flex';
 squarePyramidSurfaceAreaFormula.style.display = 'block';
 
-
-// variables set default value when changes select options
-let errorPyramidInput = document.querySelector('.error-inputs');
-let resultPyramidInput = document.querySelector('.input-result-figure');
-
-if(errorPyramidInput == null || resultPyramidInput == null)
-    ErrorDOMElement();
 
 //Change Pyramid Form to Square, Rectangular and Triangular
 async function typePyramidForm() {
@@ -119,12 +129,14 @@ function calcSquarePyramidSurfaceArea(a, h) {
     const base = Math.pow(Number(a), 2)
     const la = 2 * Number(a) * Math.sqrt((Math.pow(Number(a), 2) / 4) + Math.pow(Number(h), 2));
     const sa = base + la;
-    return sa.toFixed(2).replace(/\.*0+$/, '');
+    //removeZerosAfterDecimalPoint is global function from math-global-functions.js
+    return removeZerosAfterDecimalPoint(sa.toFixed(2));
 }
 
 function calcSquarePyramidVolume(a, h) {
     const v = (Math.pow(Number(a), 2) * Number(h)) / 3;
-    return v.toFixed(2).replace(/\.*0+$/, '');
+    //removeZerosAfterDecimalPoint is global function from math-global-functions.js
+    return removeZerosAfterDecimalPoint(v.toFixed(2));
 }
 
 
@@ -137,21 +149,25 @@ function calcRectangularPyramidSurfaceArea(l, w, h) {
     const widthSide = (length / 2) * Math.sqrt((4 * Math.pow(height, 2)) + Math.pow(width, 2));
     const literalArea = lengthSide + widthSide;
     const sa = baseArea +  literalArea;
-    return sa.toFixed(2).replace(/\.*0+$/, '');
+    //removeZerosAfterDecimalPoint is global function from math-global-functions.js
+    return removeZerosAfterDecimalPoint(sa.toFixed(2));
 } 
 
 function calcRectangularPyramidVolume(l, w, h) {
     const v = (Number(l) * Number(w) * Number(h)) / 3;
-    return v.toFixed(2).replace(/\.*0+$/, '');
+    //removeZerosAfterDecimalPoint is global function from math-global-functions.js
+    return removeZerosAfterDecimalPoint(v.toFixed(2));
 }   
 
 function calcTriangularPyramidSurfaceArea(a, b, h) {
     const sa = ((Number(b) * Number(a)) / 2) + ((Number(b) * Number(h)) * (3 / 2));
-    return sa.toFixed(2).replace(/\.*0+$/, '');
+    //removeZerosAfterDecimalPoint is global function from math-global-functions.js
+    return removeZerosAfterDecimalPoint(sa.toFixed(2));
 }
 
 function calcTriangularPyramidVolume(a, b, h) {
     const v = (Number(a) * Number(b) * Number(h)) / 6;
-    return v.toFixed(2).replace(/\.*0+$/, '');
+    //removeZerosAfterDecimalPoint is global function from math-global-functions.js
+    return removeZerosAfterDecimalPoint(v.toFixed(2));
 }
 

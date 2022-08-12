@@ -1,16 +1,21 @@
-
+//*
 //factorial
-document.querySelector('.btn-factorial-calculate').addEventListener('click', factorial);
-document.querySelector('.code-factorial').innerHTML = `<pre>${codeFactorial}</pre`;
+//*
+
+let btnCalculateFactorial = document.querySelector('.btn-factorial-calculate');
+let codeFactorialContainer = document.querySelector('.code-factorial');
+
 let clipboard = document.querySelector('.clipboard-factorial');
 let coppiedClipBoard = document.querySelector('.coppidClipboard-factorial');
 let codeTagFactorial = document.querySelector('.code-factorial');
 
-if(clipboard == null || coppiedClipBoard == null || codeTagFactorial == null)
+if(btnCalculateFactorial == null || codeFactorialContainer == null || clipboard == null 
+    || coppiedClipBoard == null || codeTagFactorial == null)
     ErrorDomElement();
 
 clipboard.addEventListener('click', getCodeFactorial);
 coppiedClipBoard.addEventListener('click', returnClipboardFactorial);
+btnCalculateFactorial.addEventListener('click', factorial);
 
 function getCodeFactorial(e) {
     e.preventDefault();
@@ -34,10 +39,12 @@ function factorial(e) {
         throw new Error('Missing DOM Element!')
     }
 
-    let fact = calcFactorial(Number(input.value));
+    if(!checkIsNumber(input.value)) return;
+
+    const val = Math.round(Number(input.value));
+    let fact = calcFactorial(val);
 
     result.value = fact;
-    input.value = '';
 }
 
 function calcFactorial(n) {
@@ -46,5 +53,8 @@ function calcFactorial(n) {
 
     return fact;
 }
+
+//imported codeFactorial from codeData.js!
+codeFactorialContainer.innerHTML = `<pre>${codeFactorial}</pre`;
 
 

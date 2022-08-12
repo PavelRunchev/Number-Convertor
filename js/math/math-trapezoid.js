@@ -1,5 +1,8 @@
+//*
+// Math Trapezoid
+//*
 
-document.querySelector('.trapezoid-operation-select').addEventListener('change', typeTrapezoidForm);
+let trapezoidOperationSelect = document.querySelector('.trapezoid-operation-select');
 
 let trapezoidAreaFormula = document.querySelector('.trapezoid-area-formula');
 let trapezoidPerimeterFormula = document.querySelector('.trapezoid-perimeter-formula');
@@ -10,14 +13,15 @@ let trapezoidPerimeterInputs = document.querySelector('.trapezoid-perimeter');
 let errorTrapezoidInput = document.querySelector('.error-inputs');
 let resultTrapezoidInput = document.querySelector('.input-result-figure');
 
-if(trapezoidAreaFormula == null || trapezoidPerimeterFormula == null 
-    || labelTrapezoidEnterInput == null || trapezoidAreaInputs == null
-    || trapezoidAreaFormula == null || errorTrapezoidInput == null
-    || resultTrapezoidInput == null)
+if(trapezoidOperationSelect == null || trapezoidAreaFormula == null 
+    || trapezoidPerimeterFormula == null || labelTrapezoidEnterInput == null 
+    || trapezoidAreaInputs == null || trapezoidPerimeterInputs == null 
+    || errorTrapezoidInput == null || resultTrapezoidInput == null)
     ErrorDOMElement();
 
 trapezoidPerimeterFormula.style.display = 'none';
 trapezoidPerimeterInputs.style.display = 'none';
+trapezoidOperationSelect.addEventListener('change', typeTrapezoidForm);
 
 async function typeTrapezoidForm() {
     let typeFigureSelect = document.querySelector('.type-figure');
@@ -30,6 +34,7 @@ async function typeTrapezoidForm() {
         if(typeOperationSelect == null)
             ErrorDOMElement();
 
+        //imported from math-global-functions.js
         await hiddenElements('.trapezoid-inputs > div');
         await hiddenElements('.trapezoid-info > article');
 
@@ -50,10 +55,12 @@ async function typeTrapezoidForm() {
 
 function calcTrapezoidArea(a, b, h) {
     const area = ((Number(a) + Number(b)) / 2) * Number(h);
-    return area.toFixed(2).replace(/\.*0+$/, '');
+    //removeZerosAfterDecimalPoint is global function from math-global-functions.js
+    return removeZerosAfterDecimalPoint(area.toFixed(2));
 }
 
 function calcTrapezoidPerimeter(a, b, c, d) {
     const perimeter = Number(a) + Number(b) + Number(c) + Number(d);
-    return perimeter.toFixed(2).replace(/\.*0+$/, '');
+    //removeZerosAfterDecimalPoint is global function from math-global-functions.js
+    return removeZerosAfterDecimalPoint(perimeter.toFixed(2));
 }

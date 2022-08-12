@@ -1,9 +1,8 @@
+//*
+// Math Triangle
+//*
 
-document.querySelector('.triangle-formula-select').addEventListener('change', typeTriangleFormula);
-
-function ErrorDOMElement() {
-    throw new Error('Missing DOM Element!');
-}
+let traiangleFormulaSel = document.querySelector('.triangle-formula-select');
 
 let triangleFormulaSelect = document.querySelector('.triangle-formula');
 let triangleArea = document.querySelector('.triangle-area');
@@ -12,22 +11,17 @@ let inputsByBaseAndHeight = document.querySelector('.by-base-and-height');
 let inputsByHeronsFormula = document.querySelector('.by-herons-formula');
 let inputsByAngle = document.querySelector('.by-sides-and-angle');
 
-
 let errorTriangleInput = document.querySelector('.error-inputs');
 let resultTriangleInput = document.querySelector('.input-result-figure');
 
-if(triangleFormulaSelect == null || triangleArea == null || trianglePerimeter == null
-    || inputsByBaseAndHeight == null || inputsByHeronsFormula == null
-    || inputsByAngle == null)
+if(traiangleFormulaSel == null || triangleFormulaSelect == null 
+    || triangleArea == null || trianglePerimeter == null || inputsByBaseAndHeight == null 
+    || inputsByHeronsFormula == null || inputsByAngle == null)
         ErrorDOMElement();
 
 inputsByHeronsFormula.style.display = 'none';
 inputsByAngle.style.display = 'none';
-
-function hiddenElements(selector) {
-    Array.from(document.querySelectorAll(`${selector}`))
-    .map(el => el.style.display = 'none');
-}
+traiangleFormulaSel.addEventListener('change', typeTriangleFormula);
 
 async function typeTriangleFormula() {
     let triangleFormulaSelect = document.querySelector('.triangle-formula-select');
@@ -36,6 +30,7 @@ async function typeTriangleFormula() {
         || resultTriangleInput == null)
         ErrorDOMElement();
         
+    //imported from math-global-functions.js
     await hiddenElements('.traingle-inputs > div');
     await hiddenElements('.triangle-area > section');
    
@@ -74,6 +69,7 @@ async function operationSelect() {
             || inputsByHeronsFormula == null || labelEnter == null)
             ErrorDOMElement();
         
+        //imported from math-global-functions.js
         await hiddenElements('.triangle-info > article');
         await hiddenElements('.traingle-inputs > div');
 
@@ -91,31 +87,31 @@ async function operationSelect() {
     }
 }
 
-function checkNumberIsInteger(n) {
-    return typeof Number(n) == 'number' && !isNaN(Number(n));
-}
-
 function calcTriangleAreaByBaseAndHeight(base, height) {
     const area = (Number(base) * Number(height)) / 2;
-    return area.toFixed(2).replace(/\.*0+$/, '');
+    //removeZerosAfterDecimalPoint is global function from math-global-functions.js
+    return removeZerosAfterDecimalPoint(area.toFixed(2));
 }
 
 function calcTriangleAreaByHeronsFormula(a, b, c) {
     //semiPerimeter
     const s = (Number(a) + Number(b) + Number(c)) / 2;
     const area = Math.sqrt(s * (s - Number(a)) * (s - Number(b)) * (s - Number(c)));
-    return area.toFixed(2).replace(/\.*0+$/, '');
+    //removeZerosAfterDecimalPoint is global function from math-global-functions.js
+    return removeZerosAfterDecimalPoint(area.toFixed(2));
 }
 
 function calcTriangleAreaBySidesAndAngle(sideA, sideB, angle) {
     const sinFromAngle = Math.sin(Number(angle) * Math.PI / 180);
     const area = 0.5 * (Number(sideA) * Number(sideB)) * sinFromAngle;
-    return  area.toFixed(2).replace(/\.*0+$/, '');
+    //removeZerosAfterDecimalPoint is global function from math-global-functions.js
+    return removeZerosAfterDecimalPoint(area.toFixed(2));
 }
 
 function calcTrianglePerimeter(num1, num2, num3) {
     const perimeter = Number(num1) + Number(num2) + Number(num3);
-    return perimeter.toFixed(2).replace(/\.*0+$/, '');
+    //removeZerosAfterDecimalPoint is global function from math-global-functions.js
+    return removeZerosAfterDecimalPoint(perimeter.toFixed(2));
 }
 
 

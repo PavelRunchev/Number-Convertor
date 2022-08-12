@@ -1,6 +1,8 @@
+//*
+// Math Cylinder
+//*
 
-
-document.querySelector('.cylinder-operation-select').addEventListener('change', typeCylinderForm);
+let cylinderOperationSelect = document.querySelector('.cylinder-operation-select');
 let surfaceAreaCylinderFormula = document.querySelector('.cylinder-surface-area-formula');
 let volumeCylinderFormula = document.querySelector('.cylinder-volume-formula');
 let labelCylinderEnterInput = document.querySelector('.cylinder-label-enter');
@@ -8,10 +10,13 @@ let labelCylinderEnterInput = document.querySelector('.cylinder-label-enter');
 let errorCylinderInput = document.querySelector('.error-inputs');
 let resultCylinderInput = document.querySelector('.input-result-figure');
 
-if(volumeCylinderFormula == null || errorCylinderInput == null || resultCylinderInput == null)
+if(cylinderOperationSelect == null || surfaceAreaCylinderFormula == null
+    || volumeCylinderFormula == null || labelCylinderEnterInput == null
+    || errorCylinderInput == null || resultCylinderInput == null)
     ErrorDOMElement();
 
 volumeCylinderFormula.style.display = 'none';
+cylinderOperationSelect.addEventListener('change', typeCylinderForm);
 
 async function typeCylinderForm() {
     let typeFigureSelect = document.querySelector('.type-figure');
@@ -42,10 +47,12 @@ async function typeCylinderForm() {
 
 function calcCylinderSurfaceArea(r, h) {
     const sa = 2 * Math.PI * Math.pow(Number(r), 2) + 2 * Math.PI * Number(r) * Number(h);
-    return sa.toFixed(2).replace(/\.*0+$/, '');
+    //removeZerosAfterDecimalPoint is global function from math-global-functions.js
+    return removeZerosAfterDecimalPoint(sa.toFixed(2));
 }
 
 function calcCylinderVolume(r, h) {
     const v = Number(h) * Math.PI * Math.pow(Number(r), 2);
-    return v.toFixed(2).replace(/\.*0+$/, '');
+    //removeZerosAfterDecimalPoint is global function from math-global-functions.js
+    return removeZerosAfterDecimalPoint(v.toFixed(2));
 }

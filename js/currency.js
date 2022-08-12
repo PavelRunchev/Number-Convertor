@@ -9,6 +9,12 @@ function ErrorDOMElement() {
     throw new Error('Missing DOM Element!');
 }
 
+let btnCurrencyConvert = document.querySelector('.btn-convert-currency');
+if(btnCurrencyConvert == null)
+    ErrorDOMElement;
+
+btnCurrencyConvert.addEventListener('click', convertCurrency);
+
 async function getData() {
     let loading = document.querySelector('.currency-live-loading-img');
     let mainCurrencyLive = document.querySelector('.container-main-currency-live');
@@ -51,6 +57,8 @@ async function getData() {
     spanLiraLiveCurrency.innerHTML = data.rates['TRY'].toFixed(3);
     spanYenaLiveCurrency.innerHTML = data.rates['JPY'].toFixed(3);
     spanYuanLiveCurrency.innerHTML = data.rates['CNY'].toFixed(3);
+
+    //change loading with table main currency
     loading.style.display = "none";
     mainCurrencyLive.style.display = "block";
 
@@ -61,8 +69,6 @@ async function getData() {
     }
 }
 
-document.querySelector('.btn-convert-currency').addEventListener('click', convertCurrency);
-
 function convertCurrency(e) {
     e.preventDefault();
     let result = document.querySelector('.input-result-currency');
@@ -72,14 +78,13 @@ function convertCurrency(e) {
     let selectToCurrency = document.querySelector('.form-select-to-currency');
 
     let val = (data.rates[selectToCurrency.value] / data.rates[selectFromCurrency.value]) * amount;
-    
 
-    result.value = val.toFixed(3);
+    //get from math-around-after-decimal-point.js
+    result.value = removeZerosAfterDecimalPoint(val.toFixed(3));
     const textCurrencyResult = `${amount} ${selectFromCurrency.value} = ${val.toFixed(3)} ${selectToCurrency.value}`
         + `\n1 ${selectFromCurrency.value} = ${(data.rates[selectToCurrency.value] / data.rates[selectFromCurrency.value]).toFixed(3)} ${selectToCurrency.value}` 
         + `\n1 ${selectToCurrency.value} = ${(data.rates[selectFromCurrency.value] / data.rates[selectToCurrency.value]).toFixed(3)} ${selectFromCurrency.value}`;
     divCurrencyResult.innerHTML = `<pre>${textCurrencyResult}</pre>`;
-
 }
 
 

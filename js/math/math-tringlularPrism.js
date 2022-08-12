@@ -1,6 +1,9 @@
+//*
+// Math Triangle
+//*
 
 //Triangular Prism Options
-document.querySelector('.triangular-prism-operation-select').addEventListener('change', typeTringularPrismForm);
+let trianfularPrismOperationSelect = document.querySelector('.triangular-prism-operation-select');
 
 let inputsSurfaceArea = document.querySelector('.traingular-prism-surface-area');
 let inputsVolume = document.querySelector('.traingular-prism-volume');
@@ -11,12 +14,14 @@ let labelEnterInput = document.querySelector('.traingular-prism-label-enter');
 let errorTringularPrismInput = document.querySelector('.error-inputs');
 let resultTringularPrismInput = document.querySelector('.input-result-figure');
 
-if(inputsSurfaceArea == null || inputsVolume == null 
-    || surfaceAreaInfo == null || volumeInfo == null || labelEnterInput == null)
+if(trianfularPrismOperationSelect == null || inputsSurfaceArea == null || inputsVolume == null 
+    || surfaceAreaInfo == null || volumeInfo == null || labelEnterInput == null
+    || errorTringularPrismInput == null || resultTringularPrismInput == null)
     ErrorDOMElement();
 
 inputsVolume.style.display = 'none';
 volumeInfo.style.display = 'none';
+trianfularPrismOperationSelect.addEventListener('change', typeTringularPrismForm);
 
 async function typeTringularPrismForm() {
     let typeFigureSelect = document.querySelector('.type-figure');
@@ -31,6 +36,7 @@ async function typeTringularPrismForm() {
             || errorTringularPrismInput == null || resultTringularPrismInput == null)
             ErrorDOMElement();
 
+        //imported from math-global-functions.js
         await hiddenElements('.traingular-prism-inputs > div');
         await hiddenElements('.triangularPrism-info > article');
         
@@ -54,10 +60,12 @@ function calcTriangularPrismSurficeArea(b, h, l, c) {
     const sideRectangles = 2 * (Number(c) * Number(l));
     const bottomRectangle = Number(b) * Number(l);
     const sa = frontTriangle + sideRectangles + bottomRectangle;
-    return sa.toFixed(2).replace(/\.*0+$/, '');
+    //removeZerosAfterDecimalPoint is global function from math-global-functions.js
+    return removeZerosAfterDecimalPoint(sa.toFixed(2));
 }
 
 function calcTriangularPrismVolume(w, h, l) {
     const volume = (Number(w) * Number(h) * Number(l)) / 2;
-    return volume.toFixed(2).replace(/\.*0+$/, '');
+    //removeZerosAfterDecimalPoint is global function from math-global-functions.js
+    return removeZerosAfterDecimalPoint(volume.toFixed(2));
 }

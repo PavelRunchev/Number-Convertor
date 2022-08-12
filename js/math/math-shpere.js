@@ -1,7 +1,8 @@
+//*
+// Math Sphere
+//*
 
-
-
-document.querySelector('.sphere-operation-select').addEventListener('change', typeSphereForm);
+let sphereOperationSelect = document.querySelector('.sphere-operation-select');
 let surfaceAreaSphereFormula = document.querySelector('.sphere-surface-area-formula');
 let volumeSphereFormula = document.querySelector('.sphere-volume-formula');
 let labelSphereEnterInput = document.querySelector('.sphere-label-enter');
@@ -9,10 +10,12 @@ let labelSphereEnterInput = document.querySelector('.sphere-label-enter');
 let errorSphereInput = document.querySelector('.error-inputs');
 let resultSphereInput = document.querySelector('.input-result-figure');
 
-if(volumeSphereFormula == null || errorSphereInput == null || resultSphereInput == null)
+if(sphereOperationSelect == null || surfaceAreaSphereFormula == null || volumeSphereFormula == null 
+    || labelSphereEnterInput == null || errorSphereInput == null || resultSphereInput == null)
     ErrorDOMElement();
 
 volumeSphereFormula.style.display = 'none';
+sphereOperationSelect.addEventListener('change', typeSphereForm);
 
 async function typeSphereForm() {
     let typeFigureSelect = document.querySelector('.type-figure');
@@ -26,6 +29,7 @@ async function typeSphereForm() {
             || volumeSphereFormula == null || labelSphereEnterInput == null)
             ErrorDOMElement();
 
+        //imported from math-global-functions.js
         await hiddenElements('.sphere-info > article');
 
         if(typeOperationSelect.value == 'surface-area') {
@@ -43,10 +47,12 @@ async function typeSphereForm() {
 
 function  calcSphereSurfaceArea(r) {
     const sa = 4 * Math.PI * Math.pow(Number(r), 2);
-    return sa.toFixed(2).replace(/\.*0+$/, '');
+    //removeZerosAfterDecimalPoint is global function from math-global-functions.js
+    return removeZerosAfterDecimalPoint(sa.toFixed(2));
 }
 
 function calcSphereVolume(r) {
     const v = Math.PI * Math.pow(Number(r), 3) * (4 / 3);
-    return v.toFixed(2).replace(/\.*0+$/, '');
+    //removeZerosAfterDecimalPoint is global function from math-global-functions.js
+    return removeZerosAfterDecimalPoint(v.toFixed(2));
 }

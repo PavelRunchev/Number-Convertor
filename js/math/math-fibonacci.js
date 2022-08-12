@@ -1,15 +1,20 @@
+//*
 //fibonacci
-document.querySelector('.btn-fibonacci-calculate').addEventListener('click', fibonacci);
-document.querySelector('.code-fibonacci').innerHTML = `<pre>${codeFibonacci}</pre`;
+//*
+
+let btnCalculateFibonacci = document.querySelector('.btn-fibonacci-calculate');
+let codeFibonnaciContainer = document.querySelector('.code-fibonacci');
 let clipboardFibonacci = document.querySelector('.clipboard-fibonacci');
 let coppiedClipBoardFibonacci = document.querySelector('.coppidClipboard-fibonacci');
 let codeTagFibonacci = document.querySelector('.code-fibonacci');
 
-if(clipboardFibonacci == null || coppiedClipBoardFibonacci == null || codeTagFibonacci == null)
+if(btnCalculateFibonacci == null || codeFibonnaciContainer == null || clipboardFibonacci == null 
+    || coppiedClipBoardFibonacci == null || codeTagFibonacci == null)
     ErrorDomElement();
 
-    clipboardFibonacci.addEventListener('click', getCodeFibonacci);
+clipboardFibonacci.addEventListener('click', getCodeFibonacci);
 coppiedClipBoardFibonacci.addEventListener('click', returnClipboardFibonacci);
+btnCalculateFibonacci.addEventListener('click', fibonacci);
     
 function getCodeFibonacci(e) {
     e.preventDefault();
@@ -33,7 +38,9 @@ function fibonacci(e) {
         throw new Error('Missing DOM Element!')
     }
 
-    const n = Number(input.value);
+    if(!checkIsNumber(input.value)) return;
+
+    const n = Math.round(Number(input.value));
     if(n < 1) {
         result.value = n;
         return;
@@ -51,3 +58,6 @@ function fibonacci(e) {
 
     result.value = F1;
 }
+
+//imported codeFibonacci from codeData.js!
+codeFibonnaciContainer.innerHTML = `<pre>${codeFibonacci}</pre`;

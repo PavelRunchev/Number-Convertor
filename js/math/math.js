@@ -1,23 +1,25 @@
+//*
+// Math Figure
+//*
 
+//*
+// all fugures are: Triangle, Cube, Cone, Cylinder, Pyramid, Sphere, Trapezoid, Tringular Prism
+//*
 
-document.querySelector('.type-figure').addEventListener('change', typeFigure);
-document.querySelector('.triangle-operation-select').addEventListener('change', operationSelect);
-document.querySelector('.btn-calculate-figures').addEventListener('click', calculateFigure);
+let typeFigureSel = document.querySelector('.type-figure')
+let triangleOperationSel = document.querySelector('.triangle-operation-select')
+let btnCalculateFigure = document.querySelector('.btn-calculate-figures')
 
 let errorInput = document.querySelector('.error-inputs');
 let resultInput = document.querySelector('.input-result-figure');
 
-function ErrorDOMElement() {
-    throw new Error('Missing DOM Element!');
-}
-
-function InvalidOperation() {
-    errorInput.textContent = 'Invalid operation!';
-    throw new Error('Invalid Operation!');
-}
-
-if(errorInput == null || resultInput == null)
+if(typeFigureSel == null || triangleOperationSel == null || btnCalculateFigure == null 
+    || errorInput == null || resultInput == null)
     ErrorDOMElement();
+
+typeFigureSel.addEventListener('change', typeFigure);
+triangleOperationSel.addEventListener('change', operationSelect);
+btnCalculateFigure.addEventListener('click', calculateFigure);
 
 function hiddenAllFigures() {
     let allFigres = Array.from(document.querySelectorAll('.figure'));
@@ -38,15 +40,12 @@ function hiddenAllFigures() {
 //by default hidden all figures, only first is visible!
 hiddenAllFigures();
 
-function hiddenElements(selector) {
-    Array.from(document.querySelectorAll(`${selector}`))
-    .map(el => el.style.display = 'none');
-}
-
 function showFigure(selectorForm, selectorInfo) {
-    document.querySelector(selectorForm).style.display = 'block';
+    let currentForm = document.querySelector(selectorForm);
+    currentForm.style.display = 'block';
     document.querySelector(selectorInfo).style.display = 'block';
-}
+    Array.from(currentForm.querySelectorAll('input[type="text"]')).map(inp => inp.value = '');
+}   
 
 async function typeFigure() {
     let typeFigureSelect = document.querySelector('.type-figure');
@@ -54,6 +53,7 @@ async function typeFigure() {
     if(typeFigureSelect == null)
         ErrorDOMElement();
 
+    //imported from math-global-functions.js
     await hiddenElements('.figure');
     await hiddenElements('.figure-info');
 
@@ -107,7 +107,9 @@ function calculateFigure(e) {
             sphereCalculate();
     } else if(typeFigureSelect.value == 'cylinder') {
         cylinderCalculate();
-    }   
+    }  else {
+        InvalidOperation();
+    } 
 }
 
 function triangleCalculate() {
@@ -119,33 +121,30 @@ function triangleCalculate() {
     if(operationFigureSelect.value == 'area') {
         if(triangleFormulaSelect.value == 'area-base-height') {
             const [base, height] = Array.from(document.querySelectorAll('.by-base-and-height > input'));
-            if(checkNumberIsInteger(base.value) && checkNumberIsInteger(height.value)) {
+            if(checkIsNumber(base.value) && checkIsNumber(height.value)) {
                 resultInput.value = calcTriangleAreaByBaseAndHeight(base.value, height.value);
-                base.value = '', height.value = '';
             } else {
                 errorInput.textContent = 'Triangle base and height must be a numbers!';
             }
         } else if(triangleFormulaSelect.value == 'herons-formula') {
             const [a, b, c] = Array.from(document.querySelectorAll('.by-herons-formula > input'));
-            if(checkNumberIsInteger(a.value) && checkNumberIsInteger(b.value) &&  checkNumberIsInteger(c.value)) {
+            if(checkIsNumber(a.value) && checkIsNumber(b.value) &&  checkIsNumber(c.value)) {
                 resultInput.value = calcTriangleAreaByHeronsFormula(a.value, b.value, c.value);
-                a.value = '', b.value = '', c.value = '';
             } else {
                 errorInput.textContent = 'Triangle sides must be a numbers!';
             }
             
         } else if(triangleFormulaSelect.value == 'area-sides-and-angle') {
             const [sideA, sideB, angle] = Array.from(document.querySelectorAll('.by-sides-and-angle > input'));
-            if(checkNumberIsInteger(sideA.value) && checkNumberIsInteger(sideB.value) &&  checkNumberIsInteger(angle.value)) {
+            if(checkIsNumber(sideA.value) && checkIsNumber(sideB.value) &&  checkIsNumber(angle.value)) {
                 resultInput.value = calcTriangleAreaBySidesAndAngle(sideA.value, sideB.value, angle.value);
-                sideA.value = '', sideB.value = '', angle.value = '';
             } else {
                 errorInput.textContent = 'Triangle sides must be a numbers!';
             }
         }
     } else if(operationFigureSelect.value == 'perimeter') {
         const [inp1, inp2, inp3] = Array.from(document.querySelectorAll('.by-herons-formula > input'));
-        if(checkNumberIsInteger(inp1.value) && checkNumberIsInteger(inp2.value) &&  checkNumberIsInteger(inp3.value)) {
+        if(checkIsNumber(inp1.value) && checkIsNumber(inp2.value) &&  checkIsNumber(inp3.value)) {
                 resultInput.value = calcTrianglePerimeter(inp1.value, inp2.value, inp3.value);
         } else {
             errorInput.textContent = 'Triangle sides must be a numbers!';
@@ -162,18 +161,16 @@ function triangularPrismCalculate() {
 
     if(operationFigureSelect.value == 'surface-area') {
         const [sideB, height, length, sideC] = Array.from(document.querySelectorAll('.traingular-prism-surface-area > input'));
-        if(checkNumberIsInteger(sideB.value) && checkNumberIsInteger(height.value) 
-        && checkNumberIsInteger(length.value) && checkNumberIsInteger(sideC.value)) {
+        if(checkIsNumber(sideB.value) && checkIsNumber(height.value) 
+        && checkIsNumber(length.value) && checkIsNumber(sideC.value)) {
             resultInput.value = calcTriangularPrismSurficeArea(sideB.value, height.value, length.value, sideC.value);
-            sideB.value = '', height.value = '', length.value = '', sideC.value = '';
         } else {
             errorInput.textContent = 'Invalid Tringular Prism sides!';
         }
     } else if(operationFigureSelect.value == 'volume') {
         const [w, h, l] = Array.from(document.querySelectorAll('.traingular-prism-volume > input'));
-        if(checkNumberIsInteger(w.value) && checkNumberIsInteger(h.value) && checkNumberIsInteger(l.value)) {
+        if(checkIsNumber(w.value) && checkIsNumber(h.value) && checkIsNumber(l.value)) {
             resultInput.value = calcTriangularPrismVolume(w.value, h.value, l.value);
-            w.value = '', h.value = '', l.value = '';
         } else {
             errorInput.textContent = 'Invalid Tringular Prism sides!';
         }
@@ -188,7 +185,7 @@ function coneCalculate() {
     if(operationFigureSelect == null || radius == null || height == null)
         ErrorDOMElement();
 
-    if(checkNumberIsInteger(radius.value) && checkNumberIsInteger(height.value)) {
+    if(checkIsNumber(radius.value) && checkIsNumber(height.value)) {
         if(operationFigureSelect.value == 'surface-area') {
             resultInput.value = calcConeSurfaceArea(radius.value, height.value);
         } else if(operationFigureSelect.value == 'volume') {
@@ -199,8 +196,6 @@ function coneCalculate() {
     } else {
         errorInput.textContent = 'Invalid Cone radius or height!';
     }
-
-    radius.value = '', height.value = '';
 }
 
 function trapezoidCalculate() {
@@ -210,15 +205,15 @@ function trapezoidCalculate() {
     
     if(operationFigureSelect.value == 'area') {
         const [a, b, h] = Array.from(document.querySelectorAll('.trapezoid-area > input'));
-        if(checkNumberIsInteger(a.value) && checkNumberIsInteger(b.value) && checkNumberIsInteger(h.value)) {
+        if(checkIsNumber(a.value) && checkIsNumber(b.value) && checkIsNumber(h.value)) {
             resultInput.value = calcTrapezoidArea(a.value, b.value, h.value);
         } else {
             errorInput.textContent = 'Invalid Trapezoid sides!';
         }
     } else if(operationFigureSelect.value == 'perimeter') {
         const [a, b, c, d] = Array.from(document.querySelectorAll('.trapezoid-perimeter > input'));
-        if(checkNumberIsInteger(a.value) && checkNumberIsInteger(b.value) 
-        && checkNumberIsInteger(c.value) && checkNumberIsInteger(d.value)) {
+        if(checkIsNumber(a.value) && checkIsNumber(b.value) 
+        && checkIsNumber(c.value) && checkIsNumber(d.value)) {
             resultInput.value = calcTrapezoidPerimeter(a.value, b.value, c.value, d.value);
         } else {
             errorInput.textContent = 'Invalid Trapezoid sides!';
@@ -235,7 +230,7 @@ function cubeCalculate() {
     if(operationFigureSelect.value == null || a == null)
         ErrorDOMElement();
 
-    if(checkNumberIsInteger(a.value)) {
+    if(checkIsNumber(a.value)) {
         if(operationFigureSelect.value == 'surface-area') {
             resultInput.value = calcCubeSurfaceArea(a.value);
         } else if (operationFigureSelect.value == 'volume') {
@@ -257,7 +252,7 @@ function pyramidCalculate() {
 
     if(pyramidFormulaSelect.value == 'square-pyramid') {
         const [a, h] = Array.from(document.querySelectorAll('.square-pyramid-input > input'));
-        if(checkNumberIsInteger(a.value) && checkNumberIsInteger(h.value)) {
+        if(checkIsNumber(a.value) && checkIsNumber(h.value)) {
             if(operationFigureSelect.value == 'surface-area') {
                 resultInput.value = calcSquarePyramidSurfaceArea(a.value, h.value);
             } else if(operationFigureSelect.value == 'volume') {
@@ -270,7 +265,7 @@ function pyramidCalculate() {
         }
     } else if(pyramidFormulaSelect.value == 'rectangular-pyramid') {
         const [l, w, h] = Array.from(document.querySelectorAll('.rectangular-pyramid-input > input'));
-        if(checkNumberIsInteger(l.value) && checkNumberIsInteger(w.value) && checkNumberIsInteger(h.value)) {
+        if(checkIsNumber(l.value) && checkIsNumber(w.value) && checkIsNumber(h.value)) {
             if(operationFigureSelect.value == 'surface-area') {
                 resultInput.value = calcRectangularPyramidSurfaceArea(l.value, w.value, h.value);
             } else if(operationFigureSelect.value == 'volume') {
@@ -283,7 +278,7 @@ function pyramidCalculate() {
         }
     } else if(pyramidFormulaSelect.value == 'triangular-pyramid') {
         const [a, b, h] = Array.from(document.querySelectorAll('.triangular-pyramid-input > input'));
-        if(checkNumberIsInteger(a.value) && checkNumberIsInteger(b.value) && checkNumberIsInteger(h.value)) {
+        if(checkIsNumber(a.value) && checkIsNumber(b.value) && checkIsNumber(h.value)) {
             if(operationFigureSelect.value == 'surface-area') {
                 resultInput.value = calcTriangularPyramidSurfaceArea(a.value, b.value, h.value);
             } else if(operationFigureSelect.value == 'volume') {
@@ -306,7 +301,7 @@ function sphereCalculate() {
     if(operationFigureSelect.value == null || r == null)
         ErrorDOMElement();
 
-    if(checkNumberIsInteger(r.value)) {
+    if(checkIsNumber(r.value)) {
         if(operationFigureSelect.value == 'surface-area') {
             resultInput.value = calcSphereSurfaceArea(r.value);
         } else if (operationFigureSelect.value == 'volume') {
@@ -326,7 +321,7 @@ function cylinderCalculate() {
     if(operationFigureSelect.value == null || r == null || h == null)
         ErrorDOMElement();
 
-    if(checkNumberIsInteger(r.value) && checkNumberIsInteger(h.value)) {
+    if(checkIsNumber(r.value) && checkIsNumber(h.value)) {
         if(operationFigureSelect.value == 'surface-area') {
             resultInput.value = calcCylinderSurfaceArea(r.value, h.value);
         } else if (operationFigureSelect.value == 'volume') {

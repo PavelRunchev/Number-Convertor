@@ -1,5 +1,8 @@
+//*
+// Math Cube
+//*
 
-document.querySelector('.cube-operation-select').addEventListener('change', typeCubeForm);
+let cubeOperationSelect = document.querySelector('.cube-operation-select');
 let surfaceAreaCubeFormula = document.querySelector('.cube-surface-area-formula');
 let volumeCubeFormula = document.querySelector('.cube-volume-formula');
 let labelCubeEnterInput = document.querySelector('.cube-label-enter');
@@ -7,10 +10,12 @@ let labelCubeEnterInput = document.querySelector('.cube-label-enter');
 let errorCubeInput = document.querySelector('.error-inputs');
 let resultCubeInput = document.querySelector('.input-result-figure');
 
-if(volumeCubeFormula == null || errorCubeInput == null || resultCubeInput == null)
+if(cubeOperationSelect == null || surfaceAreaCubeFormula == null || volumeCubeFormula == null || labelCubeEnterInput == null 
+    || errorCubeInput == null || resultCubeInput == null)
     ErrorDOMElement();
 
 volumeCubeFormula.style.display = 'none';
+cubeOperationSelect.addEventListener('change', typeCubeForm);
 
 async function typeCubeForm() {
     let typeFigureSelect = document.querySelector('.type-figure');
@@ -41,10 +46,12 @@ async function typeCubeForm() {
 
 function calcCubeSurfaceArea(a) {
     const sa = 6 * Math.pow(Number(a), 2);
-    return sa.toFixed(2).replace(/\.*0+$/, '');
+    //removeZerosAfterDecimalPoint is global function from math-global-functions.js
+    return removeZerosAfterDecimalPoint(sa.toFixed(2));
 }
 
 function calcCubeVolume(a) {
     const v = Math.pow(Number(a), 3);
-    return v.toFixed(2).replace(/\.*0+$/, '');
+    //removeZerosAfterDecimalPoint is global function from math-global-functions.js
+    return removeZerosAfterDecimalPoint(v.toFixed(2));
 }
