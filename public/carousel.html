@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="mask-icon" href="./favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    
+    <title>CONVERTOR</title>
+    <!-- Loading Css -->
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <!-- Bootstrap Css -->
+    <link rel="stylesheet" href="./bootstrap-resource/bootstrap.css">
+    <link rel="stylesheet" href="./bootstrap-resource/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="./bootstrap-resource/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./bootstrap-resource/mdb.min.css">
+   
+</head>
+
+<body>
+    <header class="header-container">
+        <!-- Navbar -->
+        <nav class="nav-container">
+            <i class="fas fa-bars"></i>
+            <ul class="unordered-list">
+                <li class="list-item">
+                    <a class="link" href="./index.html">Table</a>
+                    <span class="list-item-underline"></span>
+                </li>
+                <li class="list-item">
+                    <a class="link" href="./math.html">Math</a>
+                    <span class="list-item-underline"></span>
+                </li>
+                <li class="list-item">
+                    <a class="link" href="./currency.html">Currency</a>
+                    <span class="list-item-underline"></span>
+                </li>
+                <li class="list-item">
+                    <a class="link inspiration-link" href="#">Inspiration </a>
+                    <i class="fas fa-caret-down"></i>
+                    <i class="fas fa-caret-up"></i>
+                    <span class="list-item-underline"></span>
+                </li>
+
+                <li class="list-item">
+                    <a
+                        class="nav-link dropdown-toggle link"
+                        href="#"
+                        id="navbarDropdown"
+                        role="button"
+                        data-mdb-toggle="dropdown"
+                        aria-expanded="false"
+                    >
+                        Other
+                    </a>
+                    <span class="list-item-underline"></span>
+                    <!-- Dropdown menu -->
+                    <ul class="dropdown-menu ul-dropdown-container" aria-labelledby="navbarDropdown">
+                        <li>
+                        <a class="dropdown-item" href="./carousel.html">Carousel</a>
+                        </li>
+                        <li>
+                        <a class="dropdown-item" href="./download.html">Download</a>
+                        </li>
+                        <li>
+                        <a class="dropdown-item" href="./forms.html">Forms</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!-- Navbar -->
+        <div class="text-center e-header">Carousel</div>
+        <div class="header-container-search">
+            <input type="text" class="form-control search-input" placeholder="Search"/>
+            <button class="btn-search"><i class="fas fa-search"></i></button>
+        </div>
+
+        <div class="navigation-under-container">
+            <div class="c-nav-under-container c-nav-under-container-1">
+                <h3 class="navigation-under-title">TU Gabrovo</h3>
+                <div class="navigation-under-title-line"></div>
+                <ul class="navigation-under-list">
+                    <li class="navigation-under-item">
+                        <a class="navigation-under-link" href="#">Awards</a>
+                        <i class="fas fa-caret-right"></i>
+                    </li>
+                    <li class="navigation-under-item">
+                        <a class="navigation-under-link" href="#">Cureer Center</a>
+                        <i class="fas fa-caret-right"></i>
+                    </li>
+                    <li class="navigation-under-item">
+                        <a class="navigation-under-link" href="#">Departments</a>
+                        <i class="fas fa-caret-right"></i>
+                    </li>
+                    <li class="navigation-under-item">
+                        <a class="navigation-under-link" href="#">Education</a>
+                        <i class="fas fa-caret-right"></i>
+                    </li>
+                    <li class="navigation-under-item">
+                        <a class="navigation-under-link" href="#">International Cooperation</a>
+                        <i class="fas fa-caret-right"></i>
+                    </li>
+                </ul>
+            </div>
+        
+            <div class="c-nav-under-container c-nav-under-container-2">
+                <h3 class="navigation-under-title">SoftUni Sofia</h3>
+                <div class="navigation-under-title-line"></div>
+                <ul class="navigation-under-list">
+                    <li class="navigation-under-item">
+                        <a class="navigation-under-link" href="#">Business Partners</a>
+                        <i class="fas fa-caret-right"></i>
+                    </li>
+                    <li class="navigation-under-item">
+                        <a class="navigation-under-link" href="#">Creativity</a>
+                        <i class="fas fa-caret-right"></i>
+                    </li>
+                    <li class="navigation-under-item">
+                        <a class="navigation-under-link" href="#">Developer Career</a>
+                        <i class="fas fa-caret-right"></i>
+                    </li>
+                    <li class="navigation-under-item">
+                        <a class="navigation-under-link" href="#">Forum</a>
+                        <i class="fas fa-caret-right"></i>
+                    </li>
+                    <li class="navigation-under-item">
+                        <a class="navigation-under-link" href="#">Sertifications</a>
+                        <i class="fas fa-caret-right"></i>
+                    </li>
+                   
+                </ul>
+            </div>
+        </div>
+
+    </header>
+
+     <!-- Cookies Info Learn -->
+     <div class="cookies-info-learn-more-container">
+        <h3 class="text-center font-weight-bold mb-4">Personal Information</h3>
+        <p>As set forth in our Privacy Policy, we use these cookies and technologies on the basis of your consent, which you can give by clicking / tapping "ACCEPT" below. By consenting, you permit us and our partners to collect personal data such as your browsing history on our site and IP address to provide ads that are aligned to your interests, Store and/or access information on a device, Select basic ads, Create a personalised ads profile, Select personalised ads, Create a personalised content profile, Select personalised content, Measure ad performance, Measure content performance, Apply market research to generate audience insights, Develop and improve products, Ensure security, prevent fraud, and debug, Technically deliver ads or content, Match and combine offline data sources, Link different devices, Receive and use automatically-sent device characteristics for identification, Use precise geolocation data, Actively scan device characteristics for identification.</p>
+        <p>The categories of personal information we collect depend on how you interact with our Services, and the requirements of applicable law. Visitors are people who access the Services. Visitors include Registered Users who access the Services through their accounts and Non-Registered Users who access the Services without using an account. We recognize that most Visitors are Non-Registered Users.</p>
+        <p>You do not need to be a Registered User in order to access most information on the Services. Being a Registered User is only required for certain activities, such as creating, managing, or administrating a Fandom community, making a contribution to a Fandom community that does not allow for contributions by non-Registered Users, submitting comments about other content on the Services, or participating in a chat forum. In addition, you must be a Registered User in order to make certain purchases or view certain content on our mobile applications.</p>
+        <p>We collect the information you provide when modifying the content of a page on the Services (such as making edits, uploading images, etc.). Your username or another indicator that you provided the information is left on the history tab associated with the edited page or appropriate special/image page, on the recent changes link, and in your user contributions. We also collect information you provide when you upload, purchase, view, or download certain content or products from the Services. Further, the Fandom mobile app asks you to indicate the communities in which you are particularly interested.</p>
+        <p><b>Cookies.</b> Cookies are small text files placed in device browsers to store your preferences, and facilitate and otherwise enhance your experience. Most browsers allow you to block and delete cookies. However, if you do that, the Services may not work properly.</p>
+
+        <div class="cookies-info-learn-more-footer">
+            <button class="e-button-default btn-cookies-info-learn-more-back">Back</button>
+        </div>
+    </div>
+
+    <div class="my-toastr">
+        <div class="my-toast-header"></div>
+        <div class="toast-body">No Matches!</div>
+    </div>
+
+    <main class="container-fluid">
+        <div class="container-form">
+            <h3 class="text-left my-5 font-weight-bold">Carousel</h3>
+            <h5>Bootstrap 5 Carousel component</h5>
+            <p>Responsive carousel built with the latest Bootstrap 5. Carousel is a slideshow cycling through different elements such as photos, videos, or text. Many examples and easy tutorials.</p>
+          
+            <h5>Basic Example</h5>
+            <p>Carousel allows to navigate through a collection of images in a sequential fashion, moving to the previous/next one through the arrows on the sides.</p>
+           
+            <div class="container-carousel">
+                <!-- Carousel wrapper -->
+                <div id="carouselBasicExample" class="carousel slide carousel-fade" data-mdb-ride="carousel">
+                    <!-- Indicators -->
+                    <div class="carousel-indicators">
+                        <button
+                            type="button"
+                            data-mdb-target="#carouselBasicExample"
+                            data-mdb-slide-to="0"
+                            class="active"
+                            aria-current="true"
+                            aria-label="Slide 1"
+                        ></button>
+                        <button
+                            type="button"
+                            data-mdb-target="#carouselBasicExample"
+                            data-mdb-slide-to="1"
+                            aria-label="Slide 2"
+                        ></button>
+                        <button
+                            type="button"
+                            data-mdb-target="#carouselBasicExample"
+                            data-mdb-slide-to="2"
+                            aria-label="Slide 3"
+                        ></button>
+                    </div>
+                
+                    <!-- Inner -->
+                    <div class="carousel-inner">
+                    <!-- Single item -->
+                    <div class="carousel-item active">
+                        <img src="./images/maxresdefault.jpg" class="img-fluid rounded d-block img-carousel" alt="Canyon at Nigh"/>
+                    </div>
+                
+                    <!-- Single item -->
+                    <div class="carousel-item">
+                        <img src="./images/photo-1549740425-5e9ed4d8cd34.jpg" class="img-fluid rounded d-block img-carousel" alt="Canyon at Nigh"/>
+                    </div>
+                
+                    <!-- Single item -->
+                    <div class="carousel-item">
+                        <img src="./images/4k-distant-planet-sunset-horizon-wallpaper-preview.jpg" class="img-fluid rounded d-block img-carousel" alt="Canyon at Nigh"/>
+                        <div class="carousel-caption d-none d-md-block">
+                            <p>Awesome World.</p>
+                        </div>
+                    </div>
+                    </div>
+                    <!-- Inner -->
+                
+                    <!-- Controls -->
+                    <button class="carousel-control-prev" type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide="prev">
+                        <i class="fas fa-chevron-left"></i>
+                    <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide="next">
+                    
+                    <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <!-- Carousel wrapper -->
+            </div>
+
+            <div class="code-container-carousel  my-5">
+                <p>
+                    <button
+                      class="e-button-default ripple"
+                      type="button"
+                      data-mdb-toggle="collapse"
+                      data-mdb-target="#collapseWidthExample33"
+                      aria-expanded="false"
+                      aria-controls="collapseWidthExample"
+                      data-mdb-ripple-centered="true" 
+                      data-mdb-ripple-color="dark"
+                    >
+                      HTML code
+                    </button>
+                </p>
+                <div>
+                        <div class="collapse" id="collapseWidthExample33" >
+                            <div class="copy-container-carousel">
+                                <i class="far fa-clipboard clipboard-carousel"></i>
+                                <i class="fas fa-check coppidClipboard-carousel"></i>
+                            </div>
+                            <code class="code-carousel my-4">
+            
+                            </code>
+                        </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <h3 class="text-left my-5 font-weight-bold">Lazy Loading</h3>
+            <h5>lazy load to image</h5>
+            <div class="container-lazy-load">   
+                <img class="lazyload lazy-load img-fluid rounded d-block my-4" 
+                    src="./images/loading-white.gif" 
+                    data-src="https://photos.smugmug.com/Wallpapers/i-KtMFZ3d/0/9071f5cf/X2/HDRshooter-4K-wallpaper-044-3840x2160-X2.jpg" 
+                    height="570" 
+                />
+                <img class="lazyload lazy-load img-fluid rounded d-block my-4" 
+                    src="./images/loading-white.gif" 
+                    data-src="https://wallpaperaccess.com/full/147522.jpg" 
+                    height="570" 
+                />
+                <img class="lazyload lazy-load img-fluid rounded d-block my-4" 
+                    src="./images/loading-white.gif" 
+                    data-src="https://cdn.wccftech.com/wp-content/uploads/2020/05/Water-Retreat-PREMIUM-.jpeg" 
+                    height="570" 
+                />
+                <img class="lazyload lazy-load img-fluid rounded d-block my-4" 
+                    src="./images/loading-white.gif" 
+                    data-src="https://c4.wallpaperflare.com/wallpaper/903/720/59/architecture-old-building-ancient-montenegro-wallpaper-preview.jpg" 
+                    height="570" 
+                />
+            </div>
+          
+
+            <h5>include img tags in HTML</h5>
+            <img src="./images/lazy-load-form.png" class="img-fluid rounded d-block w-100" alt="Image" style="width: 400px; height: 250px;"/>
+            <h5>include script in HTML</h5>
+            <img src="./images/lazy-load-script-js.png" class="img-fluid rounded d-block w-100" alt="Image" style="width: 400px; height: 200px;"/>
+            <hr>
+        </div>
+
+
+    </main>
+
+    <!-- Cookies Info -->
+    <div class="cookies-info-container">
+        <div class="cookies-info-body">
+            <p>We use cookies to improve your website experience!</p>
+            <div class="d-flex flex-wrap">
+                <button class="e-button-default btn-cookies-learn-more my-2">Learn More</button>
+                <button class="e-button-default-blue ml-3 btn-cookies-accept my-2">Accept</button>
+            </div>
+        </div>
+    </div>
+   
+   
+    <footer>
+        <div class="footer-container">
+
+            <div class="feedback-container">
+                <textarea rows="3" style="height:100%;" class="form-control text-area-feedback" placeholder="Your message ..." id="feedback"></textarea>
+                <button type="button" 
+                    class="e-button py-2 ml-1 feedback ripple" 
+                    data-toggle="modal" 
+                    data-target="#exampleModal"
+                    data-mdb-ripple-centered="true" 
+                    data-mdb-ripple-color="dark"
+                >Feedback
+                </button>
+    
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title font-weight-bold text-center" id="exampleModalLabel"><i class="fas fa-check"></i> Thank you!</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body text-light text-center">
+                                The message is sended!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="list-container">
+                <ul class="u-list">
+                    <li class="list-item">
+                        <a class="list-anchor a-table" href="./index.html">
+                            <i class="fas fa-table"></i> Table
+                        </a>
+                    </li>
+                    <li class="list-item">
+                        <a class="list-anchor a-university" href="./math.html">
+                            <i class="fas fa-university"></i> Math
+                        </a>
+                    </li>
+                    <li class="list-item">
+                        <a class="list-anchor a-calculator" href="./currency.html">
+                            <i class="fas fa-calculator"></i> Currency
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="icons-container">
+                <i class="fab fa-github"></i>
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-youtube"></i>
+                <i class="fab fa-twitter"></i>
+                
+            </div>
+        </div>
+      
+       <div class="text-center text-light">&copy; 2022 Powered by Pavel Runchev</div>
+       <div class="text-center text-light">All rights reserved!</div>
+    </footer>
+
+    <!-- loading jQuery -->
+    <script src="./js/bootstrap-js/jquery.min.js"></script>
+    <!-- loading Popper.min.js - needed after respone navigation click show nav menu -->
+    <script src="./js/bootstrap-js/popper.min.js"></script>
+    <script src="./js/bootstrap-js/bootstrap.bundle.min.js"></script>
+    <script  src="./js/bootstrap-js/bootstrap.min.js"></script>
+
+    <script src="./js/bootstrap-js/scrolling.js"></script>
+    <script src="./js/bootstrap-js/mdb.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js"></script>
+
+    <script type="text/javascript" src="./js/nav.js"></script>
+    <script type="text/javascript" src="./js/codeData.js"></script>
+    <script type="text/javascript" src="./js/global-functions.js"></script>
+    <script type="text/javascript" src="./js/cookiesInfo.js"></script>
+    <script type="text/javascript" src="./js/carousel.js"></script>
+</body>
+</html>

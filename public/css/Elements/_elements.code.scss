@@ -1,0 +1,55 @@
+
+
+//global all code tags
+code > pre {
+    max-width: 400px;
+    @include code-container;
+
+    @include for-phone-only {
+        max-width: 100%;
+    }
+}
+
+.copy-container {
+    @include for-phone-only {
+        width: 100% !important;
+        max-width: none !important;
+    }
+
+    @include for-tablet-portrait-up {
+        max-width: 400px !important;
+    }
+}
+
+.code-container-carousel {
+    @include for-phone-only {
+        width: 100% !important;
+        max-width: none !important;
+    }
+
+    @include for-tablet-portrait-up {
+        width: 100% !important;
+        max-width: none !important;
+    }
+
+    @include for-tablet-up {
+        width: 500px !important;
+    }
+}
+
+.copy-container-carousel {
+    width: 100% !important;
+}
+
+.fa-clipboard,
+    .fa-check {
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+        margin: 2% 0 2% auto;
+        color: $third-color-blue;
+    }
+
+    .fa-check {
+        display: none;
+    }

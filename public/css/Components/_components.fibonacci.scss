@@ -1,0 +1,23 @@
+
+.fibonacci-container {
+    max-width: 100%;
+    @include for-phone-only {
+        padding-left: 0%;
+    }
+
+    @include for-tablet-portrait-up {
+        padding-left: 1%;
+    }
+
+    @include for-tablet-landscape-up {
+        padding-left: 3%;
+    }
+}
+
+.code-fibonacci > pre {
+    @include code-container;
+}
+
+.input-fibonacci-number:focus {
+    @include input-select-focus;
+}

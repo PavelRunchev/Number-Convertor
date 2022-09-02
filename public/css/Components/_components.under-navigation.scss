@@ -1,0 +1,97 @@
+
+.navigation-under-container {
+    opacity: 0;
+    background: linear-gradient(rgba(77, 147, 217, 0.75), rgba(0, 0, 0, 0.85)), url(../images/tu-gabrovo.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    box-shadow: 0px 10px 13px -7px rgb(0 0 0 / 48%), 0px 0px 20px 7px rgb(0 0 0 / 20%);
+    z-index: 999 !important;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 2% 0;
+    transition: all ease-out 0.4s;
+    
+    //max-width: 992px
+    @include for-tablet-down {
+        position: absolute;
+        top: 100%;
+        left: calc(50% - 300px);
+        width: 600px;
+        @include flex-box(row, space-around, center);
+    }
+
+    //max-width 599px
+    @include for-phone-only {
+        position: static;
+        top: 6.2%;
+        left: 0;
+        width: 100%;
+        @include flex-box(column, flex-start, flex-start);
+        padding-left: 2%;
+    }
+
+    //min-width: 993px
+    @include for-tablet-up {
+        position: fixed;
+        top: 7%;
+        left: calc(50% - 300px);
+        width: 600px;
+        @include flex-box(row, space-around, center);
+    }
+
+    //min-width: 1200px
+    @include for-desktop-up {
+        position: fixed;
+        top: 6.2%;
+        left: calc(50% - 300px);
+        width: 600px;
+        @include flex-box(row, space-around, center);
+    }
+
+    & h3 {
+        color: whitesmoke;
+    }
+}
+
+.navigation-under-title-line {
+    width: 100%;
+    height: 1px;
+    background-color: whitesmoke;
+    margin-bottom: 3%;
+}
+
+.navigation-under-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.navigation-under-item {
+    position: relative;
+}
+
+.navigation-under-link {
+    display: inline-block;
+    color: whitesmoke;
+    text-decoration: none !important;
+    transition: all ease-out 0.4s;
+
+    &:hover {
+        color: #3498DB;
+        transform: translateX(10px);
+    }
+
+    &:hover ~ .fa-caret-right {
+        opacity: 1;
+        transform: translateX(10px);
+    }
+}
+
+.fa-caret-right {
+    opacity: 0;
+    display: inline-block;
+    position: absolute;
+    top: 5px;
+    left: -15px;
+    color: #3498DB;
+    transition: all ease-out 0.4s;
+}

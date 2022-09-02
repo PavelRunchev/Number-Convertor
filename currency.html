@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="mask-icon" href="./favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    
+    <title>CONVERTOR</title>
+    <!-- Loading Css -->
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <!-- Bootstrap Css -->
+    <link rel="stylesheet" href="./bootstrap-resource/bootstrap.css">
+    <link rel="stylesheet" href="./bootstrap-resource/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="./bootstrap-resource/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./bootstrap-resource/mdb.min.css">
+   
+    <link rel="text/javascript" href="https://free.currencyconverterapi.com/api/v4/convert?q=GBP_EUR&compact=ultra">
+
+</head>
+
+<body>
+    <header class="header-container">
+        <!-- Navbar -->
+        <nav class="nav-container">
+            <i class="fas fa-bars"></i>
+            <ul class="unordered-list">
+                <li class="list-item">
+                    <a class="link" href="./index.html">Table</a>
+                    <span class="list-item-underline"></span>
+                </li>
+                <li class="list-item">
+                    <a class="link" href="./math.html">Math</a>
+                    <span class="list-item-underline"></span>
+                </li>
+                <li class="list-item">
+                    <a class="link" href="./currency.html">Currency</a>
+                    <span class="list-item-underline"></span>
+                </li>
+                <li class="list-item">
+                    <a class="link inspiration-link" href="#">Inspiration </a>
+                    <i class="fas fa-caret-down"></i>
+                    <i class="fas fa-caret-up"></i>
+                    <span class="list-item-underline"></span>
+                </li>
+
+                <li class="list-item">
+                    <a
+                        class="nav-link dropdown-toggle link"
+                        href="#"
+                        id="navbarDropdown"
+                        role="button"
+                        data-mdb-toggle="dropdown"
+                        aria-expanded="false"
+                    >
+                        Other
+                    </a>
+                    <span class="list-item-underline"></span>
+                    <!-- Dropdown menu -->
+                    <ul class="dropdown-menu ul-dropdown-container" aria-labelledby="navbarDropdown">
+                        <li>
+                        <a class="dropdown-item" href="./carousel.html">Carousel</a>
+                        </li>
+                        <li>
+                        <a class="dropdown-item" href="./download.html">Download</a>
+                        </li>
+                        <li>
+                        <a class="dropdown-item" href="./forms.html">Forms</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!-- Navbar -->
+        <div class="text-center e-header">Currency Conversion</div>
+        <div class="header-container-search">
+            <input type="text" class="form-control search-input" placeholder="Search"/>
+            <button class="btn-search"><i class="fas fa-search"></i></button>
+        </div>
+
+        <div class="navigation-under-container">
+            <div class="c-nav-under-container c-nav-under-container-1">
+                <h3 class="navigation-under-title">TU Gabrovo</h3>
+                <div class="navigation-under-title-line"></div>
+                <ul class="navigation-under-list">
+                    <li class="navigation-under-item">
+                        <a class="navigation-under-link" href="#">Awards</a>
+                        <i class="fas fa-caret-right"></i>
+                    </li>
+                    <li class="navigation-under-item">
+                        <a class="navigation-under-link" href="#">Cureer Center</a>
+                        <i class="fas fa-caret-right"></i>
+                    </li>
+                    <li class="navigation-under-item">
+                        <a class="navigation-under-link" href="#">Departments</a>
+                        <i class="fas fa-caret-right"></i>
+                    </li>
+                    <li class="navigation-under-item">
+                        <a class="navigation-under-link" href="#">Education</a>
+                        <i class="fas fa-caret-right"></i>
+                    </li>
+                    <li class="navigation-under-item">
+                        <a class="navigation-under-link" href="#">International Cooperation</a>
+                        <i class="fas fa-caret-right"></i>
+                    </li>
+                </ul>
+            </div>
+        
+            <div class="c-nav-under-container c-nav-under-container-2">
+                <h3 class="navigation-under-title">SoftUni Sofia</h3>
+                <div class="navigation-under-title-line"></div>
+                <ul class="navigation-under-list">
+                    <li class="navigation-under-item">
+                        <a class="navigation-under-link" href="#">Business Partners</a>
+                        <i class="fas fa-caret-right"></i>
+                    </li>
+                    <li class="navigation-under-item">
+                        <a class="navigation-under-link" href="#">Creativity</a>
+                        <i class="fas fa-caret-right"></i>
+                    </li>
+                    <li class="navigation-under-item">
+                        <a class="navigation-under-link" href="#">Developer Career</a>
+                        <i class="fas fa-caret-right"></i>
+                    </li>
+                    <li class="navigation-under-item">
+                        <a class="navigation-under-link" href="#">Forum</a>
+                        <i class="fas fa-caret-right"></i>
+                    </li>
+                    <li class="navigation-under-item">
+                        <a class="navigation-under-link" href="#">Sertifications</a>
+                        <i class="fas fa-caret-right"></i>
+                    </li>
+                   
+                </ul>
+            </div>
+        </div>
+
+    </header>
+
+    <div class="my-toastr">
+        <div class="my-toast-header"></div>
+        <div class="toast-body">No Matches!</div>
+    </div>
+
+    <!-- Cookies Info Learn -->
+    <div class="cookies-info-learn-more-container">
+        <h3 class="text-center font-weight-bold mb-4">Personal Information</h3>
+        <p>As set forth in our Privacy Policy, we use these cookies and technologies on the basis of your consent, which you can give by clicking / tapping "ACCEPT" below. By consenting, you permit us and our partners to collect personal data such as your browsing history on our site and IP address to provide ads that are aligned to your interests, Store and/or access information on a device, Select basic ads, Create a personalised ads profile, Select personalised ads, Create a personalised content profile, Select personalised content, Measure ad performance, Measure content performance, Apply market research to generate audience insights, Develop and improve products, Ensure security, prevent fraud, and debug, Technically deliver ads or content, Match and combine offline data sources, Link different devices, Receive and use automatically-sent device characteristics for identification, Use precise geolocation data, Actively scan device characteristics for identification.</p>
+        <p>The categories of personal information we collect depend on how you interact with our Services, and the requirements of applicable law. Visitors are people who access the Services. Visitors include Registered Users who access the Services through their accounts and Non-Registered Users who access the Services without using an account. We recognize that most Visitors are Non-Registered Users.</p>
+        <p>You do not need to be a Registered User in order to access most information on the Services. Being a Registered User is only required for certain activities, such as creating, managing, or administrating a Fandom community, making a contribution to a Fandom community that does not allow for contributions by non-Registered Users, submitting comments about other content on the Services, or participating in a chat forum. In addition, you must be a Registered User in order to make certain purchases or view certain content on our mobile applications.</p>
+        <p>We collect the information you provide when modifying the content of a page on the Services (such as making edits, uploading images, etc.). Your username or another indicator that you provided the information is left on the history tab associated with the edited page or appropriate special/image page, on the recent changes link, and in your user contributions. We also collect information you provide when you upload, purchase, view, or download certain content or products from the Services. Further, the Fandom mobile app asks you to indicate the communities in which you are particularly interested.</p>
+        <p><b>Cookies.</b> Cookies are small text files placed in device browsers to store your preferences, and facilitate and otherwise enhance your experience. Most browsers allow you to block and delete cookies. However, if you do that, the Services may not work properly.</p>
+
+        <div class="cookies-info-learn-more-footer">
+            <button class="e-button-default btn-cookies-info-learn-more-back">Back</button>
+        </div>
+    </div>
+
+    <main class="container-fluid">
+        <h3 class="text-left my-4">Currency Convertor</h3>
+       
+        <div class="font-italic">Live cyrrency 
+            The exchange rate is taken up to the third decimal point, there may be a difference after the second decimal point! Values are approximate!
+        </div>
+        <div class="container-currency">
+            <form class="e-form">
+                <h3 class="text-center my-3 py-3">Calculator</h3>
+                <div class="form-inner-container">
+                    <label for="input" class="text-left w-100 pl-3 label-amount">Amount</label>
+                    <div class="input-group">
+                        <input type="number" class="form-control input-amount-currency" />
+                    </div>
+    
+                    <div class="w-100 d-flex flex-row justify-content-around my-4">
+                        <div class="form-group w-25">
+                            <label for="exampleFormControlSelect15" class="pl-3">From</label>
+                            <select class="form-control form-select form-select-from-currency" id="exampleFormControlSelect15">
+                              <option selected value="USD">USD</option>
+                            </select>
+                        </div>
+                        <div class="form-group w-25">
+                            <label for="exampleFormControlSelect16" class="pl-3">To</label>
+                            <select class="form-control form-select form-select-to-currency" id="exampleFormControlSelect16">
+                              <option selected value="USD">USD</option>
+                            </select>
+                        </div>
+                    </div>
+                  
+                    <div class="input-group my-3">
+                        <button class="e-button btn-convert btn-convert-currency ripple" type="button" data-mdb-ripple-color="info" data-mdb-ripple-centered="true">
+                            <span class="span-convert">Convert it</span>
+                            <i class="fas fa-long-arrow-alt-right"></i>
+                        </button>
+                       
+                        <input type="text" disabled readonly placeholder="Result" class="form-control input-result-currency" />
+                        
+                    </div>
+                    <div class="currensy-result"></div>
+                </div>
+            </form>
+
+            <div class="mb-5 mt-3 container-currency-live">
+                <img class="currency-live-loading-img" src="./images/loading-white.gif" style="width: 100%; height: 100%;"/>
+                <div class="container-main-currency-live">
+                    <div class="font-italic">Live cyrrency 
+                        <img src="./images/USD-flag.png" style="width: 30px; height: 20px;"/>
+                        <b>USD [US Dollar]</b> - <span class="usd-live-currency"></span> $.
+                    </div>
+                    <div class="font-italic">Live cyrrency 
+                        <img src="./images/Euroflag.png" style="width: 30px; height: 20px;"/>
+                        <b>EUR [EURO]</b> - <span class="euro-live-currency"></span> &euro;.
+                    </div>
+                    <div class="font-italic">Live cyrrency 
+                        <img src="./images/GreatBritan-flag.png" style="width: 30px; height: 20px;"/>
+                        <b>GBP [Great British Pound]</b> - <span class="pound-live-currency"></span> &pound;.
+                    </div>
+                    <div class="font-italic">Live cyrrency 
+                        <img src="./images/Russian-flag.png" style="width: 30px; height: 20px;"/>
+                        <b>RUB [Russian Ruble]</b> - <span class="ruble-live-currency"></span> &#8381;.
+                    </div>
+                    <div class="font-italic">Live cyrrency 
+                        <img src="./images/Bulgarian-flag.png" style="width: 30px; height: 20px;"/>
+                        <b>BGN [Bulgarian Lev]</b> - <span class="lev-live-currency"></span> lv.
+                    </div>
+                    <div class="font-italic">Live cyrrency 
+                        <img src="./images/Turkish-flag.png" style="width: 30px; height: 20px;"/>
+                        <b>TRY [Turkish Lira]</b> - <span class="turkey-lira-live-currency"></span> &#8378;.
+                    </div>
+                    <div class="font-italic">Live cyrrency 
+                        <img src="./images/Japan-flag.png" style="width: 30px; height: 20px;"/>
+                        <b>JPY [Japan Yena]</b> - <span class="yena-live-currency"></span> &yen;.
+                    </div>
+                    <div class="font-italic">Live cyrrency 
+                        <img src="./images/China-flag.png" style="width: 30px; height: 20px;"/>
+                        <b>CNY [China Yuan]</b> - <span class="yuan-live-currency"></span> &#20803;.
+                    </div>
+                </div>
+              
+            </div>
+        </div>
+    </main>
+
+    <!-- Cookies Info -->
+    <div class="cookies-info-container">
+        <div class="cookies-info-body">
+            <p>We use cookies to improve your website experience!</p>
+            <div class="d-flex flex-wrap">
+                <button class="e-button-default btn-cookies-learn-more my-2">Learn More</button>
+                <button class="e-button-default-blue ml-3 btn-cookies-accept my-2">Accept</button>
+            </div>
+        </div>
+    </div>
+   
+    <footer>
+        <div class="footer-container">
+
+            <div class="feedback-container">
+                <textarea rows="3" style="height:100%;" class="form-control text-area-feedback" placeholder="Your message ..." id="feedback"></textarea>
+                <button type="button" 
+                    class="e-button py-2 ml-1 feedback ripple" 
+                    data-toggle="modal" 
+                    data-target="#exampleModal"
+                    data-mdb-ripple-centered="true" 
+                    data-mdb-ripple-color="dark"
+                >Feedback
+                </button>
+    
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title font-weight-bold text-center" id="exampleModalLabel"><i class="fas fa-check"></i> Thank you!</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body text-light text-center">
+                                The message is sended!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="list-container">
+                <ul class="u-list">
+                    <li class="list-item">
+                        <a class="list-anchor a-table" href="./index.html">
+                            <i class="fas fa-table"></i> Table
+                        </a>
+                    </li>
+                    <li class="list-item">
+                        <a class="list-anchor a-university" href="./math.html">
+                            <i class="fas fa-university"></i> Math
+                        </a>
+                    </li>
+                    <li class="list-item">
+                        <a class="list-anchor a-calculator" href="./currency.html">
+                            <i class="fas fa-calculator"></i> Currency
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="icons-container">
+                <i class="fab fa-github"></i>
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-youtube"></i>
+                <i class="fab fa-twitter"></i>
+            </div>
+        </div>
+      
+       <div class="text-center text-light">&copy; 2022 Powered by Pavel Runchev</div>
+       <div class="text-center text-light">All rights reserved!</div>
+    </footer>
+
+    <!-- loading jQuery -->
+    <script src="./js/bootstrap-js/jquery.min.js"></script>
+    <!-- loading Popper.min.js - needed after respone navigation click show nav menu -->
+    <script src="./js/bootstrap-js/popper.min.js"></script>
+    <script src="./js/bootstrap-js/bootstrap.bundle.min.js"></script>
+    <script  src="./js/bootstrap-js/bootstrap.min.js"></script>
+
+    <script src="./js/bootstrap-js/scrolling.js"></script>
+    <script src="./js/bootstrap-js/mdb.min.js"></script>
+
+    <script type="text/javascript" src="./js/nav.js"></script>
+    <script type="text/javascript" src="./js/global-functions.js"></script>
+    <script type="text/javascript" src="./js/cookiesInfo.js"></script>
+    <script type="text/javascript" src="./js/currency.js"></script>
+</body>
+</html>

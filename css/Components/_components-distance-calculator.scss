@@ -1,0 +1,18 @@
+.distance-calculator-container {
+    max-width: 100%;
+    @include for-phone-only {
+        padding-left: 0%;
+    }
+
+    @include for-tablet-portrait-up {
+        padding-left: 1%;
+    }
+
+    @include for-tablet-landscape-up {
+        padding-left: 3%;
+    }
+}
+
+.code-distance-conversion > pre {
+    font-size: 10px !important;
+}

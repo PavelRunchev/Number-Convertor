@@ -1,0 +1,44 @@
+.my-toastr {
+    display: none;
+    opacity: 0;
+    width: 300px;
+    position: fixed;
+   
+    padding: 10px 20px;
+    background: linear-gradient(2deg, rgba(52, 152, 219, 0.75) 35%, rgba(213, 248, 255, 0.85) 100%);
+    border-radius: 5px;
+    box-shadow: 0px 10px 13px -7px rgb(0 0 0 / 48%), 0px 0px 20px 7px rgb(0 0 0 / 20%);
+    z-index: 1000;
+    cursor: pointer;
+
+    @include for-phone-only {
+        top: 160px;
+        right: calc(50% - 150px);
+    }
+
+    @include for-tablet-portrait-up {
+        top: 140px;
+        right: 25px;
+    }
+
+    @include for-tablet-landscape-up {
+        top: 70px;
+        right: 25px;
+    }
+}
+
+.my-toast-header {
+    text-align: center;
+    padding: 0.5rem 0.75rem;
+    color: #757575;
+    background-clip: padding-box;
+    background-color: #fff;
+    border-bottom: 1px solid rgba 0, 0, 0, 0.05;
+    border-top-left-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px);
+}
+
+.toast-body {
+    color: #fff;
+    text-align: center;
+}

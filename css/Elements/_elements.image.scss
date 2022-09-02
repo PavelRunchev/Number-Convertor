@@ -1,0 +1,10 @@
+
+.img-carousel {
+    width: 500px !important; 
+    height: 400px !important;
+
+    @include for-phone-only {
+        width: 100% !important; 
+        height: 100% !important;
+    }
+}
