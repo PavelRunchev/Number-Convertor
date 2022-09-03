@@ -1969,4 +1969,8 @@ section > h5, section > div, section > p {
   width: 100%;
   height: 600px;
   overflow: auto;
+}
+
+#mocha-stats {
+  top: 80px !important;
 }/*# sourceMappingURL=styles.css.map */

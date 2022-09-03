@@ -150,37 +150,37 @@
             
             let isConverted = '';
             if(from == 'decimal' && to == 'decimal') {
-                isConverted = convertIt(Number(numberInput.value), decimalToDecimal, Number.isInteger, globalData.textError[0]);
+                isConverted = convertIt(Number(numberInput.value), convert.decimalToDecimal, Number.isInteger, globalData.textError[0]);
             } else if(from == 'decimal' && to == 'binary') {
-                isConverted = convertIt(Number(numberInput.value), decimalToBinary, Number.isInteger, globalData.textError[0]);
+                isConverted = convertIt(Number(numberInput.value), convert.decimalToBinary, Number.isInteger, globalData.textError[0]);
             } else if(from == 'decimal' && to == 'hexadecimal') {
-                isConverted = convertIt(Number(numberInput.value), decimalToHexadecimal, Number.isInteger, globalData.textError[0]);
+                isConverted = convertIt(Number(numberInput.value), convert.decimalToHexadecimal, Number.isInteger, globalData.textError[0]);
             } else if(from == 'decimal' && to == 'octal')   {
-                isConverted = convertIt(Number(numberInput.value), decimalToOctal, Number.isInteger, globalData.textError[0]);
+                isConverted = convertIt(Number(numberInput.value), convert.decimalToOctal, Number.isInteger, globalData.textError[0]);
             }  else if(from == 'binary' && to == 'binary') {
-                isConverted = convertIt(numberInput.value, binaryToBinary, checkInputIsBinary, globalData.textError[1]);
+                isConverted = convertIt(numberInput.value, convert.binaryToBinary, checkInputIsBinary, globalData.textError[1]);
             } else if(from == 'binary' && to == 'decimal') {
-                isConverted = convertIt(numberInput.value, binaryToDecimal, checkInputIsBinary, globalData.textError[1]);
+                isConverted = convertIt(numberInput.value, convert.binaryToDecimal, checkInputIsBinary, globalData.textError[1]);
             } else if(from == 'binary' && to == 'hexadecimal') {
-                isConverted = convertIt(numberInput.value, binaryToHexadecimal, checkInputIsBinary, globalData.textError[1]);
+                isConverted = convertIt(numberInput.value, convert.binaryToHexadecimal, checkInputIsBinary, globalData.textError[1]);
             } else if(from == 'binary' && to == 'octal') {
-                isConverted = convertIt(numberInput.value, binaryToOctal, checkInputIsBinary, globalData.textError[1]);
+                isConverted = convertIt(numberInput.value, convert.binaryToOctal, checkInputIsBinary, globalData.textError[1]);
             } else if(from == 'hexadecimal' && to == 'hexadecimal') {
-                isConverted = convertIt(numberInput.value, hexadecimalToHexadecimal, checkInputIsHexadecimal, globalData.textError[2]);
+                isConverted = convertIt(numberInput.value, convert.hexadecimalToHexadecimal, checkInputIsHexadecimal, globalData.textError[2]);
             } else if(from == 'hexadecimal' && to == 'decimal') {
-                isConverted = convertIt(numberInput.value, hexadecimalToDecimal, checkInputIsHexadecimal, globalData.textError[2]);
+                isConverted = convertIt(numberInput.value, convert.hexadecimalToDecimal, checkInputIsHexadecimal, globalData.textError[2]);
             } else if(from == 'hexadecimal' && to == 'binary') {
-                isConverted = convertIt(numberInput.value, hexadecimalToBinary, checkInputIsHexadecimal, globalData.textError[2]);
+                isConverted = convertIt(numberInput.value, convert.hexadecimalToBinary, checkInputIsHexadecimal, globalData.textError[2]);
             } else if(from == 'hexadecimal' && to == 'octal') {
-                isConverted = convertIt(numberInput.value, hexadecimalToOctal, checkInputIsHexadecimal, globalData.textError[2]);
+                isConverted = convertIt(numberInput.value, convert.hexadecimalToOctal, checkInputIsHexadecimal, globalData.textError[2]);
             } else if(from == 'octal' && to == 'octal') {
-                isConverted = convertIt(Number(numberInput.value), octalToOctal, Number.isInteger, globalData.textError[3]);
+                isConverted = convertIt(Number(numberInput.value), convert.octalToOctal, Number.isInteger, globalData.textError[3]);
             } else if(from == 'octal' && to == 'decimal') {
-                isConverted = convertIt(Number(numberInput.value), octalToDecimal, Number.isInteger, globalData.textError[3]);
+                isConverted = convertIt(Number(numberInput.value), convert.octalToDecimal, Number.isInteger, globalData.textError[3]);
             } else if(from == 'octal' && to == 'binary') {
-                isConverted = convertIt(Number(numberInput.value), octalToBinary, Number.isInteger, globalData.textError[3]);
+                isConverted = convertIt(Number(numberInput.value), convert.octalToBinary, Number.isInteger, globalData.textError[3]);
             } else if(from == 'octal' && to == 'hexadecimal') {
-                isConverted = convertIt(Number(numberInput.value), octalToHexadecimal, Number.isInteger, globalData.textError[3]);
+                isConverted = convertIt(Number(numberInput.value), convert.octalToHexadecimal, Number.isInteger, globalData.textError[3]);
             }
 
             //result show output
@@ -200,224 +200,13 @@
             }    
         }
 
-        function decimalToDecimal(number) {
-            return number;
-        }
-
-        function decimalToBinary(number) {
-            let num = number, binaryNumber = '';
-            while(num > 0) {
-                if(num % 2 == 0) binaryNumber = 0 + binaryNumber;
-                else binaryNumber = 1 + binaryNumber;
-                num = Math.floor(num / 2);
-            }
-
-            if(number == 0)
-                return '0';
-
-            return binaryNumber;
-        }
-
-        function decimalToHexadecimal (number) {
-            let hex = '';
-            let num = number;
-            while(num > 0) {
-                const division = num / 16;
-                let remainder = num % 16;
-                if(remainder > 9 && remainder < 16)
-                    hex = decimalToHexData[remainder] + hex;
-                else
-                    hex = remainder + hex;
-                num = Math.floor(division);
-            }
-
-            if(number == 0)
-                return '0';
-
-            return hex;
-        }
-
-        function decimalToOctal(number) {
-            let octal = '';
-            let num = number;
-            while(num > 0) {
-                const remainder = num % 8;
-                octal = remainder + octal;
-                num = Math.floor(num / 8);
-            }
-
-            if(number == 0)
-                return '0';
-
-            return octal;
-        }
-
         function checkInputIsBinary(number) {
             return [...number].every(e => Number(e) == 0 || Number(e) == 1);
-        }
-
-        function binaryToBinary(number) {
-            return number;
-        }
-
-        function binaryToDecimal(number) {
-            let decimalSum = 0;
-            let binaryArray = [...number];
-            let pow = binaryArray.length - 1;
-            for (const b of binaryArray) {
-                const result = Math.pow(2, pow) * Number(b);
-                decimalSum += result;
-                //lessening pow
-                pow--;
-            }
-
-            return decimalSum;
-        }
-
-        function binaryToHexadecimal(number) {       
-            let hex = '';
-            let binaryArray = [...number];
-
-            if(binaryArray.length == 0)
-                return '';
-
-            if(binaryArray.every(e => e == 0))
-                return '0000';
-
-            //garant binary number is allways 4 digits!
-            if(binaryArray.length == 3)
-                binaryArray.unshift('0');
-            else if(binaryArray.length == 2) {
-                binaryArray.unshift('0');
-                binaryArray.shift('0');
-            } else if(binaryArray.length == 1) {
-                binaryArray.unshift('0');
-                binaryArray.unshift('0');
-                binaryArray.unshift('0');
-            }
-
-            while(binaryArray.length > 0) {
-                let binNumber = binaryArray.splice(binaryArray.length - 4, 4).join('');
-                if(binaryArray.length == 3) {
-                    binaryArray.unshift('0');
-                } else if(binaryArray.length == 2) {
-                    binaryArray.unshift('0');
-                    binaryArray.unshift('0');
-                } else if(binaryArray.length == 1) {
-                    binaryArray.unshift('0');
-                    binaryArray.unshift('0');
-                    binaryArray.unshift('0');
-                }
-                hex = binToHexData[binNumber] + hex;
-            }
-            
-            //trim before hex number!
-            return hex.replace(/^0+/, '');
-        }
-
-        function binaryToOctal(number) {
-            if([...number].every(e => e == 0)) 
-                return '0';
-
-            let octal = '';
-            let binaryArray = [...number].filter(el => el != ' ');
-            while(binaryArray.length > 0) {
-                let binNumber = binaryArray.splice(binaryArray.length - 3, 3).join('');
-
-                if(binaryArray.length == 2) 
-                    binaryArray.unshift('0');
-                else if(binaryArray.length == 1) {
-                    binaryArray.unshift('0');
-                    binaryArray.unshift('0');
-                }
-                    
-                octal = binToOctalData[binNumber] + octal;
-            }
-
-            return octal.replace(/^0+/, '');
         }
 
         function checkInputIsHexadecimal(number) {
             const hexNumbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
             return [...number].every(h => hexNumbers.some(e => h.toUpperCase() == e));
-        }
-
-        function hexadecimalToHexadecimal(number) {
-            return number.toUpperCase();
-        }
-
-        function hexadecimalToDecimal(number) {
-            let decimalNumber = 0; 
-            let hexadecimalArray = [...number].map(e => e.toUpperCase());
-            let pow = hexadecimalArray.length - 1;
-            while(hexadecimalArray.length > 0) {
-                const num = hexadecimalArray.shift();
-                decimalNumber += hexToDecimalData[num] * Math.pow(16, pow);
-                pow--;
-            }
-
-            return decimalNumber;
-        }
-
-        function hexadecimalToBinary(number) {
-            if([...number].every(e => e == 0)) 
-                return '0000';
-
-            let bin = '';
-            let hexArray = [...number];
-            while(hexArray.length > 0) {
-                const hex = hexArray.shift().toUpperCase();
-                bin += hexToBinaryData[hex] + ' ';
-            }
-
-            return bin.trim();
-        }
-
-        function hexadecimalToOctal(number) {
-            const binNumber = hexadecimalToBinary(number);
-            const octalNumber = binaryToOctal(binNumber);
-            return octalNumber;
-        }
-
-        function octalToOctal(number) {
-            return number.toString();
-        }
-
-        function octalToDecimal(number) {
-            let decimalNumber = 0;
-            let octalArray = [...number.toString()];
-            let pow = octalArray.length - 1;
-            while(octalArray.length > 0) {
-                const num = octalArray.shift();
-                decimalNumber += Number(num) * Math.pow(8, pow);
-                pow--;
-            }
-
-            return decimalNumber.toString();
-        }
-
-        function octalToBinary(number) {
-            let binary = '';
-            let octalArray = [...number.toString()];
-
-            if(octalArray.every(e => e == 0))
-                return '000';
-
-            if(octalArray.some(e => e == '8' || e == '9'))
-                return '';
-
-            while(octalArray.length > 0) {
-                const num = octalArray.shift();
-                binary += octalToBinaryData[num];
-            }
-
-            return binary;
-        }
-
-        function octalToHexadecimal(number) {
-            const bin = octalToBinary(number);
-            const hex = binaryToHexadecimal(bin);
-            return hex;
         }
 
         function reset() {
