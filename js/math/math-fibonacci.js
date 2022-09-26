@@ -42,23 +42,22 @@
 
         if(input.value == '' || !globalFunc.CheckIsNumber(input.value)) return;
 
-        const n = Math.round(Number(input.value));
-        if(n < 1) {
-            result.value = n;
-            return;
-        }
-        
-        let fn = n;
-        let F0 = 0;
-        let F1 = 1;
+        let n = Math.round(Number(input.value));
+        function calcFibonacci(n) {
+            if(n < 1) return 0;
+            if(n < 3) return 1;
 
-        for (let i = 2; i <= n; i++) {
-            fn = F0 + F1;
-            F0 = F1;
-            F1 = fn;
+            let f0 = 0n, f1 = 1n;
+            for (let i = 2; i <= n; i++) {
+                let fn = BigInt(f0) + BigInt(f1);
+                f0 = f1;
+                f1 = fn;
+            }
+
+            return f1;
         }
 
-        result.value = F1;
+        result.value = calcFibonacci(n);
     }
 
     //imported codeFibonacci from codeData.js!

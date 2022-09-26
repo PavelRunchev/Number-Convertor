@@ -1720,6 +1720,10 @@ section > h5, section > div, section > p {
   }
 }
 
+.input-factorial-result {
+  height: auto !important;
+}
+
 .form-factorial {
   max-width: 400px;
 }
@@ -1747,6 +1751,10 @@ section > h5, section > div, section > p {
   .fibonacci-container {
     padding-left: 3%;
   }
+}
+
+.input-fibonacci-result {
+  height: auto !important;
 }
 
 .code-fibonacci > pre {

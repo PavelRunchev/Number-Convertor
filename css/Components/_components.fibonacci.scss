@@ -14,6 +14,10 @@
     }
 }
 
+.input-fibonacci-result {
+    height: auto !important;
+}
+
 .code-fibonacci > pre {
     @include code-container;
 }
