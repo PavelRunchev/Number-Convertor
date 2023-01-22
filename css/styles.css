@@ -1339,6 +1339,18 @@ code > pre {
   }
 }
 
+.error {
+  color: rgb(249, 38, 16);
+}
+
+.right {
+  color: #3498DB;
+}
+
+.invalid-leap {
+  font-weight: bold;
+}
+
 .convert-description-container {
   max-width: 500px;
   display: flex;

@@ -566,6 +566,11 @@ const globalData = (function() {
         '\n     <label class="form-check-label" for="flexSwitchCheckChecked">Checked switch checkbox input</label>' +
         '\n</div>';
 
+    const leapYearData = 'public static bool isLeapYear(int year)' +
+        '\n{' +
+        '\n     return year % 4 == 0 && (year % 100 != 0 || year % 400 == 0);' +
+        '\n}';
+
     return {
         textError,
         decimalToHexData,
@@ -601,7 +606,8 @@ const globalData = (function() {
         checkboxData,
         inputFieldData,
         toggleSwitchData,
-        carouselData
+        carouselData,
+        leapYearData
     }
 })();
 

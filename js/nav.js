@@ -8,6 +8,9 @@
     let ul = document.querySelector('.unordered-list');
     let listItems = Array.from(ul.querySelectorAll('li'));
 
+    if(ul == null)
+        globalFunc.ErrorDOMElement();
+
     //show / hide - bars btn and navigation!
     window.addEventListener('resize', showBars);
     function showBars() {
