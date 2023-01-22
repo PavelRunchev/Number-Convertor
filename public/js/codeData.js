@@ -571,6 +571,32 @@ const globalData = (function() {
         '\n     return year % 4 == 0 && (year % 100 != 0 || year % 400 == 0);' +
         '\n}';
 
+    const exponentialFunctionData = 'function calcExponential(x) {' +
+        '\n let oldValue = 0, exp = 0, k = 0;' +
+        '\n' +
+        '\n let factorial = (k) => {' +
+        '\n    let res = 1, count = 1;' +
+        '\n    while( count <= k) {' +
+        '\n        res = res * count;' +
+        '\n        count++;' +
+        '\n    }' +
+        '\n' +
+        '\n    return res;' +
+        '\n }' +
+        '\n' +
+        '\n while(true) {' +
+        '\n   exp += Math.pow(x, k) / factorial(k);' +
+        '\n' +
+        '\n    if(exp == oldValue) break;' +
+        '\n    else {' +
+        '\n        oldValue = exp;' +
+        '\n        k++;' +
+        '\n    }' +
+        '\n }' +
+        '\n' +
+        '\n return exp.toFixed(14);' +
+    '\n};';
+
     return {
         textError,
         decimalToHexData,
@@ -607,7 +633,8 @@ const globalData = (function() {
         inputFieldData,
         toggleSwitchData,
         carouselData,
-        leapYearData
+        leapYearData,
+        exponentialFunctionData
     }
 })();
 
